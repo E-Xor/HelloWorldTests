@@ -31,5 +31,5 @@ gem 'sqlite3'
 # end
 
 # Try to fix engineyard issue
- gem 'bundler', '1.0.18'
+gem 'bundler', '1.0.18'
  
