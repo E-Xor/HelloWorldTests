@@ -1,0 +1,15 @@
+<h1>Say#hello</h1>
+<p>Find me in app/views/say/hello.html.erb</p>
+<p>It's <%= Time.now %></p>
+OR
+<p>It's <%= @timenow %></p>
+<p>Say goodbey <%= link_to "here", say_goodbye_path %>.</p>
+<p>
+  Files: <br/><% @files.each do |f| %>
+    &nbsp;&nbsp;<%= f %><br>
+  <% end %>
+</p>
+<p>
+  Current __FILE__: <br/><%= @current_file %><br/>
+  Current __FILE__ directory : <br/><%= @current_dir %>
+</p>

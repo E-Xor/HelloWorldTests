@@ -1,0 +1,2 @@
+module MyTestScaffoldsHelper
+end
