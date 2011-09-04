@@ -40,8 +40,6 @@ HelloWorldTests::Application.routes.draw do
   #       get 'recent', :on => :collection
   #     end
   #   end
-#  resources :svetik
-#  resources :say
   resources :my_test_scaffolds
 
   # Sample resource route within a namespace:
