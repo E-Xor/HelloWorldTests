@@ -1,18 +1,9 @@
 <h1>Listing my_test_scaffolds</h1>
 
 <table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Image url</th>
-    <th>Price</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @my_test_scaffolds.each do |my_test_scaffold| %>
-  <tr>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
     <td><%= my_test_scaffold.title %></td>
     <td><%= my_test_scaffold.description %></td>
     <td><%= my_test_scaffold.image_url %></td>
