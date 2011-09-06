@@ -1,20 +1,34 @@
+<div id="product_list">
+
 <h1>Listing my_test_scaffolds</h1>
 
 <table>
 
 <% @my_test_scaffolds.each do |my_test_scaffold| %>
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-    <td><%= my_test_scaffold.title %></td>
-    <td><%= my_test_scaffold.description %></td>
-    <td><%= my_test_scaffold.image_url %></td>
-    <td><%= my_test_scaffold.price %></td>
-    <td><%= link_to 'Show', my_test_scaffold %></td>
-    <td><%= link_to 'Edit', edit_my_test_scaffold_path(my_test_scaffold) %></td>
-    <td><%= link_to 'Destroy', my_test_scaffold, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= image_tag(my_test_scaffold.image_url, :class => 'list_image') %></td>
+
+    <td class="list_description">
+      <dl>
+        <dt><%= my_test_scaffold.title %></dt>
+        <dd><%= truncate(strip_tags(my_test_scaffold.description), :length => 80) %><br/>
+        $ <%= my_test_scaffold.price %></dd>
+      </dl>
+    </td>
+
+    <td class="list_actions">
+      <%= link_to 'Show', my_test_scaffold %><br/>
+      <%= link_to 'Edit', edit_my_test_scaffold_path(my_test_scaffold) %><br/>
+      <%= link_to 'Destroy', my_test_scaffold, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
   </tr>
 <% end %>
 </table>
 
+</div>
+
 <br />
 
 <%= link_to 'New My test scaffold', new_my_test_scaffold_path %>
+
+
