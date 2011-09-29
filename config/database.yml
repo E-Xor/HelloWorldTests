@@ -1,26 +1,3 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#development:
-#  adapter: sqlite3
-#  database: db/development.sqlite3
-#  pool: 5
-#  timeout: 5000
-
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
-#test:
-#  adapter: sqlite3
-#  database: db/test.sqlite3
-#  pool: 5
-#  timeout: 5000
-
-#production:
-#  adapter: sqlite3
-#  database: db/production.sqlite3
-#  pool: 5
-#  timeout: 5000
-
 production:
   adapter: mysql2
   encoding: utf8
@@ -30,20 +7,38 @@ production:
   #host: localhost
   socket: /var/run/mysqld/mysqld.sock
 
+# Engineyard
 development:
-  adapter: mysql2
-  encoding: utf8
-  database: hwt
-  username: root
-  #password:
-  #host: localhost
-  socket: /var/run/mysqld/mysqld.sock
+  adapter:   mysql2
+  database:  helloworldtestsapp
+  username:  deploy
+  password:  7JLs1NIUyv
+  host:      ec2-46-137-179-10.eu-west-1.compute.amazonaws.com
+  reconnect: true
 
 test:
-  adapter: mysql2
-  encoding: utf8
-  database: hwt_test
-  username: root
-  #password:
-  #host: localhost
-  socket: /var/run/mysqld/mysqld.sock
+  adapter:   mysql2
+  database:  helloworldtestsapp_test
+  username:  deploy
+  password:  7JLs1NIUyv
+  host:      ec2-46-137-179-10.eu-west-1.compute.amazonaws.com
+  reconnect: true
+
+# VM
+#development:
+#  adapter: mysql2
+#  encoding: utf8
+#  database: hwt
+#  username: root
+#  #password:
+#  #host: localhost
+#  socket: /var/run/mysqld/mysqld.sock
+#
+#test:
+#  adapter: mysql2
+#  encoding: utf8
+#  database: hwt_test
+#  username: root
+#  #password:
+#  #host: localhost
+#  socket: /var/run/mysqld/mysqld.sock
