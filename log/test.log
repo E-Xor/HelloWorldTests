@@ -1,0 +1,408 @@
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 60ms (Views: 59.3ms | ActiveRecord: 3.8ms)
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 4.8ms)
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 6.8ms)
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 5.2ms)
+  [1m[35mSQL (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 5.0ms)
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 4.6ms)
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mMyTestScaffold Load (31.9ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mSQL (15.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (1.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 4.7ms)
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mMyTestScaffold Load (0.6ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 6.1ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 4.9ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 5.0ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 5.4ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 6.0ms)
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mMyTestScaffold Load (0.4ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 4.8ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1[0m
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds`
+Completed 200 OK in 407ms (Views: 405.8ms | ActiveRecord: 1.4ms)
+  [1m[36mSQL (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 3.7ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mMyTestScaffold Load (0.4ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1[0m
+  Processing by MyTestScaffoldsController#new as HTML
+Rendered my_test_scaffolds/_form.html.erb (83.3ms)
+Completed 200 OK in 120ms (Views: 119.4ms | ActiveRecord: 1.1ms)
+  [1m[35mSQL (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mMyTestScaffold Load (0.6ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds`[0m
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 1.6ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 23.3ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1[0m
+  Processing by MyTestScaffoldsController#new as HTML
+Rendered my_test_scaffolds/_form.html.erb (12.1ms)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 1.6ms)
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mMyTestScaffold Load (0.7ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds`[0m
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 1.3ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 4.6ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by MyTestScaffoldsController#new as HTML
+Rendered my_test_scaffolds/_form.html.erb (12.0ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.3ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mMyTestScaffold Load (0.4ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds`
+Completed 200 OK in 22ms (Views: 10.2ms | ActiveRecord: 0.7ms)
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 6.1ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1[0m
+  Processing by MyTestScaffoldsController#new as HTML
+Rendered my_test_scaffolds/_form.html.erb (11.9ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 1.1ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1
+  [1m[36mSQL (58.2ms)[0m  [1mSELECT COUNT(*) FROM `my_test_scaffolds`[0m
+  Processing by MyTestScaffoldsController#create as HTML
+  Parameters: {"my_test_scaffold"=>{"title"=>"In Controller Test", "image_url"=>"/images/ct.png", "prive"=>11.99, "description"=>"Description in controller test"}}
+Completed 500 Internal Server Error in 1ms
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds`[0m
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 59.9ms)
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 80.6ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1[0m
+  Processing by MyTestScaffoldsController#new as HTML
+Rendered my_test_scaffolds/_form.html.erb (12.2ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 1.0ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `my_test_scaffolds`[0m
+  Processing by MyTestScaffoldsController#create as HTML
+  Parameters: {"my_test_scaffold"=>{"title"=>"In Controller Test", "image_url"=>"/images/ct.png", "prise"=>11.99, "description"=>"Description in controller test"}}
+Completed 500 Internal Server Error in 1ms
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mMyTestScaffold Load (0.8ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds`[0m
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 1.9ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 96.1ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1[0m
+  Processing by MyTestScaffoldsController#new as HTML
+Rendered my_test_scaffolds/_form.html.erb (12.0ms)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 1.0ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `my_test_scaffolds`[0m
+  Processing by MyTestScaffoldsController#create as HTML
+  Parameters: {"my_test_scaffold"=>{"price"=>11.99, "title"=>"In Controller Test", "image_url"=>"/images/ct.png", "description"=>"Description in controller test"}}
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (116.0ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'In Controller Test') LIMIT 1[0m
+  [1m[35mSQL (1.9ms)[0m  describe `my_test_scaffolds`
+  [1m[36mAREL (0.6ms)[0m  [1mINSERT INTO `my_test_scaffolds` (`description`, `updated_at`, `title`, `created_at`, `price`, `image_url`) VALUES ('Description in controller test', '2011-10-02 12:12:37', 'In Controller Test', '2011-10-02 12:12:37', 11.99, '/images/ct.png')[0m
+  [1m[35mSQL (14.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/my_test_scaffolds/980190963
+Completed 302 Found in 341ms
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM `my_test_scaffolds`[0m
+  [1m[35mSQL (0.9ms)[0m  ROLLBACK
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (0.6ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mMyTestScaffold Load (0.8ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds`[0m
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 136.6ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 4.9ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1[0m
+  Processing by MyTestScaffoldsController#new as HTML
+Rendered my_test_scaffolds/_form.html.erb (13.0ms)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 1.0ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `my_test_scaffolds`[0m
+  Processing by MyTestScaffoldsController#create as HTML
+  Parameters: {"my_test_scaffold"=>{"price"=>11.99, "title"=>"In Controller Test", "image_url"=>"/images/ct.png", "description"=>"Description in controller test"}}
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'In Controller Test') LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  describe `my_test_scaffolds`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `my_test_scaffolds` (`created_at`, `image_url`, `updated_at`, `title`, `description`, `price`) VALUES ('2011-10-02 12:13:19', '/images/ct.png', '2011-10-02 12:13:19', 'In Controller Test', 'Description in controller test', 11.99)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/my_test_scaffolds/980190963
+Completed 302 Found in 9ms
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `my_test_scaffolds`[0m
+  [1m[35mSQL (0.8ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (0.4ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 LIMIT 1
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mMyTestScaffold Load (0.4ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds`[0m
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 4.2ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 5.1ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by MyTestScaffoldsController#new as HTML
+Rendered my_test_scaffolds/_form.html.erb (12.5ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.3ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `my_test_scaffolds`
+  Processing by MyTestScaffoldsController#create as HTML
+  Parameters: {"my_test_scaffold"=>{"price"=>11.99, "title"=>"In Controller Test", "image_url"=>"/images/ct.png", "description"=>"Description in controller test"}}
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'In Controller Test') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  describe `my_test_scaffolds`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `my_test_scaffolds` (`description`, `updated_at`, `title`, `image_url`, `price`, `created_at`) VALUES ('Description in controller test', '2011-10-02 12:13:32', 'In Controller Test', '/images/ct.png', 11.99, '2011-10-02 12:13:32')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/my_test_scaffolds/980190963
+Completed 302 Found in 11ms
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `my_test_scaffolds`[0m
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds`
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 3.8ms)
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 4.9ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by MyTestScaffoldsController#new as HTML
+Rendered my_test_scaffolds/_form.html.erb (12.3ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.3ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  SELECT COUNT(*) FROM `my_test_scaffolds`
+  Processing by MyTestScaffoldsController#create as HTML
+  Parameters: {"my_test_scaffold"=>{"price"=>11.99, "title"=>"In Controller Test", "image_url"=>"/images/ct.png", "description"=>"Description in controller test"}}
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'In Controller Test') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  describe `my_test_scaffolds`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `my_test_scaffolds` (`image_url`, `updated_at`, `description`, `created_at`, `price`, `title`) VALUES ('/images/ct.png', '2011-10-02 12:17:35', 'Description in controller test', '2011-10-02 12:17:35', 11.99, 'In Controller Test')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/my_test_scaffolds/980190963
+Completed 302 Found in 12ms
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `my_test_scaffolds`[0m
+  [1m[35mSQL (0.6ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mMyTestScaffold Load (0.4ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds`
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 5.0ms)
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  SELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  SELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` IS NULL) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
