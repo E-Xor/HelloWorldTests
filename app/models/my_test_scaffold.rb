@@ -1,4 +1,7 @@
 class MyTestScaffold < ActiveRecord::Base
+  # It will be aplied all queries of this model
+  default_scope :order => 'title'
+
   validates :title, :description, :image_url, :presence => true
   validates :price, :numericality => {:greater_than_or_equal_to => 0.01}
   validates :title, :uniqueness => { :message => 'has already been taken. Should be unique.' }

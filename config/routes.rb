@@ -1,5 +1,9 @@
 HelloWorldTests::Application.routes.draw do
+
 #  get "home/index"
+  # Automaticaly added by controller generator
+  get "my_store/index"
+  get "google_map/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -40,6 +44,8 @@ HelloWorldTests::Application.routes.draw do
   #       get 'recent', :on => :collection
   #     end
   #   end
+
+  # Added for correct scaffold work
   resources :my_test_scaffolds
 
   # Sample resource route within a namespace:
@@ -52,6 +58,8 @@ HelloWorldTests::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
+  # Default index
+#  root :to => "my_store#index", :as => 'my_store'
   root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
@@ -62,5 +70,10 @@ HelloWorldTests::Application.routes.draw do
   match 'svetik/home' => 'svetik#home'
   match 'say/hello' => 'say#hello'
   match 'say/goodbye' => 'say#goodbye'
+  match 'my_store' => 'my_store#index'
+  match 'google_map' => 'google_map#ym4r_index'
+  match 'google_map/index' => 'google_map#index'
+  match 'google_map/ym4r_index' => 'google_map#ym4r_index'
+
 
 end
