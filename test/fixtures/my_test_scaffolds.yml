@@ -3,3 +3,9 @@ one:
   description: Description of title 5
   image_url: /images/image5.png
   price: 50.99
+
+ten:
+  title: Title Six
+  description: Description of title 6
+  image_url: /images/image6.png
+  price: 60.99
