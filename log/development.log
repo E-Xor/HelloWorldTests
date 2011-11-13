@@ -2939,3 +2939,1203 @@ Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
   [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110902131948')
   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110902131437')[0m
   [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110901134435')
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/" for 192.168.1.3 at Tue Nov 08 00:23:26 +0200 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (58.7ms)
+Completed 200 OK in 128ms (Views: 126.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Tue Nov 08 00:23:41 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 73ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/ym4r_index" for 192.168.1.3 at Tue Nov 08 00:23:56 +0200 2011
+  Processing by GoogleMapController#ym4r_index as HTML
+Rendered google_map/ym4r_index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 97ms (Views: 96.1ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/" for 192.168.1.3 at Tue Nov 08 00:27:59 +0200 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Tue Nov 08 00:28:03 +0200 2011
+
+SyntaxError (/home/user/RailsApps/HelloWorldTests/app/controllers/google_map_controller.rb:7: syntax error, unexpected '=', expecting ')'
+    @map.control_init(:large_map =&gt; true,:map_type =&gt; true)
+                                  ^
+/home/user/RailsApps/HelloWorldTests/app/controllers/google_map_controller.rb:7: Can't assign to true
+    @map.control_init(:large_map =&gt; true,:map_type =&gt; true)
+                                            ^
+/home/user/RailsApps/HelloWorldTests/app/controllers/google_map_controller.rb:7: syntax error, unexpected '=', expecting tCOLON2 or '[' or '.'
+    @map.control_init(:large_map =&gt; true,:map_type =&gt; true)
+                                                       ^
+/home/user/RailsApps/HelloWorldTests/app/controllers/google_map_controller.rb:7: syntax error, unexpected ')', expecting kEND
+/home/user/RailsApps/HelloWorldTests/app/controllers/google_map_controller.rb:10: syntax error, unexpected '=', expecting ')'
+...t(GMarker.new([22,38],:title =&gt; "Title", :info_window =&g...
+                              ^
+/home/user/RailsApps/HelloWorldTests/app/controllers/google_map_controller.rb:10: syntax error, unexpected ',', expecting kEND
+...([22,38],:title =&gt; "Title", :info_window =&gt; "This desc...
+                              ^
+/home/user/RailsApps/HelloWorldTests/app/controllers/google_map_controller.rb:10: syntax error, unexpected ')', expecting kEND
+... can have <b>HTML</b> in it!"))
+                              ^):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.9ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (33.9ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Tue Nov 08 00:29:03 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 192.168.1.3 at Tue Nov 08 00:29:06 +0200 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/ym4r_index" for 192.168.1.3 at Tue Nov 08 00:29:08 +0200 2011
+  Processing by GoogleMapController#ym4r_index as HTML
+Completed 500 Internal Server Error in 4ms
+
+NameError (uninitialized constant GoogleMapController::GMap):
+  app/controllers/google_map_controller.rb:6:in `ym4r_index'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.7ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.9ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/google_map/ym4r_index" for 192.168.1.3 at Tue Nov 08 00:30:00 +0200 2011
+
+LoadError (no such file to load -- ym4r):
+  app/controllers/google_map_controller.rb:1
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.6ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.3ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/google_map/ym4r_index" for 192.168.1.3 at Tue Nov 08 00:36:24 +0200 2011
+  Processing by GoogleMapController#ym4r_index as HTML
+Completed 500 Internal Server Error in 2ms
+
+NameError (uninitialized constant GoogleMapController::GMap):
+  app/controllers/google_map_controller.rb:8:in `ym4r_index'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.6ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.4ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/google_map/ym4r_index" for 192.168.1.3 at Tue Nov 08 00:36:43 +0200 2011
+
+LoadError (no such file to load -- ym4r/google_maps/geocoding):
+  app/controllers/google_map_controller.rb:1
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/google_map/ym4r_index" for 192.168.1.3 at Tue Nov 08 00:39:01 +0200 2011
+  Processing by GoogleMapController#ym4r_index as HTML
+Completed 500 Internal Server Error in 2ms
+
+NameError (uninitialized constant GoogleMapController::GMap):
+  app/controllers/google_map_controller.rb:7:in `ym4r_index'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.8ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/google_map/ym4r_index" for 192.168.1.3 at Tue Nov 08 00:39:37 +0200 2011
+  Processing by GoogleMapController#ym4r_index as HTML
+Completed 500 Internal Server Error in 2ms
+
+NameError (uninitialized constant GoogleMapController::GMap):
+  app/controllers/google_map_controller.rb:9:in `ym4r_index'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (28.6ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.4ms)
+
+
+Started GET "/google_map/ym4r_index" for 192.168.1.3 at Tue Nov 08 00:39:39 +0200 2011
+  Processing by GoogleMapController#ym4r_index as HTML
+Completed 500 Internal Server Error in 2ms
+
+NameError (uninitialized constant GoogleMapController::GMap):
+  app/controllers/google_map_controller.rb:9:in `ym4r_index'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.3ms)
+
+
+Started GET "/google_map/ym4r_index" for 192.168.1.3 at Tue Nov 08 00:39:39 +0200 2011
+  Processing by GoogleMapController#ym4r_index as HTML
+Completed 500 Internal Server Error in 2ms
+
+NameError (uninitialized constant GoogleMapController::GMap):
+  app/controllers/google_map_controller.rb:9:in `ym4r_index'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.4ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/google_map/ym4r_index" for 192.168.1.3 at Tue Nov 08 00:41:16 +0200 2011
+  Processing by GoogleMapController#ym4r_index as HTML
+Completed 500 Internal Server Error in 2ms
+
+NameError (uninitialized constant GoogleMapController::GMap):
+  app/controllers/google_map_controller.rb:9:in `ym4r_index'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.9ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.6ms)
+
+
+Started GET "/google_map/ym4r_index" for 192.168.1.3 at Tue Nov 08 00:41:28 +0200 2011
+  Processing by GoogleMapController#ym4r_index as HTML
+Completed 500 Internal Server Error in 2ms
+
+NameError (uninitialized constant GoogleMapController::GMap):
+  app/controllers/google_map_controller.rb:9:in `ym4r_index'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (52.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/google_map/ym4r_index" for 192.168.1.3 at Tue Nov 08 00:47:02 +0200 2011
+  Processing by GoogleMapController#ym4r_index as HTML
+Completed 500 Internal Server Error in 2ms
+
+NameError (uninitialized constant GoogleMapController::GMap):
+  app/controllers/google_map_controller.rb:9:in `ym4r_index'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/" for 192.168.1.3 at Sun Nov 13 15:54:24 +0200 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (11.5ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::GMap):
+    6:   <%= javascript_include_tag "jquery-1.6.4.min" %>
+    7:   <%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false" %>
+    8:   <%= javascript_include_tag "google_map" %>
+    9:   <%= GMap.header %>
+    10:   <%= javascript_include_tag :defaults %>
+    11:   <%= csrf_meta_tag %>
+    12: </head>
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___897167618__620386628_0'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/" for 192.168.1.3 at Sun Nov 13 15:55:04 +0200 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::GMap):
+    6:   <%= javascript_include_tag "jquery-1.6.4.min" %>
+    7:   <%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false" %>
+    8:   <%= javascript_include_tag "google_map" %>
+    9:   <%= GMap.header %>
+    10:   <%= javascript_include_tag :defaults %>
+    11:   <%= csrf_meta_tag %>
+    12: </head>
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___897167618__620638218_0'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.6ms)
+
+
+Started GET "/" for 192.168.1.3 at Sun Nov 13 15:55:06 +0200 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (20.4ms)
+Completed 500 Internal Server Error in 29ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::GMap):
+    6:   <%= javascript_include_tag "jquery-1.6.4.min" %>
+    7:   <%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false" %>
+    8:   <%= javascript_include_tag "google_map" %>
+    9:   <%= GMap.header %>
+    10:   <%= javascript_include_tag :defaults %>
+    11:   <%= csrf_meta_tag %>
+    12: </head>
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___897167618__621054338_0'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.1ms)
+
+
+Started GET "/" for 192.168.1.3 at Sun Nov 13 15:55:07 +0200 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (17.6ms)
+Completed 500 Internal Server Error in 24ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::GMap):
+    6:   <%= javascript_include_tag "jquery-1.6.4.min" %>
+    7:   <%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false" %>
+    8:   <%= javascript_include_tag "google_map" %>
+    9:   <%= GMap.header %>
+    10:   <%= javascript_include_tag :defaults %>
+    11:   <%= csrf_meta_tag %>
+    12: </head>
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___897167618__621434748_0'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (57.8ms)
+
+
+Started GET "/" for 192.168.1.3 at Sun Nov 13 15:55:07 +0200 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.6ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::GMap):
+    6:   <%= javascript_include_tag "jquery-1.6.4.min" %>
+    7:   <%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false" %>
+    8:   <%= javascript_include_tag "google_map" %>
+    9:   <%= GMap.header %>
+    10:   <%= javascript_include_tag :defaults %>
+    11:   <%= csrf_meta_tag %>
+    12: </head>
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___897167618__620674348_0'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.6ms)
+
+
+Started GET "/" for 192.168.1.3 at Sun Nov 13 15:55:12 +0200 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.8ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::GMap):
+    6:   <%= javascript_include_tag "jquery-1.6.4.min" %>
+    7:   <%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false" %>
+    8:   <%= javascript_include_tag "google_map" %>
+    9:   <%= GMap.header %>
+    10:   <%= javascript_include_tag :defaults %>
+    11:   <%= csrf_meta_tag %>
+    12: </head>
+  app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___897167618__621079778_0'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/" for 192.168.1.3 at Sun Nov 13 15:56:06 +0200 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 15:56:11 +0200 2011
+
+LoadError (no such file to load -- ym4r/google_maps):
+  app/controllers/google_map_controller.rb:1
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.1ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 15:57:24 +0200 2011
+
+LoadError (no such file to load -- ym4r/google_maps):
+  app/controllers/google_map_controller.rb:1
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.1ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 15:57:37 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:00:45 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:00:45 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:02:24 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:02:45 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:02:53 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:02:54 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:03:03 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:07:51 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:08:57 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (wrong number of arguments (0 for 2)):
+    1: <h1>GoogleMap#index</h1>
+    2: <p>
+    3: <%= label %>
+    4: <%= text_field %>
+    5: </p>
+    6: <p>
+  app/views/google_map/index.html.erb:3:in `label'
+  app/views/google_map/index.html.erb:3:in `_app_views_google_map_index_html_erb___639099012__620915998_0'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.9ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.6ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:11:03 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 2)):
+    1: <h1>GoogleMap#index</h1>
+    2: <p>
+    3: <%= label 'address_label' 'Address: ' %>
+    4: <%= text_field 'address_text' %>
+    5: </p>
+    6: <p>
+  app/views/google_map/index.html.erb:3:in `label'
+  app/views/google_map/index.html.erb:3:in `_app_views_google_map_index_html_erb___639099012__621291428_0'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.7ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.2ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:11:14 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (27.5ms)
+Completed 500 Internal Server Error in 32ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 2)):
+    1: <h1>GoogleMap#index</h1>
+    2: <p>
+    3: <%= label 'address_label', 'Address: ' %>
+    4: <%= text_field 'address_text' %>
+    5: </p>
+    6: <p>
+    7: <div id="map_canvas"></div>
+  app/views/google_map/index.html.erb:4:in `text_field'
+  app/views/google_map/index.html.erb:4:in `_app_views_google_map_index_html_erb___639099012__621637588_0'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (58.0ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (64.3ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:11:51 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:12:19 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:12:30 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:12:41 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:12:43 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 64ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:14:55 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 2)):
+    1: <h1>GoogleMap#index</h1>
+    2: <p>
+    3: <%= label :address_label %>
+    4: <%= text_field :address, :text %>
+    5: </p>
+    6: <p>
+  app/views/google_map/index.html.erb:3:in `label'
+  app/views/google_map/index.html.erb:3:in `_app_views_google_map_index_html_erb___639099012__621033348_0'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.4ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:16:09 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:16:28 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:17:19 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:17:45 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:17:47 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:17:47 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:18:17 +0200 2011
+  Processing by GoogleMapController#index as HTML
+ERROR: compiling _app_views_google_map_index_html_erb___639099012__621799578_0 RAISED compile error
+/home/user/RailsApps/HelloWorldTests/app/views/google_map/index.html.erb:3: syntax error, unexpected ':', expecting ')'
+...ppend= ( label :map, :address: );@output_buffer.safe_concat(...
+                              ^
+/home/user/RailsApps/HelloWorldTests/app/views/google_map/index.html.erb:9: syntax error, unexpected kENSURE, expecting ')'
+/home/user/RailsApps/HelloWorldTests/app/views/google_map/index.html.erb:11: syntax error, unexpected kEND, expecting ')'
+Function body:           def _app_views_google_map_index_html_erb___639099012__621799578_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "google_map/index";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>GoogleMap#index</h1>
+<p>
+');@output_buffer.append= ( label :map, :address: );@output_buffer.safe_concat('
+');@output_buffer.append= ( text_field :map, :address );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+<p>
+<div id="map_canvas"></div>
+</p>');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/user/RailsApps/HelloWorldTests/app/views/google_map/index.html.erb:11:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:436:in `_run__931791166__process_action__199225275__callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/sendfile.rb:107:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/runtime.rb:17:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `synchronize'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:77:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/content_length.rb:13:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:52:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/handler/webrick.rb:13:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rack-1.2.3/lib/rack/server.rb:217:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/commands/server.rb:65:in `start'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:30
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:27:in `tap'
+/usr/local/lib/ruby/gems/1.8/gems/railties-3.0.9/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered google_map/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (compile error
+/home/user/RailsApps/HelloWorldTests/app/views/google_map/index.html.erb:3: syntax error, unexpected ':', expecting ')'
+...ppend= ( label :map, :address: );@output_buffer.safe_concat(...
+                              ^
+/home/user/RailsApps/HelloWorldTests/app/views/google_map/index.html.erb:9: syntax error, unexpected kENSURE, expecting ')'
+/home/user/RailsApps/HelloWorldTests/app/views/google_map/index.html.erb:11: syntax error, unexpected kEND, expecting ')'):
+    1: <h1>GoogleMap#index</h1>
+    2: <p>
+    3: <%= label :map, :address: %>
+    4: <%= text_field :map, :address %>
+    5: </p>
+    6: <p>
+  app/views/google_map/index.html.erb:11:in `compile'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (60.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (66.5ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:18:23 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:18:36 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:18:46 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:18:57 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:20:02 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:24:14 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:24:20 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:24:29 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:25:42 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined method `submit' for #<#<Class:0xb5f1c998>:0xb5f1bb4c>):
+    2: <p>
+    3: <%= label :map, :address %>:
+    4: <%= text_field :map, :address, :size => 50 %>
+    5: <%= submit 'Go' %>
+    6: </p>
+    7: <p>
+    8: <div id="map_canvas"></div>
+  app/views/google_map/index.html.erb:5:in `_app_views_google_map_index_html_erb___639099012__621226188_0'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.6ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:38:46 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:40:53 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:47:47 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:48:17 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:48:18 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:49:08 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:54:25 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/(53.9,%2027.56666670000004)" for 192.168.1.3 at Sun Nov 13 16:54:36 +0200 2011
+
+ActionController::RoutingError (No route matches "/google_map/(53.9,%2027.56666670000004)"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/google_map/(53.9,%2027.56666670000004)" for 192.168.1.3 at Sun Nov 13 16:54:59 +0200 2011
+
+ActionController::RoutingError (No route matches "/google_map/(53.9,%2027.56666670000004)"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:55:11 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/(53.9,%2027.56666670000004)" for 192.168.1.3 at Sun Nov 13 16:55:14 +0200 2011
+
+ActionController::RoutingError (No route matches "/google_map/(53.9,%2027.56666670000004)"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/google_map/(53.9,%2027.56666670000004)" for 192.168.1.3 at Sun Nov 13 16:55:19 +0200 2011
+
+ActionController::RoutingError (No route matches "/google_map/(53.9,%2027.56666670000004)"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 192.168.1.3 at Sun Nov 13 16:55:57 +0200 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 35ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:56:02 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/(53.9,%2027.56666670000004)" for 192.168.1.3 at Sun Nov 13 16:56:12 +0200 2011
+
+ActionController::RoutingError (No route matches "/google_map/(53.9,%2027.56666670000004)"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/google_map/(53.9,%2027.56666670000004)" for 192.168.1.3 at Sun Nov 13 16:57:24 +0200 2011
+
+ActionController::RoutingError (No route matches "/google_map/(53.9,%2027.56666670000004)"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:57:25 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:59:23 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 16:59:51 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 17:01:32 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 17:32:10 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 37ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 17:34:18 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 17:37:54 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 17:38:25 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 17:40:48 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 17:43:55 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 17:44:42 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 17:48:03 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 17:51:40 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 17:54:15 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 17:57:47 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 17:59:16 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 17:59:53 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:01:08 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:02:27 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:02:53 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:03:18 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:04:10 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:04:25 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:04:48 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:05:04 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:06:23 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:06:43 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:06:58 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:07:09 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:07:28 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:07:44 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:08:49 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:09:23 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:09:35 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:09:53 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:10:25 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:11:07 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:11:20 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:11:38 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:15:06 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:15:24 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:16:01 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/" for 192.168.1.3 at Sun Nov 13 18:21:27 +0200 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:21:38 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (71.7ms)
+Completed 200 OK in 77ms (Views: 76.2ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/" for 192.168.1.3 at Sun Nov 13 18:23:12 +0200 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map/index" for 192.168.1.3 at Sun Nov 13 18:23:17 +0200 2011
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_store" for 192.168.1.3 at Sun Nov 13 18:23:42 +0200 2011
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (85.6ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_store/index.html.erb within layouts/my_book_store (456.3ms)
+Completed 200 OK in 760ms (Views: 474.8ms | ActiveRecord: 85.6ms)
+
+
+Started GET "/svetik/home" for 192.168.1.3 at Sun Nov 13 18:23:48 +0200 2011
+  Processing by SvetikController#home as HTML
+Rendered svetik/home.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 47ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/hello" for 192.168.1.3 at Sun Nov 13 18:25:03 +0200 2011
+  Processing by SayController#hello as HTML
+Rendered say/hello.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_test_scaffolds" for 192.168.1.3 at Sun Nov 13 18:25:07 +0200 2011
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (51.6ms)
+Completed 200 OK in 76ms (Views: 69.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/my_store" for 192.168.1.3 at Sun Nov 13 18:25:12 +0200 2011
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_store/index.html.erb within layouts/my_book_store (9.7ms)
+Completed 200 OK in 20ms (Views: 13.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/my_store" for 192.168.1.3 at Sun Nov 13 18:25:16 +0200 2011
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+Rendered my_store/index.html.erb within layouts/my_book_store (10.4ms)
+Completed 200 OK in 105ms (Views: 97.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/my_test_scaffolds" for 192.168.1.3 at Sun Nov 13 18:25:20 +0200 2011
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (16.1ms)
+Completed 200 OK in 27ms (Views: 19.7ms | ActiveRecord: 0.3ms)

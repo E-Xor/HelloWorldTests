@@ -1,5 +1,23 @@
-      html, body, #map_canvas {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-      }
+html, body, #map_canvas {
+  margin: 0;
+  padding: 0;
+  height: 500px;
+  width: 800px;
+}
+
+#map_address_label {
+  font-size: 14pt;
+}
+
+#map_address {
+  height: 25px;
+  font-size: 16pt;
+  color: #777;
+  padding-left: 3px;
+}
+
+#go_button {
+  height: 35px;
+  width: 70px;
+  font-size: 14pt;
+}

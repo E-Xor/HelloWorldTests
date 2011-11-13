@@ -71,9 +71,7 @@ HelloWorldTests::Application.routes.draw do
   match 'say/hello' => 'say#hello'
   match 'say/goodbye' => 'say#goodbye'
   match 'my_store' => 'my_store#index'
-  match 'google_map' => 'google_map#ym4r_index'
   match 'google_map/index' => 'google_map#index'
-  match 'google_map/ym4r_index' => 'google_map#ym4r_index'
 
 
 end

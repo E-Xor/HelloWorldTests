@@ -1,5 +1,9 @@
 <h1>GoogleMap#index</h1>
-
+<p>
+<%= label :map, :address, :id => 'map_address_label' %>:
+<%= text_field :map, :address, :size => 20 %>
+<%= submit_tag 'Go', :id => 'go_button', :onclick => 'reLocate();' %>
+</p>
 <p>
 <div id="map_canvas"></div>
 </p>
