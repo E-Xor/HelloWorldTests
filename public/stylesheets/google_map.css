@@ -5,19 +5,32 @@ html, body, #map_canvas {
   width: 800px;
 }
 
-#map_address_label {
-  font-size: 14pt;
+#from_address_label, #to_address_label {
+  font-size: 12pt;
+  vertical-align: middle;
 }
 
-#map_address {
-  height: 25px;
+#to_address, #from_address {
+  height: 21px;
   font-size: 16pt;
-  color: #777;
+  color: #666;
   padding-left: 3px;
 }
 
-#go_button {
+#show_button, #show_directions_button {
+  height: 27px;
+  width: 140px;
+  font-size: 12pt;
+  border:1px solid;
+}
+
+dl {
+}
+dl dt {
+  float: left;
+  width: 120px;
   height: 35px;
-  width: 70px;
-  font-size: 14pt;
+}
+dl dd {
+  height: 35px;
 }

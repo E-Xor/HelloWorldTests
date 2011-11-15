@@ -1,9 +1,16 @@
 <h1>GoogleMap#index</h1>
 <p>
-<%= label :map, :address, :id => 'map_address_label' %>:
-<%= text_field :map, :address, :size => 20 %>
-<%= submit_tag 'Go', :id => 'go_button', :onclick => 'reLocate();' %>
+<dl>
+  <dt><%= label_tag :from_address, 'From Address', :id => 'from_address_label' %></dt>
+  <dd><%= text_field_tag :from_address, nil, :size => 20, :onkeypress => 'return reLocateViaEnter()' %>
+  <%= submit_tag 'Show', :id => 'show_button', :onclick => 'reLocate();' %></dd>
+
+  <dt><%= label_tag :to_address, 'To Address', :id => 'to_address_label' %></dt>
+  <dd><%= text_field_tag :to_address, nil, :size => 20, :onkeypress => 'return showDirectionsViaEnter()' %>
+  <%= submit_tag 'Show Directions', :id => 'show_directions_button', :onclick => 'showDirections();' %></dd>
+</dl>
 </p>
+
 <p>
 <div id="map_canvas"></div>
 </p>
