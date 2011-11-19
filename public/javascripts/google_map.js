@@ -94,7 +94,7 @@ function showDirections() {
 		if (status == google.maps.DirectionsStatus.OK) {
 			directionsDisplay.setDirections(response);
 			distance = "The distance between the two points on the chosen route is: "+response.routes[0].legs[0].distance.text;
-			distance += ".The aproximative driving time is: "+response.routes[0].legs[0].duration.text;
+			distance += ". The aproximative driving time is: "+response.routes[0].legs[0].duration.text;
 			document.getElementById("road").innerHTML = distance;
 		} else { alert("Direction Service was not successful for the following reason: " + status); }
 	});
