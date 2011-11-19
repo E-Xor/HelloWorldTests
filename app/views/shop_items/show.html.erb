@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>My test scaffold:</b>
+  <%= @shop_item.my_test_scaffold_id %>
+</p>
+
+<p>
+  <b>Shop cart:</b>
+  <%= @shop_item.shop_cart_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_shop_item_path(@shop_item) %> |
+<%= link_to 'Back', shop_items_path %>

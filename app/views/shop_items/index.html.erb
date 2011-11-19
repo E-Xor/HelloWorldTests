@@ -1,0 +1,25 @@
+<h1>Listing shop_items</h1>
+
+<table>
+  <tr>
+    <th>My test scaffold</th>
+    <th>Shop cart</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @shop_items.each do |shop_item| %>
+  <tr>
+    <td><%= shop_item.my_test_scaffold_id %></td>
+    <td><%= shop_item.shop_cart_id %></td>
+    <td><%= link_to 'Show', shop_item %></td>
+    <td><%= link_to 'Edit', edit_shop_item_path(shop_item) %></td>
+    <td><%= link_to 'Destroy', shop_item, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Shop item', new_shop_item_path %>
