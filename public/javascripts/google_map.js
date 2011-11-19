@@ -13,6 +13,10 @@ var myOptions = {
 
 function initialize() {
 	reLocate();
+	var input_from = document.getElementById('from_address');
+	var input_to = document.getElementById('to_address');
+	autocomplete_from = new google.maps.places.Autocomplete(input_from);
+	autocomplete_to = new google.maps.places.Autocomplete(input_to);	
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
