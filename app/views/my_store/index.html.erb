@@ -12,6 +12,7 @@
     <%= sanitize mts.description %><!--Sanitize allows to use any html tags inside-->
     <div class="price_line">
       <span class="price"><%= currency(mts.price) %></span><!--See helper for currency()-->
+      <%= button_to 'Add to cart', shop_items_path(:my_test_scaffold_id => mts)%>
     </div>
   </div>
 

@@ -42,9 +42,13 @@ class ShopItemsController < ApplicationController
   def create
     @shop_item = ShopItem.new(params[:shop_item])
 
+    @shop_cart = current_shop_cart # method in application_conteoller.rb
+    my_test_scaffold = MyTestScaffold.find(params[:my_test_scaffold_id])
+    shop_item = @shop_cart.shop_items.build(:my_test_scaffold => my_test_scaffold)
+
     respond_to do |format|
       if @shop_item.save
-        format.html { redirect_to(@shop_item, :notice => 'Shop item was successfully created.') }
+        format.html { redirect_to(@shop_item.cart, :notice => 'Shop item was successfully created!') } # .cart is added to @shop_item
         format.xml  { render :xml => @shop_item, :status => :created, :location => @shop_item }
       else
         format.html { render :action => "new" }

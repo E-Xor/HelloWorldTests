@@ -2,8 +2,8 @@ HelloWorldTests::Application.routes.draw do
 
 #  get "home/index"
   # Automaticaly added by controller generator
-  get "my_store/index"
-  get "google_map/index"
+#  get "my_store/index"
+#  get "google_map/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -46,7 +46,7 @@ HelloWorldTests::Application.routes.draw do
   #   end
 
   # Added for correct scaffold work
-  resources :my_test_scaffolds
+  resources :my_test_scaffolds, :shop_items, :google_map
 
   # Sample resource route within a namespace:
   #   namespace :admin do
@@ -71,7 +71,9 @@ HelloWorldTests::Application.routes.draw do
   match 'say/hello' => 'say#hello'
   match 'say/goodbye' => 'say#goodbye'
   match 'my_store' => 'my_store#index'
-  match 'google_map/index' => 'google_map#index'
+#  match 'shop_items' => 'shop_items#index'
+#  match 'new_shop_item' => 'shop_items#new'
+#  match 'google_map/index' => 'google_map#index'
 
 
 end
