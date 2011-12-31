@@ -1,4 +1,5 @@
 class ShopCartsController < ApplicationController
+  layout 'my_book_store'
   # GET /shop_carts
   # GET /shop_carts.xml
   def index

@@ -1,4 +1,4 @@
-<% if notice %><!--What the notice?-->
+<% if notice %>
   <p id="notice"><%= notice %></p>
 <% end  %>
 
@@ -7,7 +7,7 @@
 <% @my_test_scaffolds.each do |mts| %>
 
   <div class="entry">
-    <%= image_tag(mts.image_url) %>
+    <%= link_to(image_tag(mts.image_url), shop_items_path(:my_test_scaffold_id => mts), :method => :post) %>
     <h3><%= mts.title %></h3>
     <%= sanitize mts.description %><!--Sanitize allows to use any html tags inside-->
     <div class="price_line">

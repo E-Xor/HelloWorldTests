@@ -42,9 +42,12 @@ class ShopItemsController < ApplicationController
   def create
     @shop_item = ShopItem.new(params[:shop_item])
 
-    @shop_cart = current_shop_cart # method in application_conteoller.rb
+    @shop_cart = current_shop_cart # method in application_controller.rb
     my_test_scaffold = MyTestScaffold.find(params[:my_test_scaffold_id])
-    @shop_item = @shop_cart.shop_items.build(:my_test_scaffold => my_test_scaffold)
+#    @shop_item = @shop_cart.shop_items.build(:my_test_scaffold => my_test_scaffold)
+    # ShopCart has many ShopItems, i.e. ShopItem has field shop_cart_id
+    # .build adds record to :has_many releationship before save
+    @shop_item = @shop_cart.add_test_scaffold(my_test_scaffold.id)
 
     respond_to do |format|
       if @shop_item.save

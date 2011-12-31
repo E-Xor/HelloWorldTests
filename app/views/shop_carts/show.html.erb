@@ -1,5 +1,11 @@
-<p id="notice"><%= notice %></p>
+<h2>Shop Cart</h2>
+<% if notice %><p id="notice"><%= notice %></p><% end %>
 
+<ul>
+  <% for shop_item in @shop_cart.shop_items%>
+    <li><%= shop_item.quantity %> &times; <%= shop_item.my_test_scaffold.title %></li>
+  <% end %>
+</ul>
 
 <%= link_to 'Edit', edit_shop_cart_path(@shop_cart) %> |
 <%= link_to 'Back', shop_carts_path %>

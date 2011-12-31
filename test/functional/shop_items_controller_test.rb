@@ -18,10 +18,10 @@ class ShopItemsControllerTest < ActionController::TestCase
 
   test "should create shop_item" do
     assert_difference('ShopItem.count') do
-      post :create, :shop_item => @shop_item.attributes
+      post :create, :my_test_scaffold_id => my_test_scaffolds(:one).id
     end
 
-    assert_redirected_to shop_item_path(assigns(:shop_item))
+    assert_redirected_to shop_cart_path(assigns(:shop_item).shop_cart)
   end
 
   test "should show shop_item" do

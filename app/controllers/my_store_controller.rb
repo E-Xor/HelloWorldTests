@@ -3,6 +3,8 @@ class MyStoreController < ApplicationController
 
   def index
     @my_test_scaffolds = MyTestScaffold.all
+    session[:hit_counter] ||= 0
+    session[:hit_counter] += 1
   end
 
 end
