@@ -6445,3 +6445,429 @@ Started GET "/shop_carts/13" for 192.168.1.5 at Sat Dec 31 21:05:35 +0200 2011
   [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 2 ORDER BY title LIMIT 1
 Rendered shop_carts/show.html.erb within layouts/my_book_store (94.9ms)
 Completed 200 OK in 110ms (Views: 97.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 192.168.1.5 at Mon Jan 02 20:46:00 +0200 2012
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 370ms (Views: 369.3ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/my_store" for 192.168.1.5 at Mon Jan 02 20:46:03 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (1.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+Rendered my_store/index.html.erb within layouts/my_book_store (39.7ms)
+Completed 200 OK in 53ms (Views: 42.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/shop_items?my_test_scaffold_id=1" for 192.168.1.5 at Mon Jan 02 20:46:05 +0200 2012
+  Processing by ShopItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"gShkXMnBRvv8guGT1yvkj8ua1tGVx6FrQlIxQ3QjbI0=", "my_test_scaffold_id"=>"1"}
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  describe `shop_carts`
+  [1m[36mAREL (34.7ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-01-02 18:46:05', '2012-01-02 18:46:05')[0m
+  [1m[35mSQL (4.5ms)[0m  COMMIT
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mShopItem Load (2.1ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 1 AND (`shop_items`.shop_cart_id = 14) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `shop_items` (`quantity`, `shop_cart_id`, `my_test_scaffold_id`, `created_at`, `updated_at`) VALUES (1, 14, 1, '2012-01-02 18:46:05', '2012-01-02 18:46:05')[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mShopCart Load (0.5ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 14 LIMIT 1[0m
+Redirected to http://hwt.com/shop_carts/14
+Completed 302 Found in 148ms
+
+
+Started GET "/shop_carts/14" for 192.168.1.5 at Mon Jan 02 20:46:05 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 14 LIMIT 1
+  [1m[36mShopItem Load (0.5ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 14)[0m
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_carts/show.html.erb within layouts/my_book_store (201.1ms)
+Completed 200 OK in 212ms (Views: 203.4ms | ActiveRecord: 45.8ms)
+
+
+Started GET "/shop_carts/13" for 192.168.1.5 at Mon Jan 02 20:53:30 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mShopCart Load (1.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 13 LIMIT 1[0m
+  [1m[35mShopItem Load (0.6ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 13)
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 2 ORDER BY title LIMIT 1[0m
+Rendered shop_carts/show.html.erb within layouts/my_book_store (48.5ms)
+Completed 200 OK in 65ms (Views: 50.7ms | ActiveRecord: 2.1ms)
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mShopCart Load (1.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts`
+  [1m[36mSQL (68.4ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_quantity, my_test_scaffold_id AS my_test_scaffold_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 13) GROUP BY my_test_scaffold_id[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT SUM(`shop_items`.`quantity`) AS sum_quantity, my_test_scaffold_id AS my_test_scaffold_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 14) GROUP BY my_test_scaffold_id
+  [1m[36mShopCart Load (0.3ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts`[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT SUM(`shop_items`.`quantity`) AS sum_quantity, my_test_scaffold_id AS my_test_scaffold_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 13) GROUP BY my_test_scaffold_id
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_quantity, my_test_scaffold_id AS my_test_scaffold_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 14) GROUP BY my_test_scaffold_id[0m
+  [1m[35mShopCart Load (2.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts`
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_quantity, my_test_scaffold_id AS my_test_scaffold_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 13) GROUP BY my_test_scaffold_id[0m
+  [1m[35mSQL (2.4ms)[0m  SHOW TABLES
+  [1m[36mShopItem Load (1.6ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 1 AND (`shop_items`.shop_cart_id = 13)[0m
+  [1m[35mShopItem Load (0.5ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 2 AND (`shop_items`.shop_cart_id = 13)
+  [1m[36mShopItem Load (0.3ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 3 AND (`shop_items`.shop_cart_id = 13)[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT SUM(`shop_items`.`quantity`) AS sum_quantity, my_test_scaffold_id AS my_test_scaffold_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 14) GROUP BY my_test_scaffold_id
+  [1m[36mShopItem Load (0.3ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 1 AND (`shop_items`.shop_cart_id = 14)[0m
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateTexts (20110901134435)
+Migrating to CreateMyTestScaffolds (20110902131437)
+Migrating to AddPressisionAndScaleToPrice (20110902131948)
+Migrating to CreateShopCarts (20111119150136)
+Migrating to CreateShopItems (20111119154637)
+Migrating to AddQuantityToShopItem (20111231184853)
+Migrating to GroupShopItemsInShopCarts (20120102184706)
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts`
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_quantity, my_test_scaffold_id AS my_test_scaffold_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 13) GROUP BY my_test_scaffold_id[0m
+  [1m[35mAREL (65.5ms)[0m  DELETE FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 1 AND (`shop_items`.shop_cart_id = 13)
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  describe `shop_items`
+  [1m[36mAREL (1.1ms)[0m  [1mINSERT INTO `shop_items` (`updated_at`, `quantity`, `my_test_scaffold_id`, `created_at`, `shop_cart_id`) VALUES ('2012-01-02 19:14:53', 7, 1, '2012-01-02 19:14:53', 13)[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mAREL (14.2ms)[0m  [1mDELETE FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 3 AND (`shop_items`.shop_cart_id = 13)[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_items` (`updated_at`, `quantity`, `my_test_scaffold_id`, `created_at`, `shop_cart_id`) VALUES ('2012-01-02 19:14:53', 2, 3, '2012-01-02 19:14:53', 13)[0m
+  [1m[35mSQL (24.3ms)[0m  COMMIT
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_quantity, my_test_scaffold_id AS my_test_scaffold_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 14) GROUP BY my_test_scaffold_id[0m
+  [1m[35mSQL (5.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120102184706')
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  describe `my_test_scaffolds`
+  [1m[36mSQL (9.9ms)[0m  [1mSHOW KEYS FROM `my_test_scaffolds`[0m
+  [1m[35mSQL (0.9ms)[0m  describe `shop_carts`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `shop_carts`[0m
+  [1m[35mSQL (0.8ms)[0m  describe `shop_items`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `shop_items`[0m
+  [1m[35mSQL (0.7ms)[0m  describe `st_bu`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `st_bu`[0m
+  [1m[35mSQL (0.7ms)[0m  describe `texts`
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `texts`[0m
+
+
+Started GET "/shop_carts/13" for 192.168.1.5 at Mon Jan 02 21:15:24 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 13 LIMIT 1
+  [1m[36mShopItem Load (1.0ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 13)[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 2 ORDER BY title LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1
+Rendered shop_carts/show.html.erb within layouts/my_book_store (280.3ms)
+Completed 200 OK in 305ms (Views: 284.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/shop_carts/14" for 192.168.1.5 at Mon Jan 02 21:15:29 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 14 LIMIT 1[0m
+  [1m[35mShopItem Load (0.4ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 14)
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered shop_carts/show.html.erb within layouts/my_book_store (34.6ms)
+Completed 200 OK in 45ms (Views: 36.7ms | ActiveRecord: 0.7ms)
+  [1m[36mSQL (1.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to GroupShopItemsInShopCarts (20120102184706)
+  [1m[35mShopItem Load (18.1ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (quantity > 1)
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.8ms)[0m  [1mINSERT INTO `shop_items` (`updated_at`, `shop_cart_id`, `quantity`, `created_at`, `my_test_scaffold_id`) VALUES ('2012-01-02 19:25:31', 13, 1, '2012-01-02 19:25:31', 1)[0m
+  [1m[35mSQL (2.6ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `shop_items` (`updated_at`, `shop_cart_id`, `quantity`, `created_at`, `my_test_scaffold_id`) VALUES ('2012-01-02 19:25:31', 13, 1, '2012-01-02 19:25:31', 1)
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_items` (`updated_at`, `shop_cart_id`, `quantity`, `created_at`, `my_test_scaffold_id`) VALUES ('2012-01-02 19:25:31', 13, 1, '2012-01-02 19:25:31', 1)[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `shop_items` (`updated_at`, `shop_cart_id`, `quantity`, `created_at`, `my_test_scaffold_id`) VALUES ('2012-01-02 19:25:31', 13, 1, '2012-01-02 19:25:31', 1)
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_items` (`updated_at`, `shop_cart_id`, `quantity`, `created_at`, `my_test_scaffold_id`) VALUES ('2012-01-02 19:25:31', 13, 1, '2012-01-02 19:25:31', 1)[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `shop_items` (`updated_at`, `shop_cart_id`, `quantity`, `created_at`, `my_test_scaffold_id`) VALUES ('2012-01-02 19:25:31', 13, 1, '2012-01-02 19:25:31', 1)
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_items` (`updated_at`, `shop_cart_id`, `quantity`, `created_at`, `my_test_scaffold_id`) VALUES ('2012-01-02 19:25:31', 13, 1, '2012-01-02 19:25:31', 1)[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `shop_items` (`updated_at`, `shop_cart_id`, `quantity`, `created_at`, `my_test_scaffold_id`) VALUES ('2012-01-02 19:25:31', 13, 1, '2012-01-02 19:25:31', 3)
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_items` (`updated_at`, `shop_cart_id`, `quantity`, `created_at`, `my_test_scaffold_id`) VALUES ('2012-01-02 19:25:31', 13, 1, '2012-01-02 19:25:31', 3)[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mAREL (1.1ms)[0m  [1mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20120102184706'[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `my_test_scaffolds`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `my_test_scaffolds`
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `shop_carts`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `shop_carts`
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `shop_items`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `shop_items`
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `texts`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `texts`
+
+
+Started GET "/shop_carts/14" for 192.168.1.5 at Mon Jan 02 21:25:59 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 14 LIMIT 1
+  [1m[36mShopItem Load (0.6ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 14)[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_carts/show.html.erb within layouts/my_book_store (174.3ms)
+Completed 200 OK in 193ms (Views: 177.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/shop_carts/13" for 192.168.1.5 at Mon Jan 02 21:26:06 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 13 LIMIT 1[0m
+  [1m[35mShopItem Load (0.4ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 13)
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 2 ORDER BY title LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1
+Rendered shop_carts/show.html.erb within layouts/my_book_store (41.9ms)
+Completed 200 OK in 53ms (Views: 43.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/shop_carts/13" for 192.168.1.5 at Mon Jan 02 21:28:00 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 13 LIMIT 1[0m
+  [1m[35mShopItem Load (0.5ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 13)
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 2 ORDER BY title LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1
+Rendered shop_carts/show.html.erb within layouts/my_book_store (112.2ms)
+Completed 200 OK in 126ms (Views: 114.1ms | ActiveRecord: 1.3ms)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateTexts (20110901134435)
+Migrating to CreateMyTestScaffolds (20110902131437)
+Migrating to AddPressisionAndScaleToPrice (20110902131948)
+Migrating to CreateShopCarts (20111119150136)
+Migrating to CreateShopItems (20111119154637)
+Migrating to AddQuantityToShopItem (20111231184853)
+Migrating to GroupShopItemsInShopCarts (20120102184706)
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts`
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_quantity, my_test_scaffold_id AS my_test_scaffold_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 13) GROUP BY my_test_scaffold_id[0m
+  [1m[35mAREL (3.3ms)[0m  DELETE FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 1 AND (`shop_items`.shop_cart_id = 13)
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_items` (`updated_at`, `shop_cart_id`, `my_test_scaffold_id`, `created_at`, `quantity`) VALUES ('2012-01-02 19:28:09', 13, 1, '2012-01-02 19:28:09', 7)[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+  [1m[36mAREL (0.6ms)[0m  [1mDELETE FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 3 AND (`shop_items`.shop_cart_id = 13)[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_items` (`updated_at`, `shop_cart_id`, `my_test_scaffold_id`, `created_at`, `quantity`) VALUES ('2012-01-02 19:28:09', 13, 3, '2012-01-02 19:28:09', 2)[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_quantity, my_test_scaffold_id AS my_test_scaffold_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 14) GROUP BY my_test_scaffold_id[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120102184706')
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  describe `my_test_scaffolds`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `my_test_scaffolds`[0m
+  [1m[35mSQL (0.6ms)[0m  describe `shop_carts`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `shop_carts`[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_items`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `shop_items`[0m
+  [1m[35mSQL (0.5ms)[0m  describe `texts`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `texts`[0m
+
+
+Started GET "/shop_carts/13" for 192.168.1.5 at Mon Jan 02 21:28:10 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 13 LIMIT 1[0m
+  [1m[35mShopItem Load (0.4ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 13)
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 2 ORDER BY title LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1[0m
+Rendered shop_carts/show.html.erb within layouts/my_book_store (36.2ms)
+Completed 200 OK in 49ms (Views: 39.0ms | ActiveRecord: 0.9ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to GroupShopItemsInShopCarts (20120102184706)
+  [1m[35mShopItem Load (0.7ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (quantity > 1)
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_items` (`shop_cart_id`, `my_test_scaffold_id`, `updated_at`, `quantity`, `created_at`) VALUES (13, 1, '2012-01-02 19:28:16', 1, '2012-01-02 19:28:16')[0m
+  [1m[35mSQL (1.8ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `shop_items` (`shop_cart_id`, `my_test_scaffold_id`, `updated_at`, `quantity`, `created_at`) VALUES (13, 1, '2012-01-02 19:28:16', 1, '2012-01-02 19:28:16')
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_items` (`shop_cart_id`, `my_test_scaffold_id`, `updated_at`, `quantity`, `created_at`) VALUES (13, 1, '2012-01-02 19:28:16', 1, '2012-01-02 19:28:16')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `shop_items` (`shop_cart_id`, `my_test_scaffold_id`, `updated_at`, `quantity`, `created_at`) VALUES (13, 1, '2012-01-02 19:28:16', 1, '2012-01-02 19:28:16')
+  [1m[36mSQL (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_items` (`shop_cart_id`, `my_test_scaffold_id`, `updated_at`, `quantity`, `created_at`) VALUES (13, 1, '2012-01-02 19:28:16', 1, '2012-01-02 19:28:16')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `shop_items` (`shop_cart_id`, `my_test_scaffold_id`, `updated_at`, `quantity`, `created_at`) VALUES (13, 1, '2012-01-02 19:28:16', 1, '2012-01-02 19:28:16')
+  [1m[36mSQL (27.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_items` (`shop_cart_id`, `my_test_scaffold_id`, `updated_at`, `quantity`, `created_at`) VALUES (13, 1, '2012-01-02 19:28:16', 1, '2012-01-02 19:28:16')[0m
+  [1m[35mSQL (4.8ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.3ms)[0m  DELETE FROM `shop_items` WHERE `shop_items`.`id` = 33
+  [1m[36mSQL (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_items` (`shop_cart_id`, `my_test_scaffold_id`, `updated_at`, `quantity`, `created_at`) VALUES (13, 3, '2012-01-02 19:28:16', 1, '2012-01-02 19:28:16')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (35.6ms)[0m  INSERT INTO `shop_items` (`shop_cart_id`, `my_test_scaffold_id`, `updated_at`, `quantity`, `created_at`) VALUES (13, 3, '2012-01-02 19:28:16', 1, '2012-01-02 19:28:16')
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.4ms)[0m  [1mDELETE FROM `shop_items` WHERE `shop_items`.`id` = 34[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mAREL (1.1ms)[0m  [1mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20120102184706'[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `my_test_scaffolds`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `my_test_scaffolds`
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `shop_carts`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `shop_carts`
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `shop_items`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `shop_items`
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `texts`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `texts`
+
+
+Started GET "/shop_carts/13" for 192.168.1.5 at Mon Jan 02 21:28:18 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mShopCart Load (0.3ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 13 LIMIT 1
+  [1m[36mShopItem Load (0.4ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 13)[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 2 ORDER BY title LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1[0m
+Rendered shop_carts/show.html.erb within layouts/my_book_store (102.3ms)
+Completed 200 OK in 117ms (Views: 104.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/shop_carts/13" for 192.168.1.5 at Mon Jan 02 21:28:22 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 13 LIMIT 1
+  [1m[36mShopItem Load (4.3ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 13)[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 2 ORDER BY title LIMIT 1
+  [1m[36mMyTestScaffold Load (5.6ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1[0m
+Rendered shop_carts/show.html.erb within layouts/my_book_store (84.9ms)
+Completed 200 OK in 108ms (Views: 77.7ms | ActiveRecord: 10.4ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateTexts (20110901134435)
+Migrating to CreateMyTestScaffolds (20110902131437)
+Migrating to AddPressisionAndScaleToPrice (20110902131948)
+Migrating to CreateShopCarts (20111119150136)
+Migrating to CreateShopItems (20111119154637)
+Migrating to AddQuantityToShopItem (20111231184853)
+Migrating to GroupShopItemsInShopCarts (20120102184706)
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts`
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_quantity, my_test_scaffold_id AS my_test_scaffold_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 13) GROUP BY my_test_scaffold_id[0m
+  [1m[35mAREL (5.1ms)[0m  DELETE FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 1 AND (`shop_items`.shop_cart_id = 13)
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_items` (`created_at`, `updated_at`, `my_test_scaffold_id`, `quantity`, `shop_cart_id`) VALUES ('2012-01-02 19:28:23', '2012-01-02 19:28:23', 1, 7, 13)[0m
+  [1m[35mSQL (0.9ms)[0m  COMMIT
+  [1m[36mAREL (0.8ms)[0m  [1mDELETE FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 3 AND (`shop_items`.shop_cart_id = 13)[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_items` (`created_at`, `updated_at`, `my_test_scaffold_id`, `quantity`, `shop_cart_id`) VALUES ('2012-01-02 19:28:23', '2012-01-02 19:28:23', 3, 2, 13)[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_quantity, my_test_scaffold_id AS my_test_scaffold_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 14) GROUP BY my_test_scaffold_id[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120102184706')
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  describe `my_test_scaffolds`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `my_test_scaffolds`[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `shop_carts`[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_items`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `shop_items`[0m
+  [1m[35mSQL (0.5ms)[0m  describe `texts`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `texts`[0m
+
+
+Started GET "/shop_carts/13" for 192.168.1.5 at Mon Jan 02 21:28:24 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 13 LIMIT 1
+  [1m[36mShopItem Load (0.3ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 13)[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 2 ORDER BY title LIMIT 1
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1
+Rendered shop_carts/show.html.erb within layouts/my_book_store (35.2ms)
+Completed 200 OK in 45ms (Views: 36.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/shop_carts/wibble" for 192.168.1.5 at Mon Jan 02 21:30:19 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"wibble"}
+  [1m[36mShopCart Load (0.7ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 0 LIMIT 1[0m
+Completed 404 Not Found in 11ms
+
+ActiveRecord::RecordNotFound (Couldn't find ShopCart with ID=wibble):
+  app/controllers/shop_carts_controller.rb:17:in `show'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (36.2ms)
