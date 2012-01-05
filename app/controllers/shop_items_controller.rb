@@ -51,7 +51,7 @@ class ShopItemsController < ApplicationController
 
     respond_to do |format|
       if @shop_item.save
-        format.html { redirect_to(@shop_item.shop_cart, :notice => 'Shop item was successfully created!') } # .cart is added to @shop_item
+        format.html { redirect_to(@shop_item.shop_cart)}#, :notice => 'Shop item was successfully created!') } # .cart is added to @shop_item
         format.xml  { render :xml => @shop_item, :status => :created, :location => @shop_item }
       else
         format.html { render :action => "new" }
@@ -80,11 +80,22 @@ class ShopItemsController < ApplicationController
   # DELETE /shop_items/1.xml
   def destroy
     @shop_item = ShopItem.find(params[:id])
-    @shop_item.destroy
+
+    @shop_item.quantity -= 1
+    if @shop_item.quantity == 0
+      @shop_item.destroy
+    else
+      @shop_item.save
+    end
 
     respond_to do |format|
-      format.html { redirect_to(shop_items_url) }
-      format.xml  { head :ok }
+     if @shop_item.shop_cart
+        format.html { redirect_to(@shop_item.shop_cart) }
+        format.xml  { head :ok }
+      else
+        format.html { redirect_to(my_store_path) }
+        format.xml  { render :xml => @shop_item.errors, :status => :unprocessable_entity }
+      end
     end
   end
 end

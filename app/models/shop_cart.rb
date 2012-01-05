@@ -11,4 +11,8 @@ class ShopCart < ActiveRecord::Base
     end
     current_shop_item
   end
+
+  def total_price
+    shop_items.to_a.sum { |si| si.total_price }
+  end
 end

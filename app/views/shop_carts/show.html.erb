@@ -1,11 +1,28 @@
-<h2>Shop Cart</h2>
+<h2 class="shop_cart_title">Shop Cart</h2>
 <% if notice %><p id="notice"><%= notice %></p><% end %>
 
-<ul>
+<table>
   <% for shop_item in @shop_cart.shop_items%>
-    <li><%= shop_item.quantity %> &times; <%= shop_item.my_test_scaffold.title %></li>
+    <tr>
+      <td><%= shop_item.quantity %>&times;</td>
+      <td><%= shop_item.my_test_scaffold.title %></td>
+      <td class="shop_item_price"><%= number_to_currency shop_item.my_test_scaffold.price %></td>
+      <td><%= button_to '+1', shop_items_path(:my_test_scaffold_id => shop_item.my_test_scaffold.id) %></td>
+      <td>
+        <% if shop_item.quantity == 1%>
+          <%= button_to '-1', shop_item, :method => :delete, :confirm => "It will remove last '#{shop_item.my_test_scaffold.title}' from the cart. OK?" %>
+        <% else %>
+          <%= button_to '-1', shop_item, :method => :delete %>
+        <% end %>
+    </td>
+    </tr>
   <% end %>
-</ul>
+  <tr class="cart_total_row">
+    <td colspan="2">Total</td>
+    <td class="cart_total_price"><%= number_to_currency @shop_cart.total_price %></td>
+  </tr>
+<table>
 
-<%= link_to 'Edit', edit_shop_cart_path(@shop_cart) %> |
-<%= link_to 'Back', shop_carts_path %>
+<%= button_to 'Remove all items from cart', @shop_cart, :method => :delete, :confirm => 'It will remove all items from the cart. OK?'%>
+<!--<%= link_to 'Edit', edit_shop_cart_path(@shop_cart) %> |
+<%= link_to 'Back', shop_carts_path %>-->

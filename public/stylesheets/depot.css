@@ -88,9 +88,9 @@
 }
 
 #product_list .list_description dt {
-	color:        #244;
-	font-weight:  bold;
-	font-size:    larger;
+        color:        #244;
+        font-weight:  bold;
+        font-size:    larger;
 }
 
 #product_list .list_description dd {
@@ -156,4 +156,23 @@
   color: #44a;
   font-weight: bold;
   margin-right: 2em;
+}
+
+/* Shop Cart */
+
+#store .shop_cart_title {
+  font: 18pt bold;
+}
+
+#store .shop_item_price {
+  text-align: right;
+}
+
+#store .cart_total_row {
+  text-align: center;
+}
+
+#store .cart_total_row .cart_total_price {
+  font-weight: bold;
+  border: 1px solid #595;
 }

@@ -44,6 +44,6 @@ class ShopItemsControllerTest < ActionController::TestCase
       delete :destroy, :id => @shop_item.to_param
     end
 
-    assert_redirected_to shop_items_path
+    assert_redirected_to my_store_path # in this case we can't redirect to unexisting cart
   end
 end

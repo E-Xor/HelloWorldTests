@@ -14,11 +14,17 @@ class ShopCartsController < ApplicationController
   # GET /shop_carts/1
   # GET /shop_carts/1.xml
   def show
-    @shop_cart = ShopCart.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @shop_cart }
+    begin
+      @shop_cart = ShopCart.find(params[:id])
+      # Handle invalid id, ususally in case it's entered manually
+    rescue ActiveRecord::RecordNotFound
+      logger.error "=========> Attempt to acces invalid Shop Cart, id: #{params[:id]}"
+      redirect_to my_store_url, :notice => 'Invalid shop cart'
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xml  { render :xml => @shop_cart }
+      end
     end
   end
 
@@ -75,9 +81,11 @@ class ShopCartsController < ApplicationController
   def destroy
     @shop_cart = ShopCart.find(params[:id])
     @shop_cart.destroy
+    session[:shop_cart_id] = nil
+
 
     respond_to do |format|
-      format.html { redirect_to(shop_carts_url) }
+      format.html { redirect_to(my_store_url, :notice => 'Your cart was cleared.') }
       format.xml  { head :ok }
     end
   end
