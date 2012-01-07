@@ -27,6 +27,8 @@
   background: white;
 }
 
+/* Sidebar */
+
 #side {
   float: left;
   padding-top: 1em;
@@ -39,6 +41,19 @@
 #side a {
   color: #bfb;
   font-size: small;
+}
+
+/* Shop Cart */
+
+#shop_cart, #shop_cart table {
+  font-size: smaller;
+  color: white;
+}
+
+#shop_cart table {
+  border-top: 1px dotted #595;
+  border-bottom: 1px dotted #595;
+  margin-bottom: 10px;
 }
 
 /* Store */
@@ -54,9 +69,11 @@
 
 
 #store h1 {
-        font:  150% sans-serif;
+        font:  200% sans-serif;
         color: #226;
-        border-bottom: 3px dotted #77d;
+        border-bottom: 1px dotted #77d;
+  margin-top: 0;
+  margin-bottom: 1em;
 }
 
 #store .entry form, #store .entry form div {

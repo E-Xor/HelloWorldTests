@@ -9,13 +9,16 @@
 <body id="store">
 
 <div id="banner">
-  <%= image_tag('logo.jpg', :size => "150x40", :alt => 'Logo') %>
+  <%= image_tag('logo.jpg', :size => "60x40", :alt => 'Logo') %>
   <%= @page_title || "My Book Store" %>
 </div>
 
 <div id="columns">
 
   <div id="side">
+    <div id="shop_cart">
+      <%= render(@shop_cart) %> <!-- @shop_cart is set in controller, also see partial template ../shop_carts/_shop_cart.html.erb -->
+    </div><!-- shop cart -->
     <%= link_to "Home", '/' %><br/>
     <%= link_to "Book Store", my_store_path %><br/>
     <%= link_to "My Test Scaffold", my_test_scaffolds_path %><br/>

@@ -1,5 +1,5 @@
 class MyTestScaffoldsController < ApplicationController
-  layout 'my_book_store'
+#  layout 'my_book_store'
 
   # GET /my_test_scaffolds
   # GET /my_test_scaffolds.xml
