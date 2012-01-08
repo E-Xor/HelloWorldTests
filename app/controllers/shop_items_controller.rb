@@ -53,6 +53,7 @@ class ShopItemsController < ApplicationController
       if @shop_item.save
 #        format.html { redirect_to(@shop_item.shop_cart)}#, :notice => 'Shop item was successfully created!') } # .cart is added to @shop_item
         format.html { redirect_to(my_store_url) } # for shop cart in sidebar
+        format.js # AJAX response, see ../views/shop_items/create.js.rjs
         format.xml  { render :xml => @shop_item, :status => :created, :location => @shop_item }
       else
         format.html { render :action => "new" }
