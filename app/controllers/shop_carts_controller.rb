@@ -85,7 +85,7 @@ class ShopCartsController < ApplicationController
 
 
     respond_to do |format|
-      format.html { redirect_to(my_store_url, :notice => 'Your cart was cleared.') }
+      format.html { redirect_to(my_store_url) }
       format.xml  { head :ok }
     end
   end

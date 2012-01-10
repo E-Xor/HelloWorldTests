@@ -15,4 +15,9 @@ class ShopCart < ActiveRecord::Base
   def total_price
     shop_items.to_a.sum { |si| si.total_price }
   end
+
+  def total_shop_items
+    shop_items.sum(:quantity)
+  end
+
 end
