@@ -89,13 +89,16 @@ class ShopItemsController < ApplicationController
     else
       @shop_item.save
     end
+    @shop_cart = current_shop_cart # method in application_controller.rb
 
     respond_to do |format|
      if @shop_item.shop_cart
-        format.html { redirect_to(@shop_item.shop_cart) }
+        format.html { redirect_to(my_store_url) }
+        format.js { @current_shop_item = @shop_item } # AJAX response, see ../views/shop_items/destroy.js.rjs
         format.xml  { head :ok }
       else
         format.html { redirect_to(my_store_path) }
+        format.js { @current_shop_item = @shop_item } # AJAX response, see ../views/shop_items/destroy.js.rjs
         format.xml  { render :xml => @shop_item.errors, :status => :unprocessable_entity }
       end
     end

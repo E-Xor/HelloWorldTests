@@ -21,7 +21,7 @@ class ShopItemsControllerTest < ActionController::TestCase
       post :create, :my_test_scaffold_id => my_test_scaffolds(:one).id
     end
 
-    assert_redirected_to shop_cart_path(assigns(:shop_item).shop_cart)
+    assert_redirected_to my_store_path
   end
 
   test "should show shop_item" do
@@ -45,5 +45,14 @@ class ShopItemsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to my_store_path # in this case we can't redirect to unexisting cart
+  end
+
+  test "should create shop_itam via AJAX" do
+    assert_difference("ShopItem.count") do
+      xhr :post, :create, :my_test_scaffold_id => my_test_scaffolds(:one).id #xhr intends reponse, not redirect
+    end
+
+    assert_response :success
+    assert_select 'tr#current_shop_item', /Title Five/
   end
 end

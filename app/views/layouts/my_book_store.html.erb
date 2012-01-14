@@ -16,9 +16,11 @@
 <div id="columns">
 
   <div id="side">
-    <%= hide_div_if(@shop_cart.shop_items.empty?, :id => "shop_cart") do %> <!-- Appplication controller helper -->
-      <%= render(@shop_cart) %> <!-- @shop_cart is set in controller, also see partial template ../shop_carts/_shop_cart.html.erb -->
-    <% end %><!-- shop cart -->
+    <% if @shop_cart %>
+      <%= hide_div_if(@shop_cart.shop_items.empty?, :id => "shop_cart") do %> <!-- Appplication controller helper -->
+        <%= render(@shop_cart) %> <!-- @shop_cart is set in controller, also see partial template ../shop_carts/_shop_cart.html.erb -->
+      <% end %><!-- hide_div_if -->
+    <% end %>
     <%= link_to "Home", '/' %><br/>
     <%= link_to "Book Store", my_store_path %><br/>
     <%= link_to "My Test Scaffold", my_test_scaffolds_path %><br/>
