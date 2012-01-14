@@ -15542,3 +15542,635 @@ Completed 200 OK in 43ms (Views: 13.2ms | ActiveRecord: 6.8ms)
   [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111119150136')
   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110902131948')[0m
   [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110901134435')
+  [1m[36mSQL (1.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateTexts (20110901134435)
+Migrating to CreateMyTestScaffolds (20110902131437)
+Migrating to AddPressisionAndScaleToPrice (20110902131948)
+Migrating to CreateShopCarts (20111119150136)
+Migrating to CreateShopItems (20111119154637)
+Migrating to AddQuantityToShopItem (20111231184853)
+Migrating to GroupShopItemsInShopCarts (20120102184706)
+Migrating to AddUserOrderIdToShopItem (20120114204148)
+  [1m[35mSQL (19.0ms)[0m  ALTER TABLE `shop_items` ADD `user_order_id` int(11)
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120114204148')[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `my_test_scaffolds`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `my_test_scaffolds`
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `shop_carts`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `shop_carts`
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `shop_items`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `shop_items`
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `texts`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `texts`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateTexts (20110901134435)
+Migrating to CreateMyTestScaffolds (20110902131437)
+Migrating to AddPressisionAndScaleToPrice (20110902131948)
+Migrating to CreateShopCarts (20111119150136)
+Migrating to CreateShopItems (20111119154637)
+Migrating to AddQuantityToShopItem (20111231184853)
+Migrating to GroupShopItemsInShopCarts (20120102184706)
+Migrating to AddUserOrderIdToShopItem (20120114204148)
+Migrating to CreateUserOrders (20120114204430)
+  [1m[35mSQL (11.4ms)[0m  CREATE TABLE `user_orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_name` varchar(255), `user_address` text, `user_email` varchar(255), `user_pay_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120114204430')[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (6.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `my_test_scaffolds`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `my_test_scaffolds`
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `shop_carts`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `shop_carts`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `shop_items`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `shop_items`
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `texts`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `texts`
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `user_orders`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `user_orders`
+
+
+Started GET "/my_store" for 192.168.1.5 at Sat Jan 14 23:14:56 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1
+  [1m[36mSQL (2.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)[0m
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (2.4ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (34.1ms)
+Completed 200 OK in 180ms (Views: 147.1ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/shop_items?my_test_scaffold_id=1" for 192.168.1.5 at Sat Jan 14 23:14:59 +0200 2012
+  Processing by ShopItemsController#create as JS
+  Parameters: {"authenticity_token"=>"i8qwipVTbQ/jbV/EDa3TA2+4txPj3aXCNdZgR5TUYxw=", "my_test_scaffold_id"=>"1", "_"=>""}
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mShopItem Load (0.6ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 1 AND (`shop_items`.shop_cart_id = 32) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.9ms)[0m  [1mINSERT INTO `shop_items` (`user_order_id`, `updated_at`, `shop_cart_id`, `my_test_scaffold_id`, `created_at`, `quantity`) VALUES (NULL, '2012-01-14 21:14:59', 32, 1, '2012-01-14 21:14:59', 1)[0m
+  [1m[35mSQL (4.8ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mShopItem Load (0.4ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (5.4ms)
+Rendered shop_carts/_shop_cart.html.erb (10.0ms)
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)[0m
+Rendered shop_items/create.js.rjs (13.7ms)
+Completed 200 OK in 69ms (Views: 19.6ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/my_store" for 192.168.1.5 at Sat Jan 14 23:15:14 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)
+  [1m[36mShopItem Load (0.2ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (10.7ms)
+Rendered shop_carts/_shop_cart.html.erb (14.9ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (109.0ms)
+Completed 200 OK in 128ms (Views: 111.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/my_store" for 192.168.1.5 at Sat Jan 14 23:15:15 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)[0m
+  [1m[35mShopItem Load (0.1ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (10.4ms)
+Rendered shop_carts/_shop_cart.html.erb (14.1ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (39.5ms)
+Completed 200 OK in 60ms (Views: 41.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/my_store" for 192.168.1.5 at Sat Jan 14 23:15:15 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+  [1m[36mShopCart Load (0.2ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)
+  [1m[36mShopItem Load (0.1ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (10.7ms)
+Rendered shop_carts/_shop_cart.html.erb (14.7ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (101.9ms)
+Completed 200 OK in 121ms (Views: 104.9ms | ActiveRecord: 0.8ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/my_store" for 192.168.1.5 at Sat Jan 14 23:15:39 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)
+  [1m[36mShopItem Load (0.2ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (13.5ms)
+Rendered shop_carts/_shop_cart.html.erb (22.6ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (69.2ms)
+Completed 200 OK in 114ms (Views: 71.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/my_store" for 192.168.1.5 at Sat Jan 14 23:16:05 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)[0m
+  [1m[35mShopItem Load (0.2ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (9.6ms)
+Rendered shop_carts/_shop_cart.html.erb (13.3ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (37.7ms)
+Completed 200 OK in 59ms (Views: 40.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/shop_carts" for 192.168.1.5 at Sat Jan 14 23:17:02 +0200 2012
+  Processing by ShopCartsController#index as HTML
+  [1m[36mShopCart Load (0.7ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts`[0m
+Rendered shop_carts/index.html.erb within layouts/my_book_store (17.9ms)
+Completed 200 OK in 29ms (Views: 21.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/shop_carts/32" for 192.168.1.5 at Sat Jan 14 23:17:09 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1
+  [1m[36mShopItem Load (0.2ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (23.5ms)
+Rendered shop_carts/show.html.erb within layouts/my_book_store (114.9ms)
+Completed 500 Internal Server Error in 126ms
+
+ActionView::Template::Error (undefined local variable or method `new_shop_order_url' for #<#<Class:0xb5e8b5c4>:0xb5e8a458>):
+    11:   </tr>
+    12: </table>
+    13: 
+    14: <%= button_to 'Checkout', new_shop_order_url, :method => :get %>
+    15: <!--<%= button_to 'Remove all items from cart', @shop_cart, :method => :delete, :confirm => 'It will remove all items from the cart. OK?'%>-->
+    16: <!--<%= link_to 'Edit', edit_shop_cart_path(@shop_cart) %> |
+    17: <%= link_to 'Back', shop_carts_path %>-->
+  app/views/shop_carts/show.html.erb:14:in `_app_views_shop_carts_show_html_erb__416707724__621524208_0'
+  app/controllers/shop_carts_controller.rb:24:in `show'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.7ms)
+
+
+Started GET "/shop_carts/32" for 192.168.1.5 at Sat Jan 14 23:17:46 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1[0m
+  [1m[35mShopItem Load (0.1ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (21.6ms)
+Rendered shop_carts/show.html.erb within layouts/my_book_store (111.7ms)
+Completed 500 Internal Server Error in 123ms
+
+ActionView::Template::Error (undefined local variable or method `new_shop_order_url' for #<#<Class:0xb5d8592c>:0xb5d84a04>):
+    11:   </tr>
+    12: </table>
+    13: 
+    14: <%= button_to 'Checkout', new_shop_order_url, :method => :get %>
+    15: <!--<%= button_to 'Remove all items from cart', @shop_cart, :method => :delete, :confirm => 'It will remove all items from the cart. OK?'%>-->
+    16: <!--<%= link_to 'Edit', edit_shop_cart_path(@shop_cart) %> |
+    17: <%= link_to 'Back', shop_carts_path %>-->
+  app/views/shop_carts/show.html.erb:14:in `_app_views_shop_carts_show_html_erb__416707724__622060058_0'
+  app/controllers/shop_carts_controller.rb:24:in `show'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/shop_carts/32" for 192.168.1.5 at Sat Jan 14 23:18:07 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1
+  [1m[36mShopItem Load (0.7ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (22.7ms)
+Rendered shop_carts/show.html.erb within layouts/my_book_store (62.8ms)
+Completed 500 Internal Server Error in 100ms
+
+ActionView::Template::Error (undefined local variable or method `new_shop_order_url' for #<#<Class:0xb69130b4>:0xb69121dc>):
+    11:   </tr>
+    12: </table>
+    13: 
+    14: <%= button_to 'Checkout', new_shop_order_url, :method => :get %>
+    15: <!--<%= button_to 'Remove all items from cart', @shop_cart, :method => :delete, :confirm => 'It will remove all items from the cart. OK?'%>-->
+    16: <!--<%= link_to 'Edit', edit_shop_cart_path(@shop_cart) %> |
+    17: <%= link_to 'Back', shop_carts_path %>-->
+  app/views/shop_carts/show.html.erb:14:in `_app_views_shop_carts_show_html_erb__416707724__616003218_0'
+  app/controllers/shop_carts_controller.rb:24:in `show'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.2ms)
+
+
+Started GET "/shop_orders" for 192.168.1.5 at Sat Jan 14 23:18:22 +0200 2012
+
+ActionController::RoutingError (No route matches "/shop_orders"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/user_order" for 192.168.1.5 at Sat Jan 14 23:18:29 +0200 2012
+
+ActionController::RoutingError (uninitialized constant UserOrderController):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/user_orders" for 192.168.1.5 at Sat Jan 14 23:18:37 +0200 2012
+  Processing by UserOrdersController#index as HTML
+  [1m[36mUserOrder Load (0.6ms)[0m  [1mSELECT `user_orders`.* FROM `user_orders`[0m
+Rendered user_orders/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 15ms (Views: 9.0ms | ActiveRecord: 1.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/user_orders" for 192.168.1.5 at Sat Jan 14 23:19:16 +0200 2012
+  Processing by UserOrdersController#index as HTML
+  [1m[36mUserOrder Load (0.4ms)[0m  [1mSELECT `user_orders`.* FROM `user_orders`[0m
+Rendered user_orders/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 31ms (Views: 8.6ms | ActiveRecord: 0.4ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104)
+
+
+Started GET "/shop_carts/" for 192.168.1.5 at Sat Jan 14 23:19:58 +0200 2012
+  Processing by ShopCartsController#index as HTML
+  [1m[36mShopCart Load (0.3ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts`[0m
+Rendered shop_carts/index.html.erb within layouts/my_book_store (17.1ms)
+Completed 200 OK in 53ms (Views: 19.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shop_carts/32" for 192.168.1.5 at Sat Jan 14 23:20:01 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1[0m
+  [1m[35mShopItem Load (0.2ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (21.4ms)
+Rendered shop_carts/show.html.erb within layouts/my_book_store (108.7ms)
+Completed 500 Internal Server Error in 121ms
+
+ActionView::Template::Error (undefined local variable or method `new_shop_order_url' for #<#<Class:0xb694c350>:0xb694b478>):
+    11:   </tr>
+    12: </table>
+    13: 
+    14: <%= button_to 'Checkout', new_shop_order_url, :method => :get %>
+    15: <!--<%= button_to 'Remove all items from cart', @shop_cart, :method => :delete, :confirm => 'It will remove all items from the cart. OK?'%>-->
+    16: <!--<%= link_to 'Edit', edit_shop_cart_path(@shop_cart) %> |
+    17: <%= link_to 'Back', shop_carts_path %>-->
+  app/views/shop_carts/show.html.erb:14:in `_app_views_shop_carts_show_html_erb__416707724__615886048_0'
+  app/controllers/shop_carts_controller.rb:24:in `show'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.5ms)
+
+
+Started GET "/" for 192.168.1.5 at Sat Jan 14 23:21:19 +0200 2012
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user_orders" for 192.168.1.5 at Sat Jan 14 23:21:23 +0200 2012
+  Processing by UserOrdersController#index as HTML
+  [1m[35mUserOrder Load (0.3ms)[0m  SELECT `user_orders`.* FROM `user_orders`
+Rendered user_orders/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 70ms (Views: 64.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 192.168.1.5 at Sat Jan 14 23:21:32 +0200 2012
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.3ms)
+Completed 500 Internal Server Error in 15ms
+
+ActionView::Template::Error (undefined local variable or method `new_user_orders_path' for #<#<Class:0xb6ab12a4>:0xb6ab0368>):
+    2: <p><%= link_to "Google Maps", google_map_index_path %></p>
+    3: <p><%= link_to "My Store", my_store_path %>, my_store_path() will be done later</p>
+    4: <p><%= link_to "My Test Scaffold", my_test_scaffolds_path %></p>
+    5: <p><%= link_to "User orders", new_user_orders_path %></p>
+    6: <p><%= link_to "Svetik Home", svetik_home_path %></p>
+    7: <p><%= link_to "Say Hello", say_hello_path %></p>
+    8: <p><%= link_to "Say Goodbye", say_goodbye_path %></p>
+  app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___295815960__615154908_0'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.6ms)
+
+
+Started GET "/" for 192.168.1.5 at Sat Jan 14 23:21:58 +0200 2012
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (11.1ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (undefined local variable or method `new_user_orders_path' for #<#<Class:0xb69931d8>:0xb6992184>):
+    2: <p><%= link_to "Google Maps", google_map_index_path %></p>
+    3: <p><%= link_to "My Store", my_store_path %>, my_store_path() will be done later</p>
+    4: <p><%= link_to "My Test Scaffold", my_test_scaffolds_path %></p>
+    5: <p><%= link_to "User orders", new_user_orders_path %></p>
+    6: <p><%= link_to "Svetik Home", svetik_home_path %></p>
+    7: <p><%= link_to "Say Hello", say_hello_path %></p>
+    8: <p><%= link_to "Say Goodbye", say_goodbye_path %></p>
+  app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___295815960__615740998_0'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.3ms)
+
+
+Started GET "/" for 192.168.1.5 at Sat Jan 14 23:22:01 +0200 2012
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (60.5ms)
+Completed 500 Internal Server Error in 66ms
+
+ActionView::Template::Error (undefined local variable or method `new_user_orders_path' for #<#<Class:0xb68b22dc>:0xb68b1454>):
+    2: <p><%= link_to "Google Maps", google_map_index_path %></p>
+    3: <p><%= link_to "My Store", my_store_path %>, my_store_path() will be done later</p>
+    4: <p><%= link_to "My Test Scaffold", my_test_scaffolds_path %></p>
+    5: <p><%= link_to "User orders", new_user_orders_path %></p>
+    6: <p><%= link_to "Svetik Home", svetik_home_path %></p>
+    7: <p><%= link_to "Say Hello", say_hello_path %></p>
+    8: <p><%= link_to "Say Goodbye", say_goodbye_path %></p>
+  app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___295815960__616201288_0'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.4ms)
+
+
+Started GET "/" for 192.168.1.5 at Sat Jan 14 23:22:02 +0200 2012
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined local variable or method `new_user_orders_path' for #<#<Class:0xb6a3fdac>:0xb6a3ee48>):
+    2: <p><%= link_to "Google Maps", google_map_index_path %></p>
+    3: <p><%= link_to "My Store", my_store_path %>, my_store_path() will be done later</p>
+    4: <p><%= link_to "My Test Scaffold", my_test_scaffolds_path %></p>
+    5: <p><%= link_to "User orders", new_user_orders_path %></p>
+    6: <p><%= link_to "Svetik Home", svetik_home_path %></p>
+    7: <p><%= link_to "Say Hello", say_hello_path %></p>
+    8: <p><%= link_to "Say Goodbye", say_goodbye_path %></p>
+  app/views/home/index.html.erb:5:in `_app_views_home_index_html_erb___295815960__615387038_0'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.7ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.7ms)
+
+
+Started GET "/" for 192.168.1.5 at Sat Jan 14 23:22:08 +0200 2012
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/shop_carts/" for 192.168.1.5 at Sat Jan 14 23:22:14 +0200 2012
+  Processing by ShopCartsController#index as HTML
+  [1m[36mShopCart Load (0.3ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts`[0m
+Rendered shop_carts/index.html.erb within layouts/my_book_store (15.6ms)
+Completed 200 OK in 25ms (Views: 18.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shop_carts/32" for 192.168.1.5 at Sat Jan 14 23:22:15 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1
+  [1m[36mShopItem Load (0.2ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (22.5ms)
+Rendered shop_carts/show.html.erb within layouts/my_book_store (45.2ms)
+Completed 500 Internal Server Error in 59ms
+
+ActionView::Template::Error (undefined local variable or method `shop_order_url' for #<#<Class:0xb69b1d7c>:0xb69b0be8>):
+    11:   </tr>
+    12: </table>
+    13: 
+    14: <%= button_to 'Checkout', shop_order_url, :method => :get %>
+    15: <%= button_to 'Remove all items from cart', @shop_cart, :method => :delete, :confirm => 'It will remove all items from the cart. OK?'%>
+    16: <!--<%= link_to 'Edit', edit_shop_cart_path(@shop_cart) %> |
+    17: <%= link_to 'Back', shop_carts_path %>-->
+  app/views/shop_carts/show.html.erb:14:in `_app_views_shop_carts_show_html_erb__416707724__615678468_0'
+  app/controllers/shop_carts_controller.rb:24:in `show'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.8ms)
+
+
+Started GET "/" for 192.168.1.5 at Sat Jan 14 23:22:33 +0200 2012
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shop_carts/32" for 192.168.1.5 at Sat Jan 14 23:22:56 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mShopCart Load (0.2ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1[0m
+  [1m[35mShopItem Load (0.2ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (23.9ms)
+Rendered shop_carts/show.html.erb within layouts/my_book_store (47.7ms)
+Completed 500 Internal Server Error in 61ms
+
+ActionView::Template::Error (undefined local variable or method `shop_orders_url' for #<#<Class:0xb69a0798>:0xb699eb00>):
+    11:   </tr>
+    12: </table>
+    13: 
+    14: <%= button_to 'Checkout', shop_orders_url, :method => :get %>
+    15: <%= button_to 'Remove all items from cart', @shop_cart, :method => :delete, :confirm => 'It will remove all items from the cart. OK?'%>
+    16: <!--<%= link_to 'Edit', edit_shop_cart_path(@shop_cart) %> |
+    17: <%= link_to 'Back', shop_carts_path %>-->
+  app/views/shop_carts/show.html.erb:14:in `_app_views_shop_carts_show_html_erb__416707724__615715628_0'
+  app/controllers/shop_carts_controller.rb:24:in `show'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (57.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (63.0ms)
+
+
+Started GET "/shop_carts/32" for 192.168.1.5 at Sat Jan 14 23:22:59 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1
+  [1m[36mShopItem Load (0.1ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (21.9ms)
+Rendered shop_carts/show.html.erb within layouts/my_book_store (45.6ms)
+Completed 500 Internal Server Error in 58ms
+
+ActionView::Template::Error (undefined local variable or method `shop_orders_url' for #<#<Class:0xb6a972b4>:0xb6a963b4>):
+    11:   </tr>
+    12: </table>
+    13: 
+    14: <%= button_to 'Checkout', shop_orders_url, :method => :get %>
+    15: <%= button_to 'Remove all items from cart', @shop_cart, :method => :delete, :confirm => 'It will remove all items from the cart. OK?'%>
+    16: <!--<%= link_to 'Edit', edit_shop_cart_path(@shop_cart) %> |
+    17: <%= link_to 'Back', shop_carts_path %>-->
+  app/views/shop_carts/show.html.erb:14:in `_app_views_shop_carts_show_html_erb__416707724__615208278_0'
+  app/controllers/shop_carts_controller.rb:24:in `show'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.0ms)
+
+
+Started GET "/shop_carts/32" for 192.168.1.5 at Sat Jan 14 23:23:08 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mShopCart Load (0.2ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1[0m
+  [1m[35mShopItem Load (0.2ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (23.3ms)
+Rendered shop_items/_shop_item.html.erb (2.4ms)
+Rendered shop_carts/_shop_cart.html.erb (4.8ms)
+Rendered shop_carts/show.html.erb within layouts/my_book_store (100.0ms)
+Completed 200 OK in 112ms (Views: 102.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/user_orders" for 192.168.1.5 at Sat Jan 14 23:23:20 +0200 2012
+  Processing by UserOrdersController#index as HTML
+  [1m[35mUserOrder Load (0.2ms)[0m  SELECT `user_orders`.* FROM `user_orders`
+Rendered user_orders/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 13ms (Views: 7.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/shop_carts/32" for 192.168.1.5 at Sat Jan 14 23:23:35 +0200 2012
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1[0m
+  [1m[35mShopItem Load (0.2ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (23.7ms)
+Rendered shop_carts/show.html.erb within layouts/my_book_store (48.5ms)
+Completed 500 Internal Server Error in 115ms
+
+ActionView::Template::Error (undefined local variable or method `new_user_orders_url' for #<#<Class:0xb690cca0>:0xb69f7d54>):
+    11:   </tr>
+    12: </table>
+    13: 
+    14: <%= button_to 'Checkout', new_user_orders_url, :method => :get %>
+    15: <%= button_to 'Remove all items from cart', @shop_cart, :method => :delete, :confirm => 'It will remove all items from the cart. OK?'%>
+    16: <!--<%= link_to 'Edit', edit_shop_cart_path(@shop_cart) %> |
+    17: <%= link_to 'Back', shop_carts_path %>-->
+  app/views/shop_carts/show.html.erb:14:in `_app_views_shop_carts_show_html_erb__416707724__615370188_0'
+  app/controllers/shop_carts_controller.rb:24:in `show'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.4ms)
+
+
+Started GET "/" for 192.168.1.5 at Sat Jan 14 23:23:49 +0200 2012
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/my_store" for 192.168.1.5 at Sat Jan 14 23:23:51 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+  [1m[36mShopCart Load (2.3ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)
+  [1m[36mShopItem Load (0.1ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (6.8ms)
+Rendered shop_carts/_shop_cart.html.erb (14.9ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (100.0ms)
+Completed 200 OK in 134ms (Views: 102.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/my_store" for 192.168.1.5 at Sat Jan 14 23:23:54 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)[0m
+  [1m[35mShopItem Load (1.0ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (10.6ms)
+Rendered shop_carts/_shop_cart.html.erb (15.8ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (40.5ms)
+Completed 200 OK in 59ms (Views: 42.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/my_store" for 192.168.1.5 at Sat Jan 14 23:24:34 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)
+  [1m[36mShopItem Load (0.1ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (11.5ms)
+Rendered shop_carts/_shop_cart.html.erb (15.8ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (42.3ms)
+Completed 200 OK in 63ms (Views: 44.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/my_store" for 192.168.1.5 at Sat Jan 14 23:25:05 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)[0m
+  [1m[35mShopItem Load (0.2ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (10.3ms)
+Rendered shop_carts/_shop_cart.html.erb (26.8ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (53.2ms)
+Completed 500 Internal Server Error in 73ms
+
+ActionView::Template::Error (undefined local variable or method `new_user_orders_url' for #<#<Class:0xb6007510>:0xb6005ea4>):
+    13:   </tr>
+    14: </table>
+    15: 
+    16: <%= button_to 'Checkout', new_user_orders_url, :method => :get %>
+    17: <%= button_to 'Remove all items from cart', shop_cart, :method => :delete, :confirm => 'It will remove all items from the cart. OK?' %>
+  app/views/shop_carts/_shop_cart.html.erb:16:in `_app_views_shop_carts__shop_cart_html_erb___966249359__620963868_727856'
+  app/views/layouts/my_book_store.html.erb:21:in `_app_views_layouts_my_book_store_html_erb___247602958__620748118_0'
+  app/helpers/application_helper.rb:6:in `hide_div_if'
+  app/views/layouts/my_book_store.html.erb:20:in `_app_views_layouts_my_book_store_html_erb___247602958__620748118_0'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.6ms)
+
+
+Started GET "/my_store" for 192.168.1.5 at Sat Jan 14 23:25:09 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 32 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)
+  [1m[36mShopItem Load (0.2ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 32)[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (10.6ms)
+Rendered shop_carts/_shop_cart.html.erb (15.1ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (99.1ms)
+Completed 200 OK in 119ms (Views: 101.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/user_orders" for 192.168.1.5 at Sat Jan 14 23:25:12 +0200 2012
+  Processing by UserOrdersController#index as HTML
+  [1m[36mUserOrder Load (0.2ms)[0m  [1mSELECT `user_orders`.* FROM `user_orders`[0m
+Rendered user_orders/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 12ms (Views: 8.1ms | ActiveRecord: 0.2ms)

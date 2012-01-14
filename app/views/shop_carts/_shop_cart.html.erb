@@ -1,0 +1,17 @@
+<!--
+  Partial template. Based on ./show.html.erb.
+  It will be used from ../layouts/my_book_store_.html.erb
+  Like in any other partial we have here var_name in accrodance with filename _var_name.html.erb
+-->
+
+<table>
+  <%= render(shop_cart.shop_items) %>  <!-- see patial template ../shop_items/_shop_item.html.erb -->
+
+  <tr class="cart_total_row">
+    <td colspan="2">Total</td>
+    <td class="cart_total_price"><%= number_to_currency shop_cart.total_price %></td>
+  </tr>
+</table>
+
+<%= button_to 'Checkout', user_orders_url, :method => :get %>
+<%= button_to 'Remove all items from cart', shop_cart, :method => :delete, :confirm => 'It will remove all items from the cart. OK?' %>

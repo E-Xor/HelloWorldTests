@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120102184706) do
+ActiveRecord::Schema.define(:version => 20120114204430) do
 
   create_table "my_test_scaffolds", :force => true do |t|
     t.string   "title"
@@ -32,10 +32,20 @@ ActiveRecord::Schema.define(:version => 20120102184706) do
     t.integer  "quantity",            :default => 1
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_order_id"
   end
 
   create_table "texts", :force => true do |t|
     t.string   "str"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_orders", :force => true do |t|
+    t.string   "user_name"
+    t.text     "user_address"
+    t.string   "user_email"
+    t.string   "user_pay_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

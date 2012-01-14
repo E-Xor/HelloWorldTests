@@ -11,6 +11,7 @@
   </tr>
 </table>
 
+<%= button_to 'Checkout', user_orders_url, :method => :get %>
 <%= button_to 'Remove all items from cart', @shop_cart, :method => :delete, :confirm => 'It will remove all items from the cart. OK?'%>
 <!--<%= link_to 'Edit', edit_shop_cart_path(@shop_cart) %> |
 <%= link_to 'Back', shop_carts_path %>-->
