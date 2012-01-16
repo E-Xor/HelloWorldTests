@@ -1,4 +1,5 @@
 class UserOrdersController < ApplicationController
+layout 'my_book_store'
   # GET /user_orders
   # GET /user_orders.xml
   def index
@@ -24,6 +25,10 @@ class UserOrdersController < ApplicationController
   # GET /user_orders/new
   # GET /user_orders/new.xml
   def new
+    if current_shop_cart.shop_items.empty?
+      redirect_to my_store_url, :notice => "Your cart is empty"
+      return
+    end
     @user_order = UserOrder.new
 
     respond_to do |format|

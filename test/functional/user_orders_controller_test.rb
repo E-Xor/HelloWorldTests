@@ -11,7 +11,17 @@ class UserOrdersControllerTest < ActionController::TestCase
     assert_not_nil assigns(:user_orders)
   end
 
+  test "requires items in cart" do
+    get :new
+    assert_redirected_to my_store_path
+    assert_equal flash[:notice], 'Your cart is empty'
+  end
+
   test "should get new" do
+    shop_cart  = ShopCart.create
+    session[:shop_cart_id] = shop_cart.id
+    ShopItem.create(:shop_cart => shop_cart, :my_test_scaffold => my_test_scaffolds(:one))
+
     get :new
     assert_response :success
   end

@@ -1,7 +1,7 @@
 <%= form_for(@user_order) do |f| %>
   <% if @user_order.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user_order.errors.count, "error") %> prohibited this user_order from being saved:</h2>
+      <h2><%= pluralize(@user_order.errors.count, "error") %> prohibited this user order from being saved:</h2>
 
       <ul>
       <% @user_order.errors.full_messages.each do |msg| %>
@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_name %><br />
-    <%= f.text_field :user_name %>
+    <%= f.label :user_name, "Your Name: " %>
+    <%= f.text_field :user_name, :size => 40  %>
   </div>
   <div class="field">
-    <%= f.label :user_address %><br />
-    <%= f.text_area :user_address %>
+    <%= f.label :user_address, "Delivery address: " %>
+    <%= f.text_area :user_address, :rows => 3, :cols => 40 %>
   </div>
   <div class="field">
-    <%= f.label :user_email %><br />
-    <%= f.text_field :user_email %>
+    <%= f.label :user_email, "E-Mail: " %>
+    <%= f.email_field :user_email, :size => 40 %>
   </div>
   <div class="field">
-    <%= f.label :user_pay_type %><br />
-    <%= f.text_field :user_pay_type %>
+    <%= f.label :user_pay_type, "Pay with: " %>
+    <%= f.select :user_pay_type, UserOrder::PAYMENT_TYPES, :prompt => "Please select payment method" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Order!" %>
   </div>
 <% end %>

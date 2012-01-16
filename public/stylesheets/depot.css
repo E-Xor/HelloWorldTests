@@ -196,3 +196,36 @@
   font-weight: bold;
   border: 1px solid #595;
 }
+
+/* User order Form */
+.user_order_form fieldset {
+  background: #efe;
+}
+
+.user_order_form legend {
+  color: #dfd;
+  background: #141;
+  font-family: sans-serif;
+  padding: 0.2em 1em;
+}
+
+.user_order_form label {
+  width: 10em;
+  float: left;
+  text-align: right;
+  padding-top: 0.2em;
+  margin-right: 0.1em;
+  display: block;
+}
+
+.user_order_form select, .user_order_form textarea, .user_order_form input {
+  margin-left: 0.5em;
+}
+
+.user_order_form .submit {
+  margin-left: 4em;
+}
+
+.user_order_form div {
+  margin: 0.5em 0;
+}

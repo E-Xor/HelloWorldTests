@@ -46,7 +46,8 @@ HelloWorldTests::Application.routes.draw do
   #   end
 
   # Added for correct scaffold work
-  resources :my_test_scaffolds, :shop_items, :google_map, :shop_carts, :user_orders
+  resources :my_test_scaffolds, :shop_items, :google_map, :shop_carts
+  resources :user_orders
 
   # Sample resource route within a namespace:
   #   namespace :admin do
