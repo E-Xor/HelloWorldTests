@@ -46,10 +46,13 @@ layout 'my_book_store'
   # POST /user_orders.xml
   def create
     @user_order = UserOrder.new(params[:user_order])
+    @user_order.add_shop_items_from_user_cart(current_shop_cart)
 
     respond_to do |format|
       if @user_order.save
-        format.html { redirect_to(@user_order, :notice => 'User order was successfully created.') }
+        ShopCart.destroy(session[:shop_cart_id])
+        session[:shop_cart_id] = nil
+        format.html { redirect_to(my_store_url, :notice => "Thanks for the order, #{@user_order.user_name}.") }
         format.xml  { render :xml => @user_order, :status => :created, :location => @user_order }
       else
         format.html { render :action => "new" }

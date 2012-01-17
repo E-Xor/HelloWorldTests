@@ -16969,3 +16969,280 @@ Started GET "/user_orders/new" for 192.168.1.5 at Mon Jan 16 23:17:24 +0200 2012
 Rendered user_orders/_form.html.erb (6.5ms)
 Rendered user_orders/new.html.erb within layouts/my_book_store (11.4ms)
 Completed 200 OK in 101ms (Views: 14.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 192.168.1.5 at Tue Jan 17 22:30:05 +0200 2012
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_store" for 192.168.1.5 at Tue Jan 17 22:30:08 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (1.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+  [1m[36mSQL (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  describe `shop_carts`
+  [1m[36mAREL (2.8ms)[0m  [1mINSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-01-17 20:30:08', '2012-01-17 20:30:08')[0m
+  [1m[35mSQL (5.0ms)[0m  COMMIT
+  [1m[36mSQL (1.9ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)[0m
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (3.9ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (40.6ms)
+Completed 200 OK in 92ms (Views: 42.1ms | ActiveRecord: 12.1ms)
+
+
+Started POST "/shop_items?my_test_scaffold_id=1" for 192.168.1.5 at Tue Jan 17 22:30:10 +0200 2012
+  Processing by ShopItemsController#create as JS
+  Parameters: {"authenticity_token"=>"r8m+OrQsqLoTpotnP8vNPS7vjwFO9XtOdewTo773gjg=", "my_test_scaffold_id"=>"1", "_"=>""}
+  [1m[35mShopCart Load (0.5ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 35 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mShopItem Load (0.4ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 1 AND (`shop_items`.shop_cart_id = 35) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_items` (`shop_cart_id`, `updated_at`, `my_test_scaffold_id`, `quantity`, `user_order_id`, `created_at`) VALUES (35, '2012-01-17 20:30:11', 1, 1, NULL, '2012-01-17 20:30:11')[0m
+  [1m[35mSQL (3.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mShopItem Load (0.4ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (5.5ms)
+Rendered shop_carts/_shop_cart.html.erb (10.8ms)
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)[0m
+Rendered shop_items/create.js.rjs (15.0ms)
+Completed 200 OK in 167ms (Views: 21.1ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/user_orders/new" for 192.168.1.5 at Tue Jan 17 22:30:12 +0200 2012
+  Processing by UserOrdersController#new as HTML
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 35 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)[0m
+Completed 500 Internal Server Error in 30ms
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/models/user_order.rb:2
+  app/controllers/user_orders_controller.rb:32:in `new'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.7ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.4ms)
+
+
+Started GET "/user_orders/new" for 192.168.1.5 at Tue Jan 17 22:30:54 +0200 2012
+  Processing by UserOrdersController#new as HTML
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 35 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)[0m
+Rendered user_orders/_form.html.erb (7.5ms)
+Rendered user_orders/new.html.erb within layouts/my_book_store (12.0ms)
+Completed 200 OK in 107ms (Views: 14.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/my_store" for 192.168.1.5 at Tue Jan 17 22:30:57 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 35 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)
+  [1m[36mShopItem Load (0.1ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (9.9ms)
+Rendered shop_carts/_shop_cart.html.erb (13.5ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (40.0ms)
+Completed 200 OK in 57ms (Views: 42.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_orders/new" for 192.168.1.5 at Tue Jan 17 22:30:59 +0200 2012
+  Processing by UserOrdersController#new as HTML
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 35 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)
+Rendered user_orders/_form.html.erb (6.3ms)
+Rendered user_orders/new.html.erb within layouts/my_book_store (10.7ms)
+Completed 200 OK in 109ms (Views: 13.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/my_store" for 192.168.1.5 at Tue Jan 17 22:50:04 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.9ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 35 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)[0m
+  [1m[35mShopItem Load (0.2ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (13.8ms)
+Rendered shop_carts/_shop_cart.html.erb (19.8ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (60.7ms)
+Completed 200 OK in 99ms (Views: 64.5ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/shop_items?my_test_scaffold_id=3" for 192.168.1.5 at Tue Jan 17 22:50:06 +0200 2012
+  Processing by ShopItemsController#create as JS
+  Parameters: {"authenticity_token"=>"r8m+OrQsqLoTpotnP8vNPS7vjwFO9XtOdewTo773gjg=", "my_test_scaffold_id"=>"3", "_"=>""}
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 35 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1[0m
+  [1m[35mShopItem Load (2.1ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 3 AND (`shop_items`.shop_cart_id = 35) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  describe `shop_items`
+  [1m[36mAREL (1.1ms)[0m  [1mINSERT INTO `shop_items` (`my_test_scaffold_id`, `shop_cart_id`, `updated_at`, `quantity`, `user_order_id`, `created_at`) VALUES (3, 35, '2012-01-17 20:50:07', 1, NULL, '2012-01-17 20:50:07')[0m
+  [1m[35mSQL (5.5ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mShopItem Load (0.5ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (7.8ms)
+Rendered shop_carts/_shop_cart.html.erb (13.1ms)
+  [1m[35mSQL (0.7ms)[0m  SELECT SUM(`shop_items`.`quantity`) AS sum_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)
+Rendered shop_items/create.js.rjs (17.4ms)
+Completed 200 OK in 176ms (Views: 23.3ms | ActiveRecord: 11.5ms)
+
+
+Started POST "/shop_items?my_test_scaffold_id=3" for 192.168.1.5 at Tue Jan 17 22:50:08 +0200 2012
+  Processing by ShopItemsController#create as JS
+  Parameters: {"authenticity_token"=>"r8m+OrQsqLoTpotnP8vNPS7vjwFO9XtOdewTo773gjg=", "my_test_scaffold_id"=>"3", "_"=>""}
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 35 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1
+  [1m[36mShopItem Load (0.3ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 3 AND (`shop_items`.shop_cart_id = 35) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.9ms)[0m  [1mUPDATE `shop_items` SET `updated_at` = '2012-01-17 20:50:08', `quantity` = 2 WHERE `shop_items`.`id` = 103[0m
+  [1m[35mSQL (59.2ms)[0m  COMMIT
+  [1m[36mShopItem Load (0.7ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)[0m
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (15.1ms)
+Rendered shop_carts/_shop_cart.html.erb (23.6ms)
+  [1m[35mSQL (0.4ms)[0m  SELECT SUM(`shop_items`.`quantity`) AS sum_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)
+Rendered shop_items/create.js.rjs (28.8ms)
+Completed 200 OK in 144ms (Views: 42.7ms | ActiveRecord: 62.6ms)
+
+
+Started GET "/user_orders/new" for 192.168.1.5 at Tue Jan 17 22:50:10 +0200 2012
+  Processing by UserOrdersController#new as HTML
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 35 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)
+Rendered user_orders/_form.html.erb (6.6ms)
+Rendered user_orders/new.html.erb within layouts/my_book_store (11.3ms)
+Completed 200 OK in 46ms (Views: 14.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/user_orders" for 192.168.1.5 at Tue Jan 17 22:50:32 +0200 2012
+  Processing by UserOrdersController#create as HTML
+  Parameters: {"commit"=>"Order!", "user_order"=>{"user_address"=>"New Hampshire", "user_name"=>"Max Cool", "user_pay_type"=>"", "user_email"=>"ads@zxc.com"}, "authenticity_token"=>"r8m+OrQsqLoTpotnP8vNPS7vjwFO9XtOdewTo773gjg=", "utf8"=>"✓"}
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 35 LIMIT 1[0m
+Completed 500 Internal Server Error in 20ms
+
+NameError (undefined local variable or method `user_cart' for #<UserOrder:0xb69b9f04>):
+  app/models/user_order.rb:10:in `add_shop_items_from_user_cart'
+  app/controllers/user_orders_controller.rb:49:in `create'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.3ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.7ms)
+
+
+Started POST "/user_orders" for 192.168.1.5 at Tue Jan 17 22:55:35 +0200 2012
+  Processing by UserOrdersController#create as HTML
+  Parameters: {"commit"=>"Order!", "user_order"=>{"user_address"=>"New Hampshire", "user_name"=>"Max Cool", "user_pay_type"=>"", "user_email"=>"ads@zxc.com"}, "authenticity_token"=>"r8m+OrQsqLoTpotnP8vNPS7vjwFO9XtOdewTo773gjg=", "utf8"=>"✓"}
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 35 LIMIT 1
+  [1m[36mShopItem Load (0.1ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mROLLBACK[0m
+Rendered user_orders/_form.html.erb (6.6ms)
+Rendered user_orders/new.html.erb within layouts/my_book_store (11.3ms)
+Completed 200 OK in 147ms (Views: 14.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/user_orders" for 192.168.1.5 at Tue Jan 17 22:55:43 +0200 2012
+  Processing by UserOrdersController#create as HTML
+  Parameters: {"commit"=>"Order!", "user_order"=>{"user_address"=>"New Hampshire", "user_name"=>"Max Cool", "user_pay_type"=>"Check", "user_email"=>"ads@zxc.com"}, "authenticity_token"=>"r8m+OrQsqLoTpotnP8vNPS7vjwFO9XtOdewTo773gjg=", "utf8"=>"✓"}
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 35 LIMIT 1
+  [1m[36mShopItem Load (0.2ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `user_orders`[0m
+  [1m[35mAREL (1.6ms)[0m  INSERT INTO `user_orders` (`user_pay_type`, `user_address`, `user_name`, `updated_at`, `user_email`, `created_at`) VALUES ('Check', 'New Hampshire', 'Max Cool', '2012-01-17 20:55:43', 'ads@zxc.com', '2012-01-17 20:55:43')
+  [1m[36mAREL (0.9ms)[0m  [1mUPDATE `shop_items` SET `updated_at` = '2012-01-17 20:55:43', `shop_cart_id` = NULL, `user_order_id` = 1 WHERE `shop_items`.`id` = 102[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE `shop_items` SET `updated_at` = '2012-01-17 20:55:43', `shop_cart_id` = NULL, `user_order_id` = 1 WHERE `shop_items`.`id` = 103
+  [1m[36mSQL (3.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 35 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mShopItem Load (0.6ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 35)
+  [1m[36mAREL (0.3ms)[0m  [1mDELETE FROM `shop_carts` WHERE `shop_carts`.`id` = 35[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+Completed 500 Internal Server Error in 59ms
+
+NameError (undefined local variable or method `sessiom' for #<UserOrdersController:0xb69dcf04>):
+  app/controllers/user_orders_controller.rb:54:in `create'
+  app/controllers/user_orders_controller.rb:51:in `create'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.3ms)
+
+
+Started POST "/user_orders" for 192.168.1.5 at Tue Jan 17 22:57:52 +0200 2012
+  Processing by UserOrdersController#create as HTML
+  Parameters: {"commit"=>"Order!", "user_order"=>{"user_address"=>"New Hampshire", "user_name"=>"Max Cool", "user_pay_type"=>"Check", "user_email"=>"ads@zxc.com"}, "authenticity_token"=>"r8m+OrQsqLoTpotnP8vNPS7vjwFO9XtOdewTo773gjg=", "utf8"=>"✓"}
+  [1m[36mShopCart Load (0.6ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 35 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `shop_carts`[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-01-17 20:57:52', '2012-01-17 20:57:52')
+  [1m[36mSQL (4.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mShopItem Load (0.5ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 36)
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  describe `user_orders`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `user_orders` (`user_name`, `user_address`, `user_email`, `user_pay_type`, `created_at`, `updated_at`) VALUES ('Max Cool', 'New Hampshire', 'ads@zxc.com', 'Check', '2012-01-17 20:57:52', '2012-01-17 20:57:52')[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+  [1m[36mShopCart Load (0.3ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 36 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mShopItem Load (0.2ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 36)[0m
+  [1m[35mAREL (0.3ms)[0m  DELETE FROM `shop_carts` WHERE `shop_carts`.`id` = 36
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 51ms
+
+NameError (undefined local variable or method `store_url' for #<UserOrdersController:0xb6a8e024>):
+  app/controllers/user_orders_controller.rb:55:in `create'
+  app/controllers/user_orders_controller.rb:51:in `create'
+
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.5ms)
+Rendered /usr/local/lib/ruby/gems/1.8/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.7ms)
+
+
+Started POST "/user_orders" for 192.168.1.5 at Tue Jan 17 22:58:03 +0200 2012
+  Processing by UserOrdersController#create as HTML
+  Parameters: {"commit"=>"Order!", "user_order"=>{"user_address"=>"New Hampshire", "user_name"=>"Max Cool", "user_pay_type"=>"Check", "user_email"=>"ads@zxc.com"}, "authenticity_token"=>"r8m+OrQsqLoTpotnP8vNPS7vjwFO9XtOdewTo773gjg=", "utf8"=>"✓"}
+  [1m[35mShopCart Load (0.3ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 35 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-01-17 20:58:03', '2012-01-17 20:58:03')[0m
+  [1m[35mSQL (4.5ms)[0m  COMMIT
+  [1m[36mShopItem Load (2.9ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 37)[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `user_orders`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `user_orders` (`created_at`, `user_name`, `user_email`, `user_address`, `updated_at`, `user_pay_type`) VALUES ('2012-01-17 20:58:04', 'Max Cool', 'ads@zxc.com', 'New Hampshire', '2012-01-17 20:58:04', 'Check')
+  [1m[36mSQL (2.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mShopCart Load (0.4ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 37 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mShopItem Load (0.2ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 37)
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM `shop_carts` WHERE `shop_carts`.`id` = 37[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+Redirected to http://hwt.com/my_store
+Completed 302 Found in 108ms
+
+
+Started GET "/my_store" for 192.168.1.5 at Tue Jan 17 22:58:04 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `shop_carts`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-01-17 20:58:04', '2012-01-17 20:58:04')
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 38)
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (2.5ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (28.0ms)
+Completed 200 OK in 52ms (Views: 30.6ms | ActiveRecord: 34.8ms)

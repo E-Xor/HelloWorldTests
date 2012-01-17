@@ -1,10 +1,10 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  user_name: MyString
-  user_address: MyText
-  user_email: MyString
-  user_pay_type: MyString
+  user_name: John Doe
+  user_address: New York
+  user_email: asd@asd.com
+  user_pay_type: Check
 
 two:
   user_name: MyString
