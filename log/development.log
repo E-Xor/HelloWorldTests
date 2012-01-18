@@ -17246,3 +17246,387 @@ Rendered collection (0.0ms)
 Rendered shop_carts/_shop_cart.html.erb (2.5ms)
 Rendered my_store/index.html.erb within layouts/my_book_store (28.0ms)
 Completed 200 OK in 52ms (Views: 30.6ms | ActiveRecord: 34.8ms)
+  [1m[36mSQL (3.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (90.5ms)[0m  DROP DATABASE IF EXISTS `hwt_test`
+  [1m[36mSQL (2.6ms)[0m  [1mCREATE DATABASE `hwt_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (14.5ms)[0m  [1mCREATE TABLE `my_test_scaffolds` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `image_url` varchar(255), `price` decimal(8,2), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (3.5ms)[0m  [1mCREATE TABLE `shop_carts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (4.5ms)[0m  [1mCREATE TABLE `shop_items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `my_test_scaffold_id` int(11), `shop_cart_id` int(11), `quantity` int(11) DEFAULT 1, `created_at` datetime, `updated_at` datetime, `user_order_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (5.0ms)[0m  [1mCREATE TABLE `texts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `str` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (3.2ms)[0m  [1mCREATE TABLE `user_orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_name` varchar(255), `user_address` text, `user_email` varchar(255), `user_pay_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (3.2ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (6.2ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120114204430')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120114204148')[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110902131437')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120102184706')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111231184853')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20111119154637')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20111119150136')
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110902131948')[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110901134435')
+
+
+Started GET "/" for 192.168.1.5 at Wed Jan 18 22:09:47 +0200 2012
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map" for 192.168.1.5 at Wed Jan 18 22:09:50 +0200 2012
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_store" for 192.168.1.5 at Wed Jan 18 22:10:08 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `shop_carts`[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-01-18 20:10:08', '2012-01-18 20:10:08')
+  [1m[36mSQL (56.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 39)
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (3.0ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (48.1ms)
+Completed 200 OK in 267ms (Views: 53.8ms | ActiveRecord: 58.0ms)
+
+
+Started POST "/shop_items?my_test_scaffold_id=1" for 192.168.1.5 at Wed Jan 18 22:10:11 +0200 2012
+  Processing by ShopItemsController#create as JS
+  Parameters: {"authenticity_token"=>"H/sh0cZEd/RXzDxZ0CZMbohzvHrXOpJrd6swQ2ehnco=", "my_test_scaffold_id"=>"1", "_"=>""}
+  [1m[36mShopCart Load (0.3ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 39 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mShopItem Load (0.4ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 1 AND (`shop_items`.shop_cart_id = 39) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `shop_items`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `shop_items` (`created_at`, `my_test_scaffold_id`, `updated_at`, `quantity`, `user_order_id`, `shop_cart_id`) VALUES ('2012-01-18 20:10:12', 1, '2012-01-18 20:10:12', 1, NULL, 39)
+  [1m[36mSQL (5.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mShopItem Load (0.4ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 39)
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (5.6ms)
+Rendered shop_carts/_shop_cart.html.erb (10.8ms)
+  [1m[35mSQL (0.5ms)[0m  SELECT SUM(`shop_items`.`quantity`) AS sum_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 39)
+Rendered shop_items/create.js.rjs (14.5ms)
+Completed 200 OK in 71ms (Views: 20.2ms | ActiveRecord: 8.3ms)
+
+
+Started POST "/shop_items?my_test_scaffold_id=3" for 192.168.1.5 at Wed Jan 18 22:10:13 +0200 2012
+  Processing by ShopItemsController#create as JS
+  Parameters: {"authenticity_token"=>"H/sh0cZEd/RXzDxZ0CZMbohzvHrXOpJrd6swQ2ehnco=", "my_test_scaffold_id"=>"3", "_"=>""}
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 39 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1
+  [1m[36mShopItem Load (0.3ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 3 AND (`shop_items`.shop_cart_id = 39) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `shop_items`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `shop_items` (`shop_cart_id`, `user_order_id`, `my_test_scaffold_id`, `updated_at`, `quantity`, `created_at`) VALUES (39, NULL, 3, '2012-01-18 20:10:14', 1, '2012-01-18 20:10:14')
+  [1m[36mSQL (5.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mShopItem Load (0.4ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 39)
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (7.8ms)
+Rendered shop_carts/_shop_cart.html.erb (12.8ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 39)[0m
+Rendered shop_items/create.js.rjs (16.7ms)
+Completed 200 OK in 130ms (Views: 22.3ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/user_orders/new" for 192.168.1.5 at Wed Jan 18 22:10:15 +0200 2012
+  Processing by UserOrdersController#new as HTML
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 39 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 39)[0m
+Rendered user_orders/_form.html.erb (6.2ms)
+Rendered user_orders/new.html.erb within layouts/my_book_store (10.4ms)
+Completed 200 OK in 44ms (Views: 13.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/user_orders" for 192.168.1.5 at Wed Jan 18 22:11:34 +0200 2012
+  Processing by UserOrdersController#create as HTML
+  Parameters: {"commit"=>"Order!", "user_order"=>{"user_address"=>"San Francisco", "user_name"=>"Mimimi", "user_pay_type"=>"", "user_email"=>"zxc@zcx.com"}, "authenticity_token"=>"H/sh0cZEd/RXzDxZ0CZMbohzvHrXOpJrd6swQ2ehnco=", "utf8"=>"✓"}
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 39 LIMIT 1
+  [1m[36mShopItem Load (0.2ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 39)[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+Rendered user_orders/_form.html.erb (5.6ms)
+Rendered user_orders/new.html.erb within layouts/my_book_store (10.5ms)
+Completed 200 OK in 128ms (Views: 13.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/user_orders" for 192.168.1.5 at Wed Jan 18 22:11:39 +0200 2012
+  Processing by UserOrdersController#create as HTML
+  Parameters: {"commit"=>"Order!", "user_order"=>{"user_address"=>"San Francisco", "user_name"=>"Mimimi", "user_pay_type"=>"Purchase", "user_email"=>"zxc@zcx.com"}, "authenticity_token"=>"H/sh0cZEd/RXzDxZ0CZMbohzvHrXOpJrd6swQ2ehnco=", "utf8"=>"✓"}
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 39 LIMIT 1
+  [1m[36mShopItem Load (0.3ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 39)[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `user_orders`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `user_orders` (`user_email`, `user_pay_type`, `created_at`, `user_name`, `user_address`, `updated_at`) VALUES ('zxc@zcx.com', 'Purchase', '2012-01-18 20:11:39', 'Mimimi', 'San Francisco', '2012-01-18 20:11:39')
+  [1m[36mAREL (0.6ms)[0m  [1mUPDATE `shop_items` SET `updated_at` = '2012-01-18 20:11:39', `user_order_id` = 4, `shop_cart_id` = NULL WHERE `shop_items`.`id` = 104[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE `shop_items` SET `updated_at` = '2012-01-18 20:11:39', `user_order_id` = 4, `shop_cart_id` = NULL WHERE `shop_items`.`id` = 105
+  [1m[36mSQL (6.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 39 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mShopItem Load (0.4ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 39)
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM `shop_carts` WHERE `shop_carts`.`id` = 39[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+Redirected to http://hwt.com/my_store
+Completed 302 Found in 58ms
+
+
+Started GET "/my_store" for 192.168.1.5 at Wed Jan 18 22:11:39 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `shop_carts`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-01-18 20:11:39', '2012-01-18 20:11:39')
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 40)
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (2.5ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (29.0ms)
+Completed 200 OK in 112ms (Views: 31.7ms | ActiveRecord: 12.6ms)
+
+
+Started POST "/shop_items?my_test_scaffold_id=1" for 192.168.1.5 at Wed Jan 18 22:16:40 +0200 2012
+  Processing by ShopItemsController#create as JS
+  Parameters: {"authenticity_token"=>"H/sh0cZEd/RXzDxZ0CZMbohzvHrXOpJrd6swQ2ehnco=", "my_test_scaffold_id"=>"1", "_"=>""}
+  [1m[36mShopCart Load (0.8ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 40 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mShopItem Load (0.4ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 1 AND (`shop_items`.shop_cart_id = 40) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `shop_items`[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO `shop_items` (`shop_cart_id`, `updated_at`, `my_test_scaffold_id`, `created_at`, `quantity`, `user_order_id`) VALUES (40, '2012-01-18 20:16:40', 1, '2012-01-18 20:16:40', 1, NULL)
+  [1m[36mSQL (4.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mShopItem Load (0.4ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 40)
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (6.2ms)
+Rendered shop_carts/_shop_cart.html.erb (11.4ms)
+  [1m[35mSQL (0.5ms)[0m  SELECT SUM(`shop_items`.`quantity`) AS sum_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 40)
+Rendered shop_items/create.js.rjs (15.5ms)
+Completed 200 OK in 77ms (Views: 22.0ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/shop_items?my_test_scaffold_id=1" for 192.168.1.5 at Wed Jan 18 22:16:40 +0200 2012
+  Processing by ShopItemsController#create as JS
+  Parameters: {"authenticity_token"=>"H/sh0cZEd/RXzDxZ0CZMbohzvHrXOpJrd6swQ2ehnco=", "my_test_scaffold_id"=>"1", "_"=>""}
+  [1m[36mShopCart Load (0.2ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 40 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mShopItem Load (0.3ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 1 AND (`shop_items`.shop_cart_id = 40) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mAREL (0.6ms)[0m  [1mUPDATE `shop_items` SET `updated_at` = '2012-01-18 20:16:40', `quantity` = 2 WHERE `shop_items`.`id` = 106[0m
+  [1m[35mSQL (0.7ms)[0m  COMMIT
+  [1m[36mShopItem Load (0.4ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 40)[0m
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (8.2ms)
+Rendered shop_carts/_shop_cart.html.erb (13.0ms)
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 40)[0m
+Rendered shop_items/create.js.rjs (17.4ms)
+Completed 200 OK in 159ms (Views: 23.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/user_orders/new" for 192.168.1.5 at Wed Jan 18 22:16:48 +0200 2012
+  Processing by UserOrdersController#new as HTML
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 40 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 40)[0m
+Rendered user_orders/_form.html.erb (6.3ms)
+Rendered user_orders/new.html.erb within layouts/my_book_store (10.8ms)
+Completed 200 OK in 44ms (Views: 13.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/user_orders" for 192.168.1.5 at Wed Jan 18 22:16:56 +0200 2012
+  Processing by UserOrdersController#create as HTML
+  Parameters: {"commit"=>"Order!", "user_order"=>{"user_address"=>"", "user_name"=>"", "user_pay_type"=>"", "user_email"=>""}, "authenticity_token"=>"H/sh0cZEd/RXzDxZ0CZMbohzvHrXOpJrd6swQ2ehnco=", "utf8"=>"✓"}
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 40 LIMIT 1
+  [1m[36mShopItem Load (0.1ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 40)[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+Rendered user_orders/_form.html.erb (8.9ms)
+Rendered user_orders/new.html.erb within layouts/my_book_store (13.3ms)
+Completed 200 OK in 126ms (Views: 15.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/user_orders" for 192.168.1.5 at Wed Jan 18 22:17:08 +0200 2012
+  Processing by UserOrdersController#create as HTML
+  Parameters: {"commit"=>"Order!", "user_order"=>{"user_address"=>"asd", "user_name"=>"asd", "user_pay_type"=>"Check", "user_email"=>"asd@asd.com"}, "authenticity_token"=>"H/sh0cZEd/RXzDxZ0CZMbohzvHrXOpJrd6swQ2ehnco=", "utf8"=>"✓"}
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 40 LIMIT 1
+  [1m[36mShopItem Load (0.1ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 40)[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `user_orders`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `user_orders` (`user_email`, `user_pay_type`, `user_address`, `created_at`, `user_name`, `updated_at`) VALUES ('asd@asd.com', 'Check', 'asd', '2012-01-18 20:17:09', 'asd', '2012-01-18 20:17:09')
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE `shop_items` SET `shop_cart_id` = NULL, `user_order_id` = 5, `updated_at` = '2012-01-18 20:17:09' WHERE `shop_items`.`id` = 106[0m
+  [1m[35mSQL (4.7ms)[0m  COMMIT
+  [1m[36mShopCart Load (0.3ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 40 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mShopItem Load (0.4ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 40)[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM `shop_carts` WHERE `shop_carts`.`id` = 40
+  [1m[36mSQL (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://hwt.com/my_store
+Completed 302 Found in 53ms
+
+
+Started GET "/my_store" for 192.168.1.5 at Wed Jan 18 22:17:09 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-01-18 20:17:09', '2012-01-18 20:17:09')[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 41)[0m
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (2.6ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (28.1ms)
+Completed 200 OK in 108ms (Views: 30.6ms | ActiveRecord: 10.5ms)
+
+
+Started POST "/shop_items?my_test_scaffold_id=1" for 192.168.1.5 at Wed Jan 18 22:22:33 +0200 2012
+  Processing by ShopItemsController#create as JS
+  Parameters: {"authenticity_token"=>"H/sh0cZEd/RXzDxZ0CZMbohzvHrXOpJrd6swQ2ehnco=", "my_test_scaffold_id"=>"1", "_"=>""}
+  [1m[35mShopCart Load (0.7ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 41 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mShopItem Load (0.5ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 1 AND (`shop_items`.shop_cart_id = 41) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.7ms)[0m  [1mINSERT INTO `shop_items` (`quantity`, `shop_cart_id`, `created_at`, `my_test_scaffold_id`, `updated_at`, `user_order_id`) VALUES (1, 41, '2012-01-18 20:22:33', 1, '2012-01-18 20:22:33', NULL)[0m
+  [1m[35mSQL (4.3ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mShopItem Load (0.4ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 41)[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (6.2ms)
+Rendered shop_carts/_shop_cart.html.erb (11.9ms)
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 41)[0m
+Rendered shop_items/create.js.rjs (16.7ms)
+Completed 200 OK in 84ms (Views: 23.0ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/shop_items?my_test_scaffold_id=3" for 192.168.1.5 at Wed Jan 18 22:22:33 +0200 2012
+  Processing by ShopItemsController#create as JS
+  Parameters: {"authenticity_token"=>"H/sh0cZEd/RXzDxZ0CZMbohzvHrXOpJrd6swQ2ehnco=", "my_test_scaffold_id"=>"3", "_"=>""}
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 41 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1[0m
+  [1m[35mShopItem Load (0.4ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 3 AND (`shop_items`.shop_cart_id = 41) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_items` (`user_order_id`, `created_at`, `quantity`, `shop_cart_id`, `my_test_scaffold_id`, `updated_at`) VALUES (NULL, '2012-01-18 20:22:33', 1, 41, 3, '2012-01-18 20:22:33')[0m
+  [1m[35mSQL (1.2ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mShopItem Load (0.5ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 41)[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (11.9ms)
+Rendered shop_carts/_shop_cart.html.erb (18.4ms)
+  [1m[35mSQL (0.5ms)[0m  SELECT SUM(`shop_items`.`quantity`) AS sum_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 41)
+Rendered shop_items/create.js.rjs (23.5ms)
+Completed 200 OK in 178ms (Views: 32.4ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/my_store" for 192.168.1.5 at Wed Jan 18 22:23:56 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 41 LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 41)[0m
+  [1m[35mShopItem Load (0.4ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 41)
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (12.6ms)
+Rendered shop_carts/_shop_cart.html.erb (17.0ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (44.9ms)
+Completed 200 OK in 67ms (Views: 46.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/user_orders/new" for 192.168.1.5 at Wed Jan 18 22:23:59 +0200 2012
+  Processing by UserOrdersController#new as HTML
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 41 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 41)
+Rendered user_orders/_form.html.erb (6.4ms)
+Rendered user_orders/new.html.erb within layouts/my_book_store (11.3ms)
+Completed 200 OK in 44ms (Views: 14.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/user_orders" for 192.168.1.5 at Wed Jan 18 22:24:06 +0200 2012
+  Processing by UserOrdersController#create as HTML
+  Parameters: {"commit"=>"Order!", "user_order"=>{"user_address"=>"asd", "user_name"=>"asd", "user_pay_type"=>"Credit/Debet Card", "user_email"=>"asd@ads.com"}, "authenticity_token"=>"H/sh0cZEd/RXzDxZ0CZMbohzvHrXOpJrd6swQ2ehnco=", "utf8"=>"✓"}
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 41 LIMIT 1[0m
+  [1m[35mShopItem Load (0.1ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 41)
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  describe `user_orders`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `user_orders` (`created_at`, `user_email`, `updated_at`, `user_name`, `user_pay_type`, `user_address`) VALUES ('2012-01-18 20:24:07', 'asd@ads.com', '2012-01-18 20:24:07', 'asd', 'Credit/Debet Card', 'asd')[0m
+  [1m[35mAREL (0.6ms)[0m  UPDATE `shop_items` SET `updated_at` = '2012-01-18 20:24:07', `shop_cart_id` = NULL, `user_order_id` = 6 WHERE `shop_items`.`id` = 107
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE `shop_items` SET `updated_at` = '2012-01-18 20:24:07', `shop_cart_id` = NULL, `user_order_id` = 6 WHERE `shop_items`.`id` = 108[0m
+  [1m[35mSQL (105.1ms)[0m  COMMIT
+  [1m[36mShopCart Load (0.3ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 41 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mShopItem Load (0.7ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 41)[0m
+  [1m[35mAREL (0.7ms)[0m  DELETE FROM `shop_carts` WHERE `shop_carts`.`id` = 41
+  [1m[36mSQL (49.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://hwt.com/my_store
+Completed 302 Found in 212ms
+
+
+Started GET "/my_store" for 192.168.1.5 at Wed Jan 18 22:24:07 +0200 2012
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-01-18 20:24:07', '2012-01-18 20:24:07')[0m
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 42)[0m
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (2.4ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (27.7ms)
+Completed 200 OK in 119ms (Views: 29.9ms | ActiveRecord: 161.9ms)
+
+
+Started POST "/shop_items?my_test_scaffold_id=1" for 192.168.1.5 at Wed Jan 18 22:24:09 +0200 2012
+  Processing by ShopItemsController#create as JS
+  Parameters: {"authenticity_token"=>"H/sh0cZEd/RXzDxZ0CZMbohzvHrXOpJrd6swQ2ehnco=", "my_test_scaffold_id"=>"1", "_"=>""}
+  [1m[35mShopCart Load (0.3ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 42 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mShopItem Load (0.3ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 1 AND (`shop_items`.shop_cart_id = 42) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_items` (`user_order_id`, `quantity`, `my_test_scaffold_id`, `created_at`, `updated_at`, `shop_cart_id`) VALUES (NULL, 1, 1, '2012-01-18 20:24:09', '2012-01-18 20:24:09', 42)[0m
+  [1m[35mSQL (4.6ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mShopItem Load (0.5ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 42)[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (6.6ms)
+Rendered shop_carts/_shop_cart.html.erb (11.8ms)
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 42)[0m
+Rendered shop_items/create.js.rjs (16.0ms)
+Completed 200 OK in 73ms (Views: 23.0ms | ActiveRecord: 7.9ms)

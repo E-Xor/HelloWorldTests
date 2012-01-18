@@ -1,3 +1,4 @@
+page.select('#notice').each { |n| n.hide }
 page.replace_html('shop_cart', render(@shop_cart))
 
 # effects.js is part of the Script.aculo.us library, it goes with ruby
