@@ -46,9 +46,11 @@ HelloWorldTests::Application.routes.draw do
   #   end
 
   # Added for correct scaffold work
-  resources :my_test_scaffolds, :shop_items, :google_map, :shop_carts
+  resources :shop_items, :google_map, :shop_carts
   resources :user_orders
-
+  resources :my_test_scaffolds do
+    get :who_bought_this, :on => :member
+  end
   # Sample resource route within a namespace:
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController

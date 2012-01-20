@@ -82,4 +82,13 @@ class MyTestScaffoldsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def who_bought_this
+    @my_test_scaffold = MyTestScaffold.find(params[:id])
+
+    respond_to do |format|
+      format.atom # see ../views/who_bought_this.atom.builder
+      format.xml { render :xml => @my_test_scaffold }
+    end
+  end
 end

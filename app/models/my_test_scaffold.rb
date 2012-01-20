@@ -3,6 +3,7 @@ class MyTestScaffold < ActiveRecord::Base
   default_scope :order => 'title'
   # Reference for items in carts
   has_many :shop_items
+  has_many :user_orders, :through => :shop_items
   # Prevent delete is any item in a cart has reference
   before_destroy :no_shop_item
 
