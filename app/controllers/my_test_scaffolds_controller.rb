@@ -88,7 +88,9 @@ class MyTestScaffoldsController < ApplicationController
 
     respond_to do |format|
       format.atom # see ../views/who_bought_this.atom.builder
-      format.xml { render :xml => @my_test_scaffold }
+#      format.xml { render :xml => @my_test_scaffold }
+      format.xml
+      format.html
     end
   end
 end

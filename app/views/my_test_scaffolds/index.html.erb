@@ -19,6 +19,7 @@
     <td class="list_actions">
       <%= link_to 'Show', my_test_scaffold %><br/>
       <%= link_to 'Edit', edit_my_test_scaffold_path(my_test_scaffold) %><br/>
+      <%= link_to 'Who Bought This', { :controller => 'my_test_scaffolds', :action => 'who_bought_this', :id => my_test_scaffold.id } %><br/>
       <%= link_to 'Destroy', my_test_scaffold, :confirm => 'Are you sure?', :method => :delete %>
     </td>
   </tr>

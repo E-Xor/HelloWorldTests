@@ -3,7 +3,8 @@ layout 'my_book_store'
   # GET /user_orders
   # GET /user_orders.xml
   def index
-    @user_orders = UserOrder.all
+#    @user_orders = UserOrder.all
+    @user_orders = UserOrder.paginate :page => params[:page], :order => 'created_at desc', :per_page => 4
 
     respond_to do |format|
       format.html # index.html.erb
@@ -29,6 +30,10 @@ layout 'my_book_store'
       redirect_to my_store_url, :notice => "Your cart is empty"
       return
     end
+
+    @shop_cart = current_shop_cart
+    @disable_checkout_button = true
+
     @user_order = UserOrder.new
 
     respond_to do |format|
