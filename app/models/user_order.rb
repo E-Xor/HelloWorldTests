@@ -1,7 +1,7 @@
 class UserOrder < ActiveRecord::Base
   has_many :shop_items, :dependent => :destroy
 
-  PAYMENT_TYPES = [ "Check", "Credit/Debet Card", "Purchase" ]
+  PAYMENT_TYPES = PaymentType.all(:select => 'payment_type').map(&:payment_type)
 
   validates :user_name, :user_address, :user_email, :user_pay_type, :presence => true
   validates :user_pay_type, :inclusion => PAYMENT_TYPES
