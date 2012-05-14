@@ -197,6 +197,38 @@
   border: 1px solid #595;
 }
 
+/* Default fieldset */
+fieldset {
+  background: #efe;
+}
+
+legend {
+  color: #dfd;
+  background: #141;
+  font-family: sans-serif;
+  padding: 0.2em 1em;
+}
+
+label {
+  width: 10em;
+  float: left;
+  text-align: right;
+  padding-top: 0.2em;
+  margin-right: 0.1em;
+  display: block;
+}
+
+/* New Auth User */
+
+.new_auth_user select, .new_auth_user textarea, .new_auth_user input {
+  margin-left: 0.5em;
+}
+
+.new_auth_user {
+  margin: 0.5em 0;
+}
+
+
 /* User order Form */
 .user_order_form fieldset {
   background: #efe;
@@ -229,3 +261,4 @@
 .user_order_form div {
   margin: 0.5em 0;
 }
+

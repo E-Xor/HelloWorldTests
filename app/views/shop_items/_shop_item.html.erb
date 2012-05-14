@@ -10,12 +10,4 @@
       <td><%= shop_item.my_test_scaffold.title %></td>
       <td class="shop_item_price"><%= number_to_currency shop_item.my_test_scaffold.price %></td>
 
-      <td><%= button_to '+1', shop_items_path(:my_test_scaffold_id => shop_item.my_test_scaffold.id), :remote => true %>
-        <% if shop_item.quantity == 1%>
-          <%= button_to '-1', shop_item, :method => :delete, :confirm => "It will remove last '#{shop_item.my_test_scaffold.title}' from the cart. OK?", :remote => true %>
-        <% else %>
-          <%= button_to '-1', shop_item, :method => :delete, :remote => true %>
-        <% end %>
-      </td>
-
     </tr>

@@ -1,5 +1,8 @@
 HelloWorldTests::Application.routes.draw do
 
+  # Automaticaly added by scaffold generator
+  resources :auth_users
+
 #  get "home/index"
   # Automaticaly added by controller generator
 #  get "my_store/index"

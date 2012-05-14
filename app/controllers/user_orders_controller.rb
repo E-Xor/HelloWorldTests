@@ -57,6 +57,8 @@ layout 'my_book_store'
       if @user_order.save
         ShopCart.destroy(session[:shop_cart_id])
         session[:shop_cart_id] = nil
+        OrderNotifier.user_order_received(@user_order).deliver
+        OrderNotifier.user_order_shipped(@user_order).deliver
         format.html { redirect_to(my_store_url, :notice => "Thanks for the order, #{@user_order.user_name}.") }
         format.xml  { render :xml => @user_order, :status => :created, :location => @user_order }
       else
