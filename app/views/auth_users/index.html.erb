@@ -1,0 +1,23 @@
+<h1>Listing auth_users</h1>
+
+<table>
+  <tr>
+    <th>User name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @auth_users.each do |auth_user| %>
+  <tr>
+    <td><%= auth_user.user_name %></td>
+    <td><%= link_to 'Show', auth_user %></td>
+    <td><%= link_to 'Edit', edit_auth_user_path(auth_user) %></td>
+    <td><%= link_to 'Destroy', auth_user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Auth user', new_auth_user_path %>

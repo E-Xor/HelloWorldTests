@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User name:</b>
+  <%= @auth_user.user_name %>
+</p>
+
+<p>
+  <b>Enc pass:</b>
+  <%= @auth_user.enc_pass %>
+</p>
+
+<p>
+  <b>Pass salt:</b>
+  <%= @auth_user.pass_salt %>
+</p>
+
+
+<%= link_to 'Edit', edit_auth_user_path(@auth_user) %> |
+<%= link_to 'Back', auth_users_path %>

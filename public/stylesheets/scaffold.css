@@ -24,6 +24,15 @@ div.field, div.actions {
   color: green;
 }
 
+#alert {
+  color: red;
+  border: 2px solid red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #F0F0F0;
+  font: bold smaller sans-serif;
+}
+
 .field_with_errors {
   padding: 2px;
   background-color: red;

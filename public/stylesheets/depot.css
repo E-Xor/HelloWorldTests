@@ -3,12 +3,13 @@
 /* my_book_store layout */
 
 #banner {
-  background: #9c9;
+  background: #9c9 url('/images/logo_bg.png') repeat-x center top; 
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 2px solid;
+/*  font: small-caps 40px/40px "Times New Roman", serif;*/
   font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
+  color: #eee;
   text-align: center;
 }
 

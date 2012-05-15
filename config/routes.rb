@@ -1,5 +1,14 @@
 HelloWorldTests::Application.routes.draw do
 
+  get 'admin' => "auth_admin#index"
+
+  controller :auth_sessions do
+    get 'auth_login' => :new
+    post 'auth_login' => :create
+    delete 'auth_logout' => :destroy
+    get 'auth_logout' => :destroy
+  end
+
   # Automaticaly added by scaffold generator
   resources :auth_users
 

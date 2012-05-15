@@ -1,0 +1,3 @@
+<h1>Welcome, admin <%= session[:auth_user_name] %></h1>
+It's <%= Time.now %><br/>
+We have <%= pluralize(@total_orders, "order")%>
