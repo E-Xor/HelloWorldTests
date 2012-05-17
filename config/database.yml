@@ -1,44 +1,19 @@
+common: &common
+  adapter: mysql2
+  encoding: utf8
+  username: root
+  #password:
+  #host: localhost
+  socket: /var/run/mysqld/mysqld.sock
+
 production:
-  adapter: mysql2
-  encoding: utf8
+  <<: *common
   database: hwt
-  username: root
-  #password:
-  #host: localhost
-  socket: /var/run/mysqld/mysqld.sock
 
-# Engineyard
-#development:
-#  adapter:   mysql2
-#  database:  helloworldtestsapp
-#  username:  deploy
-#  password:  7JLs1NIUyv
-#  host:      ec2-46-137-179-10.eu-west-1.compute.amazonaws.com
-#  reconnect: true
-#
-#test:
-#  adapter:   mysql2
-#  database:  helloworldtestsapp_test
-#  username:  deploy
-#  password:  7JLs1NIUyv
-#  host:      ec2-46-137-179-10.eu-west-1.compute.amazonaws.com
-#  reconnect: true
-
-# VM
 development:
-  adapter: mysql2
-  encoding: utf8
+  <<: *common
   database: hwt
-  username: root
-  #password:
-  #host: localhost
-  socket: /var/run/mysqld/mysqld.sock
 
 test:
-  adapter: mysql2
-  encoding: utf8
+  <<: *common
   database: hwt_test
-  username: root
-  #password:
-  #host: localhost
-  socket: /var/run/mysqld/mysqld.sock

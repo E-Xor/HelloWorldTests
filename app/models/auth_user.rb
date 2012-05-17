@@ -8,6 +8,8 @@ class AuthUser < ActiveRecord::Base
   attr_reader :user_password
   validate :user_password_must_be_present
 
+  after_destroy :dont_delete_last_user # Rollback will happen if exception
+
   def user_password=(password) # virtual attribute
     @user_password = password
     if password.present?
@@ -26,6 +28,12 @@ class AuthUser < ActiveRecord::Base
 
   def self.make_enc_pass(password, salt)
     Digest::SHA2.hexdigest(password + "wibble" + salt)
+  end
+
+  def dont_delete_last_user
+    if AuthUser.count.zero?
+      raise "Can't delete last user"
+    end
   end
 
   private

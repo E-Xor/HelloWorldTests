@@ -7,7 +7,6 @@
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 2px solid;
-/*  font: small-caps 40px/40px "Times New Roman", serif;*/
   font: small-caps 40px/40px "Times New Roman", serif;
   color: #eee;
   text-align: center;
@@ -47,6 +46,8 @@
 /* Shop Cart */
 
 #shop_cart, #shop_cart table {
+  margin-top: 10px;
+  margin-right: 3px;
   font-size: smaller;
   color: white;
 }

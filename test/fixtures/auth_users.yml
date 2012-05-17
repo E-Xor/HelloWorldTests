@@ -1,9 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
+<% PASS_SALT = 'NaCl' %>
 one:
-  user_name: MyString
-  enc_pass: MyString
-  pass_salt: MyString
+  user_name: 'Test User Name'
+  enc_pass: <%= AuthUser.make_enc_pass('blink182', PASS_SALT) %>
+  pass_salt: <%= PASS_SALT %>
 
 two:
   user_name: MyString

@@ -11,8 +11,11 @@
     <td colspan="2">Total</td>
     <td class="cart_total_price"><%= number_to_currency shop_cart.total_price %></td>
   </tr>
+  <tr><td colspan="3"><%= button_to 'Checkout', new_user_order_url, :method => :get, :disabled => @disable_checkout_button ? true : false  %></td></tr>
+  <tr><td colspan="3"><%= button_to 'Remove all items from cart', shop_cart, :method => :delete, :confirm => 'It will remove all items from the cart. OK?' %></td></tr>
+
 </table>
 
-<%= button_to 'Checkout', new_user_order_url, :method => :get, :disabled => @disable_checkout_button ? true : false  %>
-<%= button_to 'Remove all items from cart', shop_cart, :method => :delete, :confirm => 'It will remove all items from the cart. OK?' %>
+
+
 

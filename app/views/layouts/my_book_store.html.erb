@@ -16,16 +16,23 @@
 <div id="columns">
 
   <div id="side">
+    <%= link_to "Home", '/' %><br/>
+    <%= link_to "Book Store", my_store_path %><br/>
+    <%= link_to "About", '/about' %><br/>
+    <% if session[:auth_user_id] %>
+      <%= link_to "My Test Scaffold", my_test_scaffolds_path %><br/>
+      <%= link_to "User  Orders", user_orders_path %><br/>
+      <%= link_to "Users", auth_users_path %><br/>
+      <%= link_to "Logout", auth_logout_path, :method => :delete  %>
+    <% else %>
+      <%= link_to "Sign In", auth_login_path %>
+    <% end %>
+
     <% if @shop_cart %>
       <%= hide_div_if(@shop_cart.shop_items.empty?, :id => "shop_cart") do %> <!-- Appplication controller helper -->
         <%= render(@shop_cart) %> <!-- @shop_cart is set in controller, also see partial template ../shop_carts/_shop_cart.html.erb -->
       <% end %><!-- hide_div_if -->
     <% end %>
-    <%= link_to "Home", '/' %><br/>
-    <%= link_to "Book Store", my_store_path %><br/>
-    <%= link_to "My Test Scaffold", my_test_scaffolds_path %><br/>
-    <%= link_to "User  Orders", user_orders_path %><br/>
-    <%= link_to "Users", auth_users_path %><br/>
   </div>
 
   <div id="main">

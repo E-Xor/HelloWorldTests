@@ -11,3 +11,9 @@ def current_shop_cart
     shop_cart
   end
 end
+
+def admin_authorize
+  unless AuthUser.find_by_id(session[:auth_user_id])
+    redirect_to auth_login_url, :notice => "Please log in"
+  end
+end

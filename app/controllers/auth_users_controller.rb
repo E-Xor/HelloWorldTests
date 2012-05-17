@@ -47,7 +47,7 @@ layout 'my_book_store'
     respond_to do |format|
       if @auth_user.save
 #        format.html { redirect_to(@auth_user, :notice => 'Auth user was successfully created.') }
-        format.html { redirect_to(auth_users_url, :notice => 'User #{@auth_user.user_name} was successfully created.') }
+        format.html { redirect_to(auth_users_url, :notice => "User #{@auth_user.user_name} was successfully created.") }
         format.xml  { render :xml => @auth_user, :status => :created, :location => @auth_user }
       else
         format.html { render :action => "new" }
@@ -64,7 +64,7 @@ layout 'my_book_store'
     respond_to do |format|
       if @auth_user.update_attributes(params[:auth_user])
 #        format.html { redirect_to(@auth_user, :notice => 'Auth user was successfully updated.') }
-        format.html { redirect_to(auth_users_url, :notice => 'User #{@auth_user.user_name} was successfully updated.') }
+        format.html { redirect_to(auth_users_url, :notice => "User #{@auth_user.user_name} was successfully updated.") }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -76,8 +76,13 @@ layout 'my_book_store'
   # DELETE /auth_users/1
   # DELETE /auth_users/1.xml
   def destroy
-    @auth_user = AuthUser.find(params[:id])
-    @auth_user.destroy
+    begin
+      @auth_user = AuthUser.find(params[:id])
+      @auth_user.destroy
+      flash[:notice] = "User #{@auth_user.user_name} deleted"
+    rescue Exception => e
+      flash[:notice] = e.message
+    end
 
     respond_to do |format|
       format.html { redirect_to(auth_users_url) }

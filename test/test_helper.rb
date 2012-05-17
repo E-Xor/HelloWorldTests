@@ -10,4 +10,16 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def auth_login_as(user)
+    session[:auth_user_id] = auth_users(user).id # auth_users is from fixtures
+  end
+
+  def auth_logout
+    session.delete :auth_user_id
+  end
+
+  def setup # is called on every test
+    auth_login_as :one if defined? session # session is defined only in controller tests
+  end
+
 end

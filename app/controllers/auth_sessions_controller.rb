@@ -1,5 +1,6 @@
 class AuthSessionsController < ApplicationController
 layout 'my_book_store'
+  skip_before_filter :authorize
 
   def new
   end
