@@ -27022,3 +27022,1830 @@ Completed 200 OK in 19ms (Views: 11.9ms | ActiveRecord: 5.4ms)
   [1m[35mShopItem Load (0.2ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.user_order_id = 980190964)
   [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1[0m
   [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.5ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  SELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Test Book') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Test Book') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Test Book') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Title Five') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.3ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mAuthUser Load (0.5ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  Processing by AuthAdminController#index as HTML
+  [1m[36mAuthUser Load (0.3ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM `user_orders`
+Rendered auth_admin/index.html.erb within layouts/my_book_store (5.3ms)
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 11.0ms)
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Test User Name", "user_password"=>"[FILTERED]"}
+  [1m[35mAuthUser Load (0.4ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Test User Name' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+Redirected to http://test.host/auth_login
+Completed 302 Found in 3ms
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 74ms (Views: 73.4ms | ActiveRecord: 1.5ms)
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAuthUser Load (0.1ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Test User Name", "user_password"=>"[FILTERED]"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Test User Name' LIMIT 1
+Redirected to http://test.host/admin
+Completed 302 Found in 1ms
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAuthUser Load (0.1ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  Processing by AuthSessionsController#destroy as HTML
+Redirected to http://test.host/my_store
+Completed 302 Found in 1ms
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+  Processing by AuthUsersController#create as HTML
+  Parameters: {"auth_user"=>{"user_name"=>"Max", "user_password"=>"[FILTERED]", "user_password_confirmation"=>"[FILTERED]"}}
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  describe `auth_users`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `auth_users` (`updated_at`, `user_name`, `pass_salt`, `enc_pass`, `created_at`) VALUES ('2012-05-24 12:25:35', 'Max', '-6167293780.201298657405956', '34ca99a070b8e05b0064c1194bc6573a4c890bc9dcb39524ec2eca75046f6154', '2012-05-24 12:25:35')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/auth_users
+Completed 302 Found in 10ms
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAuthUser Load (0.3ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+  Processing by AuthUsersController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAREL (0.4ms)[0m  DELETE FROM `auth_users` WHERE `auth_users`.`id` = 980190962
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/auth_users
+Completed 302 Found in 4ms
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+  [1m[35mSQL (0.6ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAuthUser Load (0.3ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  Processing by AuthUsersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mAuthUser Load (0.1ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+Rendered auth_users/_form.html.erb (5.6ms)
+Completed 200 OK in 46ms (Views: 44.7ms | ActiveRecord: 6.9ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  Processing by AuthUsersController#index as HTML
+  [1m[36mAuthUser Load (0.5ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` ORDER BY user_name[0m
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.9ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  Processing by AuthUsersController#new as HTML
+Rendered auth_users/_form.html.erb (2.1ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.4ms)
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAuthUser Load (0.1ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  Processing by AuthUsersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.5ms)
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAuthUser Load (0.1ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  Processing by AuthUsersController#update as HTML
+  Parameters: {"auth_user"=>{"user_name"=>"Max", "user_password"=>"[FILTERED]", "user_password_confirmation"=>"[FILTERED]"}, "id"=>"980190962"}
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') AND (`auth_users`.id <> 980190962) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE `auth_users` SET `updated_at` = '2012-05-24 12:25:35', `user_name` = 'Max', `pass_salt` = '-6178656080.571735622781157', `enc_pass` = '604d9e19e0ee161119d9f357e560fe9737aa688a9d347da7cad59ccf1b334571' WHERE `auth_users`.`id` = 980190962[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/auth_users
+Completed 302 Found in 6ms
+  [1m[36mSQL (22.5ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAuthUser Load (0.3ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  Processing by GoogleMapController#index as HTML
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 25.1ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  Processing by HomeController#index as HTML
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.4ms)
+  [1m[36mSQL (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAuthUser Load (0.3ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (0.5ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-24 12:25:36', '2012-05-24 12:25:36')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190963)[0m
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (2.1ms)
+Completed 200 OK in 27ms (Views: 19.6ms | ActiveRecord: 2.6ms)
+  [1m[35mSQL (4.0ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  Processing by MyTestScaffoldsController#new as HTML
+  [1m[36mAuthUser Load (0.1ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+Rendered my_test_scaffolds/_form.html.erb (5.1ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 4.3ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `my_test_scaffolds`[0m
+  Processing by MyTestScaffoldsController#create as HTML
+  Parameters: {"my_test_scaffold"=>{"price"=>11.99, "title"=>"In Controller Test", "image_url"=>"/images/ct.png", "description"=>"Description in controller test"}}
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'In Controller Test') LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `my_test_scaffolds`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `my_test_scaffolds` (`updated_at`, `price`, `created_at`, `description`, `title`, `image_url`) VALUES ('2012-05-24 12:25:36', 11.99, '2012-05-24 12:25:36', 'Description in controller test', 'In Controller Test', '/images/ct.png')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/my_test_scaffolds/980190963
+Completed 302 Found in 8ms
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `my_test_scaffolds`
+  [1m[36mSQL (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAuthUser Load (0.1ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.4ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 4.1ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUserOrder Load (0.3ms)[0m  SELECT `user_orders`.* FROM `user_orders` WHERE `user_orders`.`id` = 980190962 LIMIT 1
+  [1m[36mShopItem Load (0.4ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.user_order_id = 980190962)[0m
+Rendered collection (0.0ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUserOrder Load (0.4ms)[0m  SELECT `user_orders`.* FROM `user_orders` WHERE `user_orders`.`id` = 298486374 LIMIT 1
+  [1m[36mShopItem Load (0.4ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.user_order_id = 298486374)[0m
+Rendered collection (0.0ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mShopCart Load (0.4ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190962 LIMIT 1
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `shop_carts`
+  Processing by ShopCartsController#create as HTML
+  Parameters: {"shop_cart"=>{"created_at"=>Thu, 24 May 2012 12:25:35 UTC +00:00, "updated_at"=>Thu, 24 May 2012 12:25:35 UTC +00:00, "id"=>980190962}}
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-24 12:25:35', '2012-05-24 12:25:35')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/shop_carts/980190964
+Completed 302 Found in 81ms
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `shop_carts`
+  [1m[36mSQL (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mShopCart Load (0.3ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_carts`[0m
+  Processing by ShopCartsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShopCart Load (0.6ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190962 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mShopItem Load (0.3ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190962)
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM `shop_carts` WHERE `shop_carts`.`id` = 980190962[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/my_store
+Completed 302 Found in 4ms
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_carts`[0m
+  [1m[35mSQL (53.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mShopCart Load (0.6ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190962 LIMIT 1
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  Processing by ShopCartsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShopCart Load (0.3ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190962 LIMIT 1
+Rendered shop_carts/_form.html.erb (4.7ms)
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190962)[0m
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (3.7ms)
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 62.1ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190962 LIMIT 1
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  Processing by ShopCartsController#index as HTML
+  [1m[35mShopCart Load (0.4ms)[0m  SELECT `shop_carts`.* FROM `shop_carts`
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 1.0ms)
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  Processing by ShopCartsController#new as HTML
+Rendered shop_carts/_form.html.erb (2.0ms)
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (1.5ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.6ms)
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  Processing by ShopCartsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mShopItem Load (0.2ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190962)
+Rendered collection (0.0ms)
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (2.4ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.9ms)
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  Processing by ShopCartsController#update as HTML
+  Parameters: {"id"=>"980190962", "shop_cart"=>{"created_at"=>Thu, 24 May 2012 12:25:35 UTC +00:00, "updated_at"=>Thu, 24 May 2012 12:25:35 UTC +00:00, "id"=>980190962}}
+  [1m[36mShopCart Load (0.2ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SAVEPOINT active_record_1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/shop_carts/980190962
+Completed 302 Found in 3ms
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mShopItem Load (0.3ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`id` = 980190962 LIMIT 1
+  [1m[36mAuthUser Load (0.1ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  SELECT COUNT(*) FROM `shop_items`
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1[0m
+  Processing by ShopItemsController#create as JS
+  Parameters: {"my_test_scaffold_id"=>980190962}
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-24 12:25:36', '2012-05-24 12:25:36')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1[0m
+  [1m[35mShopItem Load (0.3ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 980190962 AND (`shop_items`.shop_cart_id = 980190965) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_items` (`my_test_scaffold_id`, `updated_at`, `shop_cart_id`, `quantity`, `created_at`, `user_order_id`) VALUES (980190962, '2012-05-24 12:25:36', 980190965, 1, '2012-05-24 12:25:36', NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mShopItem Load (0.4ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190965)[0m
+  [1m[35mMyTestScaffold Load (0.5ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (3.8ms)
+Rendered shop_carts/_shop_cart.html.erb (9.3ms)
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190965)[0m
+Completed 200 OK in 36ms (Views: 20.6ms | ActiveRecord: 6.6ms)
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `shop_items`
+  [1m[36mSQL (8.0ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mShopItem Load (0.3ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items`[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1
+  Processing by ShopItemsController#create as HTML
+  Parameters: {"my_test_scaffold_id"=>980190962}
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-24 12:25:36', '2012-05-24 12:25:36')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1
+  [1m[36mShopItem Load (0.3ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 980190962 AND (`shop_items`.shop_cart_id = 980190966) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_items` (`my_test_scaffold_id`, `updated_at`, `shop_cart_id`, `quantity`, `created_at`, `user_order_id`) VALUES (980190962, '2012-05-24 12:25:36', 980190966, 1, '2012-05-24 12:25:36', NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/my_store
+Completed 302 Found in 7ms
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT COUNT(*) FROM `shop_items`[0m
+  [1m[35mSQL (12.0ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mShopItem Load (0.4ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`id` = 980190962 LIMIT 1
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `shop_items`
+  Processing by ShopItemsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mShopItem Load (0.5ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM `shop_items` WHERE `shop_items`.`id` = 980190962[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-24 12:25:36', '2012-05-24 12:25:36')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 1 LIMIT 1
+Redirected to http://test.host/my_store
+Completed 302 Found in 7ms
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items`[0m
+  [1m[35mSQL (0.6ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mShopItem Load (0.3ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`id` = 980190962 LIMIT 1
+  [1m[36mAuthUser Load (0.1ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  Processing by ShopItemsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShopItem Load (0.2ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`id` = 980190962 LIMIT 1
+Rendered shop_items/_form.html.erb (4.1ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 27.2ms)
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mShopItem Load (0.1ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  Processing by ShopItemsController#index as HTML
+  [1m[36mShopItem Load (0.8ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items`[0m
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 1.4ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mShopItem Load (0.1ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`id` = 980190962 LIMIT 1
+  [1m[36mAuthUser Load (0.1ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  Processing by ShopItemsController#new as HTML
+Rendered shop_items/_form.html.erb (3.0ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.5ms)
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mShopItem Load (0.1ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`id` = 980190962 LIMIT 1
+  [1m[36mAuthUser Load (0.1ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  Processing by ShopItemsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mShopItem Load (0.1ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`id` = 980190962 LIMIT 1
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.7ms)
+  [1m[36mSQL (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mShopItem Load (0.1ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  Processing by ShopItemsController#update as HTML
+  Parameters: {"id"=>"980190962", "shop_item"=>{"created_at"=>Thu, 24 May 2012 12:25:35 UTC +00:00, "user_order_id"=>nil, "quantity"=>1, "updated_at"=>Thu, 24 May 2012 12:25:35 UTC +00:00, "my_test_scaffold_id"=>1, "id"=>980190962, "shop_cart_id"=>1}}
+  [1m[36mShopItem Load (0.2ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/shop_items/980190962
+Completed 302 Found in 4ms
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUserOrder Load (0.1ms)[0m  SELECT `user_orders`.* FROM `user_orders` WHERE `user_orders`.`id` = 980190962 LIMIT 1
+  [1m[36mAuthUser Load (0.1ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  Processing by UserOrdersController#new as HTML
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-24 12:25:36', '2012-05-24 12:25:36')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190968)[0m
+Redirected to http://test.host/my_store
+Completed 302 Found in 5ms
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUserOrder Load (0.1ms)[0m  SELECT `user_orders`.* FROM `user_orders` WHERE `user_orders`.`id` = 980190962 LIMIT 1
+  [1m[36mAuthUser Load (0.7ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM `user_orders`
+  Processing by UserOrdersController#create as HTML
+  Parameters: {"user_order"=>{"created_at"=>Thu, 24 May 2012 12:25:35 UTC +00:00, "updated_at"=>Thu, 24 May 2012 12:25:35 UTC +00:00, "user_address"=>"New York", "id"=>980190962, "user_pay_type"=>"Check", "user_name"=>"John Doe", "user_email"=>"asd@asd.com"}}
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-24 12:25:36', '2012-05-24 12:25:36')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mShopItem Load (0.4ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190969)
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  describe `user_orders`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `user_orders` (`user_name`, `user_pay_type`, `updated_at`, `user_email`, `created_at`, `user_address`) VALUES ('John Doe', 'Check', '2012-05-24 12:25:35', 'asd@asd.com', '2012-05-24 12:25:35', 'New York')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mShopCart Load (0.5ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190969 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mShopItem Load (0.1ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190969)[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM `shop_carts` WHERE `shop_carts`.`id` = 980190969
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mShopItem Load (0.4ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.user_order_id = 980190963)
+Rendered collection (0.0ms)
+
+Sent mail to asd@asd.com (11ms)
+Date: Thu, 24 May 2012 15:25:36 +0300
+From: e-xormail@mail.ru
+To: asd@asd.com
+Message-ID: <4fbe28c0a4304_17e22455c7264584b@vmdebian.mail>
+Subject: Order Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi John Doe,
+
+Thank you for you order:
+
+
+Please wait for separate ship e-mail.
+Rendered collection (0.0ms)
+
+Sent mail to asd@asd.com (16ms)
+Date: Thu, 24 May 2012 15:25:36 +0300
+From: e-xormail@mail.ru
+To: asd@asd.com
+Message-ID: <4fbe28c0c4420_17e22455c7264597e@vmdebian.mail>
+Subject: Shipping confirmation
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h3>Shipping updates.</h3>
+<p>Your order was just shipped:</p>
+<table>
+  <tr><th colspan="2"></th><th>Desciption</th></tr>
+  
+</table>
+Redirected to http://test.host/my_store
+Completed 302 Found in 167ms
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM `user_orders`[0m
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUserOrder Load (0.4ms)[0m  SELECT `user_orders`.* FROM `user_orders` WHERE `user_orders`.`id` = 980190962 LIMIT 1
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM `user_orders`
+  Processing by UserOrdersController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mUserOrder Load (0.2ms)[0m  [1mSELECT `user_orders`.* FROM `user_orders` WHERE `user_orders`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mShopItem Load (0.4ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.user_order_id = 980190962)[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM `user_orders` WHERE `user_orders`.`id` = 980190962
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/user_orders
+Completed 302 Found in 5ms
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `user_orders`
+  [1m[36mSQL (1.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUserOrder Load (0.8ms)[0m  [1mSELECT `user_orders`.* FROM `user_orders` WHERE `user_orders`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  Processing by UserOrdersController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mUserOrder Load (0.2ms)[0m  [1mSELECT `user_orders`.* FROM `user_orders` WHERE `user_orders`.`id` = 980190962 LIMIT 1[0m
+Rendered user_orders/_form.html.erb (3.8ms)
+Completed 200 OK in 102ms (Views: 98.8ms | ActiveRecord: 13.8ms)
+  [1m[35mSQL (0.4ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUserOrder Load (0.2ms)[0m  SELECT `user_orders`.* FROM `user_orders` WHERE `user_orders`.`id` = 980190962 LIMIT 1
+  [1m[36mAuthUser Load (0.1ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  Processing by UserOrdersController#index as HTML
+  [1m[35mUserOrder Load (0.6ms)[0m  SELECT `user_orders`.* FROM `user_orders` ORDER BY created_at desc LIMIT 4 OFFSET 0
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 1.4ms)
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUserOrder Load (0.1ms)[0m  [1mSELECT `user_orders`.* FROM `user_orders` WHERE `user_orders`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-24 12:25:36', '2012-05-24 12:25:36')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mMyTestScaffold Load (0.5ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `shop_items` (`my_test_scaffold_id`, `updated_at`, `shop_cart_id`, `quantity`, `created_at`, `user_order_id`) VALUES (980190962, '2012-05-24 12:25:36', 980190970, 1, '2012-05-24 12:25:36', NULL)
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Processing by UserOrdersController#new as HTML
+  [1m[35mShopCart Load (0.3ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190970 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190970)[0m
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190970 LIMIT 1
+Rendered user_orders/_form.html.erb (1.8ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190970)[0m
+  [1m[35mShopItem Load (0.2ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190970)
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (1.8ms)
+Rendered shop_carts/_shop_cart.html.erb (5.5ms)
+Completed 200 OK in 17ms (Views: 13.6ms | ActiveRecord: 3.6ms)
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUserOrder Load (0.1ms)[0m  SELECT `user_orders`.* FROM `user_orders` WHERE `user_orders`.`id` = 980190962 LIMIT 1
+  [1m[36mAuthUser Load (0.1ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1[0m
+  Processing by UserOrdersController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mUserOrder Load (0.2ms)[0m  SELECT `user_orders`.* FROM `user_orders` WHERE `user_orders`.`id` = 980190962 LIMIT 1
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 1.2ms)
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUserOrder Load (0.1ms)[0m  [1mSELECT `user_orders`.* FROM `user_orders` WHERE `user_orders`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 980190962 LIMIT 1
+  Processing by UserOrdersController#update as HTML
+  Parameters: {"user_order"=>{"created_at"=>Thu, 24 May 2012 12:25:35 UTC +00:00, "updated_at"=>Thu, 24 May 2012 12:25:35 UTC +00:00, "user_address"=>"New York", "id"=>980190962, "user_pay_type"=>"Check", "user_name"=>"John Doe", "user_email"=>"asd@asd.com"}, "id"=>"980190962"}
+  [1m[36mUserOrder Load (0.1ms)[0m  [1mSELECT `user_orders`.* FROM `user_orders` WHERE `user_orders`.`id` = 980190962 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/user_orders/980190962
+Completed 302 Found in 3ms
+  [1m[35mSQL (0.5ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.3ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.3ms)[0m  [1mDELETE FROM `user_orders`[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM `shop_items`
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM `shop_carts`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1[0m
+
+
+Started GET "/" for 127.0.0.1 at Thu May 24 15:25:39 +0300 2012
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 40.0ms)
+
+
+Started POST "/shop_items" for 127.0.0.1 at Thu May 24 15:25:39 +0300 2012
+  Processing by ShopItemsController#create as JS
+  Parameters: {"my_test_scaffold_id"=>"980190962"}
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `shop_carts`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-24 12:25:39', '2012-05-24 12:25:39')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1
+  [1m[36mShopItem Load (1.7ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 980190962 AND (`shop_items`.shop_cart_id = 980190971) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `shop_items`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `shop_items` (`quantity`, `user_order_id`, `my_test_scaffold_id`, `shop_cart_id`, `created_at`, `updated_at`) VALUES (1, NULL, 980190962, 980190971, '2012-05-24 12:25:39', '2012-05-24 12:25:39')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mShopItem Load (0.4ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190971)
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (6.4ms)
+Rendered shop_carts/_shop_cart.html.erb (12.2ms)
+  [1m[35mSQL (0.4ms)[0m  SELECT SUM(`shop_items`.`quantity`) AS sum_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190971)
+Rendered shop_items/create.js.rjs (17.0ms)
+Completed 200 OK in 118ms (Views: 93.4ms | ActiveRecord: 5.4ms)
+  [1m[36mShopCart Load (0.3ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190971 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190971)
+  [1m[36mShopItem Load (0.2ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190971)[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1
+
+
+Started GET "/user_orders/new" for 127.0.0.1 at Thu May 24 15:25:39 +0300 2012
+  Processing by UserOrdersController#new as HTML
+  [1m[36mShopCart Load (0.4ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190971 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190971)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190971 LIMIT 1[0m
+Rendered user_orders/_form.html.erb (6.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190971)
+  [1m[36mShopItem Load (0.4ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190971)[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (2.1ms)
+Rendered shop_carts/_shop_cart.html.erb (6.3ms)
+Rendered user_orders/new.html.erb within layouts/my_book_store (19.7ms)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 2.0ms)
+  [1m[36mPaymentType Load (0.3ms)[0m  [1mSELECT `payment_types`.* FROM `payment_types` WHERE `payment_types`.`id` = 298486374 LIMIT 1[0m
+
+
+Started POST "/user_orders" for 127.0.0.1 at Thu May 24 15:25:39 +0300 2012
+  Processing by UserOrdersController#create as HTML
+  Parameters: {"user_order"=>{"user_address"=>"1234 Peachtree str.", "user_pay_type"=>"PayPal", "user_name"=>"Max S", "user_email"=>"e-xormail@tut.by"}}
+  [1m[35mShopCart Load (0.3ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190971 LIMIT 1
+  [1m[36mShopItem Load (0.2ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190971)[0m
+  [1m[35mSQL (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `user_orders`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `user_orders` (`user_pay_type`, `user_email`, `user_name`, `updated_at`, `user_address`, `created_at`) VALUES ('PayPal', 'e-xormail@tut.by', 'Max S', '2012-05-24 12:25:39', '1234 Peachtree str.', '2012-05-24 12:25:39')
+  [1m[36mAREL (0.7ms)[0m  [1mUPDATE `shop_items` SET `user_order_id` = 980190964, `shop_cart_id` = NULL, `updated_at` = '2012-05-24 12:25:39' WHERE `shop_items`.`id` = 980190966[0m
+  [1m[35mSQL (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mShopCart Load (0.6ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190971 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mShopItem Load (0.4ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190971)[0m
+  [1m[35mAREL (0.4ms)[0m  DELETE FROM `shop_carts` WHERE `shop_carts`.`id` = 980190971
+  [1m[36mSQL (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.text.erb (3.8ms)
+Rendered order_notifier/user_order_received.text.erb (5.2ms)
+
+Sent mail to e-xormail@tut.by (11ms)
+Date: Thu, 24 May 2012 15:25:39 +0300
+From: e-xormail@mail.ru
+To: e-xormail@tut.by
+Message-ID: <4fbe28c3c7852_17ea244a5724224d3@vmdebian.mail>
+Subject: Order Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi Max S,
+
+Thank you for you order:
+ 1 x Title Five
+
+
+Please wait for separate ship e-mail.
+Rendered shop_items/_shop_item.html.erb (1.0ms)
+Rendered order_notifier/user_order_shipped.html.erb (2.2ms)
+
+Sent mail to e-xormail@tut.by (6ms)
+Date: Thu, 24 May 2012 15:25:39 +0300
+From: e-xormail@mail.ru
+To: e-xormail@tut.by
+Message-ID: <4fbe28c3ccb73_17ea244a5724225df@vmdebian.mail>
+Subject: Shipping confirmation
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h3>Shipping updates.</h3>
+<p>Your order was just shipped:</p>
+<table>
+  <tr><th colspan="2"></th><th>Desciption</th></tr>
+  <!--
+  It's a partial template. Filename is _var_name.html.erb, so we can use var_name inside it.
+-->
+    <tr>
+      <td>1&times;</td>
+      <td>Title Five</td>
+      <td class="shop_item_price">$50.99</td>
+
+    </tr>
+
+</table>
+Redirected to http://www.example.com/my_store
+Completed 302 Found in 136ms
+
+
+Started GET "/my_store" for 127.0.0.1 at Thu May 24 15:25:39 +0300 2012
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.6ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-24 12:25:39', '2012-05-24 12:25:39')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190972)[0m
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (1.5ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (11.7ms)
+Completed 200 OK in 19ms (Views: 15.5ms | ActiveRecord: 7.6ms)
+  [1m[35mShopCart Load (0.4ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 980190972 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 980190972)[0m
+  [1m[35mUserOrder Load (0.2ms)[0m  SELECT `user_orders`.* FROM `user_orders`
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.user_order_id = 980190964)[0m
+  [1m[35mShopItem Load (0.2ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.user_order_id = 980190964)
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.8ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-05-31 18:52:51', '2012-05-31 18:52:51')[0m
+  [1m[35mSQL (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.9ms)
+Completed 200 OK in 87ms (Views: 6.4ms | ActiveRecord: 9.6ms)
+  [1m[36mSQL (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-05-31 18:54:55', '2012-05-31 18:54:55')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 15ms (Views: 3.5ms | ActiveRecord: 12.1ms)
+  [1m[36mSQL (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `auth_users` (`updated_at`, `user_name`, `pass_salt`, `created_at`, `enc_pass`) VALUES ('2012-05-31 18:54:55', 'Max', '-6165827880.655016474434848', '2012-05-31 18:54:55', 'cf8fca04054b0fce0a2de77c0cd55a5ca2514d88a7ec313249ac14cc770a5725')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 21:54:55 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 2.6ms)
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.4ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 18:56:01', '2012-05-31 18:56:01')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 15ms (Views: 3.2ms | ActiveRecord: 7.5ms)
+  [1m[36mSQL (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `auth_users` (`updated_at`, `user_name`, `created_at`, `enc_pass`, `pass_salt`) VALUES ('2012-05-31 18:56:01', 'Max', '2012-05-31 18:56:01', '2cd91e9bcd68704df51ac8faa49d6784fd77c3db5c05177a8aeb34b08ec13029', '-6166287280.980201584936296')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 21:56:01 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 2.4ms)
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.5ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-05-31 18:57:40', '2012-05-31 18:57:40')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 14ms (Views: 3.1ms | ActiveRecord: 7.7ms)
+  [1m[36mSQL (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `auth_users` (`pass_salt`, `enc_pass`, `created_at`, `updated_at`, `user_name`) VALUES ('-6170600180.289393911956259', 'b22d1a1bc2d451dfac5a5dc37ae72226fef4cffe6abfe255a30f291c6474c03e', '2012-05-31 18:57:40', '2012-05-31 18:57:40', 'Max')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 21:57:40 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 2.2ms)
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.4ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-05-31 18:59:24', '2012-05-31 18:59:24')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 14ms (Views: 3.2ms | ActiveRecord: 7.2ms)
+  [1m[36mSQL (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `auth_users` (`enc_pass`, `pass_salt`, `user_name`, `created_at`, `updated_at`) VALUES ('1093c206b5c534395d090344cfef044e86c96fdb936298e35088a64f3f5a513d', '-6173082580.986130582193837', 'Max', '2012-05-31 18:59:24', '2012-05-31 18:59:24')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 21:59:24 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 2.5ms)
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 19:01:08', '2012-05-31 19:01:08')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 15ms (Views: 3.4ms | ActiveRecord: 7.3ms)
+  [1m[36mSQL (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `auth_users` (`enc_pass`, `updated_at`, `pass_salt`, `user_name`, `created_at`) VALUES ('387643469c1b8c5e8f32df2afe846e8ba31d419baaa244094adaf60fc98f1f1a', '2012-05-31 19:01:08', '-6165506580.949737570362682', 'Max', '2012-05-31 19:01:08')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 22:01:08 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 2.6ms)
+  [1m[35mSQL (0.8ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.6ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 19:07:55', '2012-05-31 19:07:55')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.9ms)
+Completed 200 OK in 15ms (Views: 3.7ms | ActiveRecord: 7.5ms)
+  [1m[36mSQL (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `auth_users` (`pass_salt`, `updated_at`, `created_at`, `enc_pass`, `user_name`) VALUES ('-6168208480.780203954485148', '2012-05-31 19:07:55', '2012-05-31 19:07:55', '66dc22cc09ea089e74c57ca7436928ff3a7a2b737f1c1a8793d842d743f5856a', 'Max')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 22:07:55 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 2.5ms)
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-05-31 19:09:18', '2012-05-31 19:09:18')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 14ms (Views: 3.3ms | ActiveRecord: 6.9ms)
+  [1m[36mSQL (1.8ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `auth_users` (`pass_salt`, `updated_at`, `user_name`, `created_at`, `enc_pass`) VALUES ('-6174055380.687778393666363', '2012-05-31 19:09:18', 'Max', '2012-05-31 19:09:18', 'a129aecbc3cee5f50600c65892d4c05db7f27877dd5729e2221257f5c4b13e8c')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 22:09:18 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 3.4ms)
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.5ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 19:13:27', '2012-05-31 19:13:27')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 14ms (Views: 3.2ms | ActiveRecord: 7.5ms)
+  [1m[36mSQL (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `auth_users` (`pass_salt`, `updated_at`, `enc_pass`, `user_name`, `created_at`) VALUES ('-6169804680.727045492207063', '2012-05-31 19:13:27', '71402695b2a87e29d98515770152e784cb91de2dae3a4e0b3c4855692630b14e', 'Max', '2012-05-31 19:13:27')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 22:13:27 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/login" for 127.0.0.1 at Thu May 31 22:13:27 +0300 2012
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-05-31 19:13:43', '2012-05-31 19:13:43')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.4ms)
+Completed 200 OK in 15ms (Views: 3.0ms | ActiveRecord: 7.9ms)
+  [1m[36mSQL (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `auth_users` (`created_at`, `updated_at`, `enc_pass`, `pass_salt`, `user_name`) VALUES ('2012-05-31 19:13:43', '2012-05-31 19:13:43', 'a87ed0912873e975018049ea5955f682ca049f855c69fd9a0a371654ae265980', '-6173798280.583064319365233', 'Max')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 22:13:43 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 22:13:43 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[35mAuthUser Load (0.4ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[35mSQL (0.6ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-05-31 19:14:17', '2012-05-31 19:14:17')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.4ms)
+Completed 200 OK in 14ms (Views: 3.1ms | ActiveRecord: 7.7ms)
+  [1m[36mSQL (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `auth_users` (`user_name`, `updated_at`, `pass_salt`, `enc_pass`, `created_at`) VALUES ('Max', '2012-05-31 19:14:17', '-6169600180.12845309993284', '28990a410044fe9d72eea2c129decd1085c972129566711cbdca21c9cce35011', '2012-05-31 19:14:17')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 22:14:17 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 22:14:17 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[35mAuthUser Load (0.4ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.4ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 19:15:02', '2012-05-31 19:15:02')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.4ms)
+Completed 200 OK in 14ms (Views: 3.0ms | ActiveRecord: 7.8ms)
+  [1m[36mSQL (1.0ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `auth_users` (`user_name`, `created_at`, `pass_salt`, `enc_pass`, `updated_at`) VALUES ('Max', '2012-05-31 19:15:02', '-6167205080.978087706151655', 'e089ee379dc1d5c1a5f65badc454610a2b0fd33c8966a2af0ee6d350f4855b4c', '2012-05-31 19:15:02')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 22:15:02 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 22:15:02 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[35mAuthUser Load (0.4ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[35mSQL (0.9ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `shop_carts`[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 19:44:32', '2012-05-31 19:44:32')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 17ms (Views: 3.5ms | ActiveRecord: 2.2ms)
+  [1m[35mSQL (4.5ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  describe `auth_users`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `auth_users` (`user_name`, `pass_salt`, `enc_pass`, `created_at`, `updated_at`) VALUES ('Max', '-6167172480.574329490569034', 'edc258af074c7a53b2c671178fa24cff3c499db2ff197f52b59fa01b45835646', '2012-05-31 19:44:32', '2012-05-31 19:44:32')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 22:44:32 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 22:44:32 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[36mAuthUser Load (0.5ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `auth_users`
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[36mSQL (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[36mPaymentType Load (0.5ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `shop_carts`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-05-31 19:44:51', '2012-05-31 19:44:51')
+  [1m[36mSQL (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Rendered my_store/index.html.erb within layouts/my_book_store (0.7ms)
+Completed 200 OK in 16ms (Views: 3.3ms | ActiveRecord: 2.0ms)
+  [1m[35mSQL (3.7ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  describe `auth_users`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `auth_users` (`pass_salt`, `enc_pass`, `user_name`, `updated_at`, `created_at`) VALUES ('-6166323080.353062120226063', '778b68bc2f47a1a4a34f96d11cda3fa4b6b6ae7b9a529b95021bbe4505255b6f', 'Max', '2012-05-31 19:44:51', '2012-05-31 19:44:51')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 22:44:51 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 22:44:51 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[36mAuthUser Load (0.5ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `auth_users`
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[36mSQL (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.7ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-05-31 19:47:33', '2012-05-31 19:47:33')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.4ms)
+Completed 200 OK in 18ms (Views: 3.0ms | ActiveRecord: 2.8ms)
+  [1m[36mSQL (4.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `auth_users` (`enc_pass`, `user_name`, `pass_salt`, `created_at`, `updated_at`) VALUES ('cb2f750cfffd9708506c1f3e1e88c0947d15a6129e3fabccc5bde0c9a2032378', 'Max', '-6170735680.553840674140204', '2012-05-31 19:47:33', '2012-05-31 19:47:33')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 22:47:33 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 22:47:33 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[35mAuthUser Load (0.4ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[35mSQL (0.6ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.6ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-05-31 19:47:58', '2012-05-31 19:47:58')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 17ms (Views: 3.1ms | ActiveRecord: 2.5ms)
+  [1m[36mSQL (47.4ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `auth_users` (`created_at`, `pass_salt`, `user_name`, `enc_pass`, `updated_at`) VALUES ('2012-05-31 19:47:58', '-6174350480.590429635321487', 'Max', '4974d04225cca7c2866a61fc0448da9841e5ccbe5b2114c200bcc7ee73e4ccd3', '2012-05-31 19:47:58')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 22:47:58 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 49.4ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 22:47:58 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[35mAuthUser Load (0.4ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 20:00:39', '2012-05-31 20:00:39')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 17ms (Views: 3.4ms | ActiveRecord: 2.6ms)
+  [1m[36mSQL (3.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `auth_users` (`updated_at`, `pass_salt`, `user_name`, `created_at`, `enc_pass`) VALUES ('2012-05-31 20:00:39', '-6172706580.252374552466295', 'Max', '2012-05-31 20:00:39', 'c06f16d42daf769c8021568f2d5faddfad01fff932ad47b69f5a3958a923ba10')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 23:00:39 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 23:00:39 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[35mAuthUser Load (0.5ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[35mSQL (0.6ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.6ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 20:01:53', '2012-05-31 20:01:53')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 18ms (Views: 3.1ms | ActiveRecord: 2.6ms)
+  [1m[36mSQL (3.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `auth_users` (`enc_pass`, `user_name`, `pass_salt`, `updated_at`, `created_at`) VALUES ('ce497a2cc5874850e989da0bda59f3684b5c36c7ee7f771599cedfc0a49a048d', 'Max', '-6172044280.37764106495423', '2012-05-31 20:01:53', '2012-05-31 20:01:53')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 23:01:53 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 23:01:53 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[35mAuthUser Load (0.5ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.6ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 20:05:53', '2012-05-31 20:05:53')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 18ms (Views: 3.4ms | ActiveRecord: 2.6ms)
+  [1m[36mSQL (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  describe `auth_users`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `auth_users` (`pass_salt`, `user_name`, `created_at`, `updated_at`, `enc_pass`) VALUES ('-6170811080.320785704259126', 'Max', '2012-05-31 20:05:53', '2012-05-31 20:05:53', 'dfb9dc5a1e259f9a9a27dd2058f6009542ee5e67f2d28be0c6af38335b7c809b')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 23:05:53 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 23:05:53 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[36mAuthUser Load (0.4ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `auth_users`
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 3ms
+  [1m[36mSQL (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[36mPaymentType Load (0.6ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-05-31 20:06:24', '2012-05-31 20:06:24')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 17ms (Views: 3.1ms | ActiveRecord: 2.8ms)
+  [1m[36mSQL (3.7ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  describe `auth_users`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `auth_users` (`user_name`, `updated_at`, `enc_pass`, `pass_salt`, `created_at`) VALUES ('Max', '2012-05-31 20:06:24', 'f87ed70a9570bf5ada23321d0d221cffd2ef8e33d5225c5d13b62b514337910a', '-6168162180.915492029709972', '2012-05-31 20:06:24')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 23:06:24 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 23:06:24 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[36mAuthUser Load (0.4ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `auth_users`
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 3ms
+  [1m[36mSQL (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 20:07:05', '2012-05-31 20:07:05')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.4ms)
+Completed 200 OK in 17ms (Views: 3.1ms | ActiveRecord: 2.5ms)
+  [1m[36mSQL (3.9ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = NULL)
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `auth_users` (`pass_salt`, `updated_at`, `user_name`, `enc_pass`, `created_at`) VALUES ('-6173744780.993032188837821', '2012-05-31 20:07:05', 'Max', '81fbe54831d669abf97e72835d1003088a22a746019cf3fa6e41d6000d8ab6ac', '2012-05-31 20:07:05')
+  [1m[36mSQL (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 23:07:05 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 23:07:05 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[35mAuthUser Load (0.4ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.6ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 20:08:03', '2012-05-31 20:08:03')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.7ms)
+Completed 200 OK in 17ms (Views: 3.3ms | ActiveRecord: 2.5ms)
+  [1m[36mSQL (3.8ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'NSI Book') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `auth_users` (`created_at`, `enc_pass`, `updated_at`, `user_name`, `pass_salt`) VALUES ('2012-05-31 20:08:03', 'd76b442681b51b54c2c3ed453dd207719f87debbc834b383ec84e96b81d0f311', '2012-05-31 20:08:03', 'Max', '-6176404480.211803574844656')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 23:08:03 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 23:08:03 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[35mAuthUser Load (0.4ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 3ms
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 20:08:26', '2012-05-31 20:08:26')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 17ms (Views: 3.1ms | ActiveRecord: 2.6ms)
+  [1m[36mSQL (8.6ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'NSI Book') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_items` (`updated_at`, `created_at`, `quantity`, `shop_cart_id`, `my_test_scaffold_id`, `user_order_id`) VALUES ('2012-05-31 20:08:26', '2012-05-31 20:08:26', 1, NULL, NULL, NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  describe `auth_users`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `auth_users` (`pass_salt`, `user_name`, `updated_at`, `created_at`, `enc_pass`) VALUES ('-6179096580.189554527306342', 'Max', '2012-05-31 20:08:26', '2012-05-31 20:08:26', '3ea967af0f515844e44da79105f3bf00d2f0f8c191b09f66f45bc5b4f29a4d42')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 23:08:26 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 12.9ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 23:08:26 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[36mAuthUser Load (0.4ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `auth_users`
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 3ms
+  [1m[36mSQL (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-05-31 20:09:21', '2012-05-31 20:09:21')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 18ms (Views: 3.3ms | ActiveRecord: 2.6ms)
+  [1m[36mSQL (3.7ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  describe `auth_users`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `auth_users` (`updated_at`, `created_at`, `pass_salt`, `enc_pass`, `user_name`) VALUES ('2012-05-31 20:09:21', '2012-05-31 20:09:21', '-6175588180.312874649478659', '6ed8f2936d17b7a196e42ababa7f3fe4ea36c85352ad75ad6671cd5ec0cd321b', 'Max')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 23:09:21 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 23:09:21 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[36mAuthUser Load (0.4ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `auth_users`
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[36mSQL (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 20:09:42', '2012-05-31 20:09:42')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.4ms)
+Completed 200 OK in 17ms (Views: 3.2ms | ActiveRecord: 2.5ms)
+  [1m[36mSQL (3.8ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'NSI Book') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `auth_users` (`pass_salt`, `updated_at`, `enc_pass`, `created_at`, `user_name`) VALUES ('-6168171680.284639994638038', '2012-05-31 20:09:42', '4887773c8f3b6fd2a0f489510d46490c6da778acf94018c3dd64da5b07a0862a', '2012-05-31 20:09:42', 'Max')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 23:09:42 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 23:09:42 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[35mAuthUser Load (0.4ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-05-31 20:10:12', '2012-05-31 20:10:12')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.4ms)
+Completed 200 OK in 18ms (Views: 3.1ms | ActiveRecord: 2.5ms)
+  [1m[36mSQL (4.5ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  describe `auth_users`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `auth_users` (`pass_salt`, `created_at`, `enc_pass`, `updated_at`, `user_name`) VALUES ('-6172183780.489136050082537', '2012-05-31 20:10:12', 'eaca45f3e0205292c59eac775f522937bb843bedd43ff2dfaa4c3509c99eceae', '2012-05-31 20:10:12', 'Max')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 23:10:12 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 23:10:12 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[36mAuthUser Load (0.4ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `auth_users`
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[36mSQL (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-05-31 20:10:38', '2012-05-31 20:10:38')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.4ms)
+Completed 200 OK in 17ms (Views: 3.1ms | ActiveRecord: 2.5ms)
+  [1m[36mSQL (3.8ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'NSI Book') LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  describe `my_test_scaffolds`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `my_test_scaffolds` (`description`, `created_at`, `title`, `price`, `updated_at`, `image_url`) VALUES ('asd', '2012-05-31 20:10:38', 'NSI Book', 9.99, '2012-05-31 20:10:38', 'asd.jpg')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_items` (`shop_cart_id`, `my_test_scaffold_id`, `user_order_id`, `created_at`, `updated_at`, `quantity`) VALUES (NULL, 1, NULL, '2012-05-31 20:10:38', '2012-05-31 20:10:38', 1)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = 1)[0m
+  [1m[35mSQL (0.6ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  describe `auth_users`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `auth_users` (`user_name`, `updated_at`, `pass_salt`, `created_at`, `enc_pass`) VALUES ('Max', '2012-05-31 20:10:38', '-6173259680.407042623715069', '2012-05-31 20:10:38', 'b0433f19c014054c9b0b64e4906bb643a1dab1aef92e06393d6dfcb7375aba2e')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 23:10:38 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 23:10:38 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[36mAuthUser Load (0.5ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `auth_users`
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[36mSQL (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[36mPaymentType Load (0.5ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.6ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 20:12:31', '2012-05-31 20:12:31')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 18ms (Views: 3.3ms | ActiveRecord: 2.6ms)
+  [1m[36mSQL (4.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_items` (`shop_cart_id`, `created_at`, `quantity`, `updated_at`, `user_order_id`, `my_test_scaffold_id`) VALUES (NULL, '2012-05-31 20:12:31', 1, '2012-05-31 20:12:31', NULL, 980190962)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `auth_users` (`enc_pass`, `created_at`, `pass_salt`, `user_name`, `updated_at`) VALUES ('c5037a8a09b7ef15a376177a6bca1cf0945cc8ab21243814407d120e984a1cd3', '2012-05-31 20:12:31', '-6176698780.616210151456934', 'Max', '2012-05-31 20:12:31')
+  [1m[36mSQL (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 23:12:31 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 23:12:31 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[35mAuthUser Load (0.4ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mPaymentType Load (0.5ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 20:13:08', '2012-05-31 20:13:08')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 17ms (Views: 3.1ms | ActiveRecord: 2.5ms)
+  [1m[36mSQL (118.3ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (0.7ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO `shop_items` (`my_test_scaffold_id`, `user_order_id`, `updated_at`, `quantity`, `shop_cart_id`, `created_at`) VALUES (980190962, NULL, '2012-05-31 20:13:08', 1, NULL, '2012-05-31 20:13:08')[0m
+  [1m[35mSQL (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = 980190962)[0m
+  [1m[35mSQL (10.9ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  describe `auth_users`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `auth_users` (`updated_at`, `created_at`, `pass_salt`, `enc_pass`, `user_name`) VALUES ('2012-05-31 20:13:08', '2012-05-31 20:13:08', '-6176473680.639180053891226', 'fad75cc4785950dc227513bd0e0cc23d77aec785e2f6792e116dfda75677ccb6', 'Max')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 23:13:08 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 190.5ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 23:13:08 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[36mAuthUser Load (0.4ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `auth_users`
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[36mSQL (12.8ms)[0m  [1mROLLBACK[0m
+  [1m[36mPaymentType Load (0.6ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.7ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 20:38:52', '2012-05-31 20:38:52')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.4ms)
+Completed 200 OK in 17ms (Views: 2.9ms | ActiveRecord: 2.9ms)
+  [1m[36mSQL (3.7ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (0.4ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_items` (`my_test_scaffold_id`, `quantity`, `updated_at`, `shop_cart_id`, `user_order_id`, `created_at`) VALUES (980190962, 1, '2012-05-31 20:38:52', NULL, NULL, '2012-05-31 20:38:52')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = 980190962)[0m
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  describe `auth_users`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `auth_users` (`pass_salt`, `updated_at`, `enc_pass`, `user_name`, `created_at`) VALUES ('-6185859880.626066682005644', '2012-05-31 20:38:52', '84350c2251c0d219952385db2f5264231480474ad09f4ad324cbe26ed379e0da', 'Max', '2012-05-31 20:38:52')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 23:38:52 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 23:38:52 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[36mAuthUser Load (0.4ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `auth_users`
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[36mSQL (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 20:39:29', '2012-05-31 20:39:29')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 17ms (Views: 3.0ms | ActiveRecord: 2.5ms)
+  [1m[36mSQL (4.5ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_items` (`updated_at`, `my_test_scaffold_id`, `quantity`, `shop_cart_id`, `created_at`, `user_order_id`) VALUES ('2012-05-31 20:39:29', 980190962, 1, NULL, '2012-05-31 20:39:29', NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = 980190962)[0m
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  describe `auth_users`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `auth_users` (`pass_salt`, `user_name`, `enc_pass`, `updated_at`, `created_at`) VALUES ('-6186269480.383823112369092', 'Max', 'cc30e6083d880cb6e7dfa87da33053eb5104f2eaaf33531da1c157a17640cdaa', '2012-05-31 20:39:29', '2012-05-31 20:39:29')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 23:39:29 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 11.4ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 23:39:29 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[36mAuthUser Load (1.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT COUNT(*) FROM `auth_users`
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 8ms
+  [1m[36mSQL (1.5ms)[0m  [1mROLLBACK[0m
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.7ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-05-31 20:47:49', '2012-05-31 20:47:49')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.4ms)
+Completed 200 OK in 15ms (Views: 3.4ms | ActiveRecord: 3.2ms)
+  [1m[36mSQL (87.5ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (0.4ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_items` (`shop_cart_id`, `updated_at`, `quantity`, `created_at`, `my_test_scaffold_id`, `user_order_id`) VALUES (NULL, '2012-05-31 20:47:49', 1, '2012-05-31 20:47:49', 980190962, NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = 980190962)[0m
+  [1m[35mSQL (19.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  describe `auth_users`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `auth_users` (`pass_salt`, `enc_pass`, `created_at`, `updated_at`, `user_name`) VALUES ('-6180023480.337263500910634', 'c7e9c70a0c9fb7b6242ace606a74ce549313343321024c8356a609747edf2f22', '2012-05-31 20:47:49', '2012-05-31 20:47:49', 'Max')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 23:47:49 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 114.5ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 23:47:49 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[36mAuthUser Load (0.4ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `auth_users`
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 4ms
+  [1m[36mSQL (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[36mPaymentType Load (0.4ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_carts`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `shop_carts` (`updated_at`, `created_at`) VALUES ('2012-05-31 20:48:12', '2012-05-31 20:48:12')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Rendered my_store/index.html.erb within layouts/my_book_store (0.5ms)
+Completed 200 OK in 15ms (Views: 3.4ms | ActiveRecord: 2.8ms)
+  [1m[36mSQL (3.1ms)[0m  [1mROLLBACK[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 980190962 ORDER BY title LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_items` (`quantity`, `my_test_scaffold_id`, `user_order_id`, `shop_cart_id`, `updated_at`, `created_at`) VALUES (1, 980190962, NULL, NULL, '2012-05-31 20:48:12', '2012-05-31 20:48:12')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.my_test_scaffold_id = 980190962)[0m
+  [1m[35mSQL (0.6ms)[0m  ROLLBACK
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  describe `auth_users`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `auth_users` (`user_name`, `updated_at`, `pass_salt`, `enc_pass`, `created_at`) VALUES ('Max', '2012-05-31 20:48:12', '-6172322080.221957398726054', '14db445a53cd5853854a4be9b17fdbcddaa1f64559df16739fd991373d74fb27', '2012-05-31 20:48:12')[0m
+  [1m[35mSQL (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+
+
+Started GET "/auth_login" for 127.0.0.1 at Thu May 31 23:48:12 +0300 2012
+  Processing by AuthSessionsController#new as HTML
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at Thu May 31 23:48:12 +0300 2012
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"user_name"=>"Max", "user_password"=>"[FILTERED]"}
+  [1m[36mAuthUser Load (0.4ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `auth_users`
+Redirected to http://www.example.com/auth_login
+Completed 302 Found in 3ms
+  [1m[36mSQL (15.9ms)[0m  [1mROLLBACK[0m

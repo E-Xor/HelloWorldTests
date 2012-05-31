@@ -16,7 +16,7 @@ class MyTestScaffold < ActiveRecord::Base
   }
 
   def no_shop_item
-    return true if shop_item.count.zero?
+    return true if shop_items.count.zero?
     errors[:base] << "Shop Items present"
     return false
   end
