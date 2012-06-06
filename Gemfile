@@ -38,6 +38,7 @@ gem "mysql2", "0.2.7"
 gem 'will_paginate', '~> 3.0'
 
 # RSpec
-#    group :test, :development do
-gem "rspec-rails", "~> 2.0"
-#    end
+group :test, :development do
+  gem "rspec-rails", "~> 2.0"
+  gem "capybara"
+end

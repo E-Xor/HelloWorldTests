@@ -8,10 +8,17 @@ describe MyTestScaffold do
     end
 
     it "should return false if there are shop items" do
-#stub!       mts = MyTestScaffold.create!(:title => "NSI Book", :description => "asd", :image_url => "asd.jpg", :price => 9.99)
+#       mts = MyTestScaffold.create!(:title => "NSI Book", :description => "asd", :image_url => "asd.jpg", :price => 9.99)
        mts = my_test_scaffolds(:one)
        shop_item = ShopItem.create!(:my_test_scaffold => mts)
        mts.no_shop_item.should eq(false)
     end
+
+    it "no_shop_item should return false" do
+       mts = mock("MyTestScaffold")
+       mts.stub!(:no_shop_item).and_return(false)
+       mts.no_shop_item.should eq(false)
+    end
+
   end
 end
