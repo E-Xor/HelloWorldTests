@@ -31,7 +31,7 @@ gem 'sqlite3'
 # end
 
 # Try to fix engineyard issue
-gem 'bundler', '1.0.18'
+gem 'bundler', '1.1.4'
 gem "mysql2", "0.2.7"
 
 # Pagination
