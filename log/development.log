@@ -34616,3 +34616,108 @@ Started GET "/my_test_scaffolds" for 192.168.2.2 at 2012-06-07 19:47:23 +0300
   [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
 Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (18.3ms)
 Completed 200 OK in 48ms (Views: 21.2ms | ActiveRecord: 0.4ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/" for 192.168.2.2 at 2012-06-08 21:39:06 +0300
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/goodbye" for 192.168.2.2 at 2012-06-08 21:39:10 +0300
+  Processing by SayController#goodbye as HTML
+Rendered say/goodbye.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/goodbye" for 192.168.2.2 at 2012-06-08 21:39:35 +0300
+  Processing by SayController#goodbye as HTML
+Rendered say/goodbye.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/hello" for 192.168.2.2 at 2012-06-08 21:39:39 +0300
+  Processing by SayController#hello as HTML
+Rendered say/hello.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/goodbye" for 192.168.2.2 at 2012-06-08 21:39:42 +0300
+  Processing by SayController#goodbye as HTML
+Rendered say/goodbye.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/goodbye" for 192.168.2.2 at 2012-06-08 21:42:01 +0300
+  Processing by SayController#goodbye as HTML
+Rendered say/goodbye.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/" for 192.168.2.2 at 2012-06-08 21:42:30 +0300
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/hello" for 192.168.2.2 at 2012-06-08 21:42:32 +0300
+  Processing by SayController#hello as HTML
+Rendered say/hello.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 38ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/goodbye" for 192.168.2.2 at 2012-06-08 21:42:33 +0300
+  Processing by SayController#goodbye as HTML
+Rendered say/goodbye.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/say/goodbye" for 192.168.2.2 at 2012-06-08 21:45:19 +0300
+  Processing by SayController#goodbye as HTML
+Rendered say/goodbye.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/goodbye" for 192.168.2.2 at 2012-06-08 21:45:25 +0300
+  Processing by SayController#goodbye as HTML
+Rendered say/goodbye.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/hello" for 192.168.2.2 at 2012-06-08 21:45:26 +0300
+  Processing by SayController#hello as HTML
+Rendered say/hello.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/hello" for 192.168.2.2 at 2012-06-08 21:45:28 +0300
+  Processing by SayController#hello as HTML
+Rendered say/hello.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/goodbye" for 192.168.2.2 at 2012-06-08 21:45:30 +0300
+  Processing by SayController#goodbye as HTML
+Rendered say/goodbye.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/goodbye" for 192.168.2.2 at 2012-06-08 21:47:00 +0300
+  Processing by SayController#goodbye as HTML
+Rendered say/goodbye.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/hello" for 192.168.2.2 at 2012-06-08 21:47:21 +0300
+  Processing by SayController#hello as HTML
+Rendered say/hello.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/say/goodbye" for 192.168.2.2 at 2012-06-08 21:48:11 +0300
+  Processing by SayController#goodbye as HTML
+Rendered say/goodbye.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
