@@ -34721,3 +34721,130 @@ Started GET "/say/goodbye" for 192.168.2.2 at 2012-06-08 21:48:11 +0300
   Processing by SayController#goodbye as HTML
 Rendered say/goodbye.html.erb within layouts/application (2.9ms)
 Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/" for 192.168.2.2 at 2012-06-08 21:52:39 +0300
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_test_scaffolds" for 192.168.2.2 at 2012-06-08 21:52:42 +0300
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mSQL (1.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mAuthUser Load (1.8ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` IS NULL LIMIT 1
+Redirected to http://192.168.2.11:3000/auth_login
+Completed 302 Found in 25ms
+
+
+Started GET "/auth_login" for 192.168.2.2 at 2012-06-08 21:52:42 +0300
+  Processing by AuthSessionsController#new as HTML
+Rendered auth_sessions/new.html.erb within layouts/my_book_store (3.8ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth_login" for 192.168.2.2 at 2012-06-08 21:52:50 +0300
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uzZ0PCLIrVKeTPOZ8NY1eLKMq8j7CwxZY2SC6qrmk/U=", "user_name"=>"Max1", "user_password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max1' LIMIT 1[0m
+Redirected to http://192.168.2.11:3000/admin
+Completed 302 Found in 22ms
+
+
+Started GET "/admin" for 192.168.2.2 at 2012-06-08 21:52:50 +0300
+  Processing by AuthAdminController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 6 LIMIT 1
+  [1m[36mPaymentType Load (0.2ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `user_orders`
+Rendered auth_admin/index.html.erb within layouts/my_book_store (4.5ms)
+Completed 200 OK in 80ms (Views: 7.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/user_orders" for 192.168.2.2 at 2012-06-08 21:52:51 +0300
+  Processing by UserOrdersController#index as HTML
+  [1m[36mPaymentType Load (0.2ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mUserOrder Load (0.3ms)[0m  SELECT `user_orders`.* FROM `user_orders` ORDER BY created_at desc LIMIT 4 OFFSET 0
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `user_orders`[0m
+Rendered user_orders/index.html.erb within layouts/my_book_store (25.1ms)
+Completed 200 OK in 56ms (Views: 28.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/my_test_scaffolds" for 192.168.2.2 at 2012-06-08 21:52:52 +0300
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 6 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (65.2ms)
+Completed 200 OK in 136ms (Views: 68.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/my_test_scaffolds/1/edit" for 192.168.2.2 at 2012-06-08 21:52:55 +0300
+  Processing by MyTestScaffoldsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 6 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered my_test_scaffolds/_form.html.erb (12.4ms)
+Rendered my_test_scaffolds/edit.html.erb within layouts/my_book_store (17.8ms)
+Completed 200 OK in 50ms (Views: 21.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/my_test_scaffolds" for 192.168.2.2 at 2012-06-08 21:53:25 +0300
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 6 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (16.4ms)
+Completed 200 OK in 48ms (Views: 19.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/my_test_scaffolds/3/edit" for 192.168.2.2 at 2012-06-08 21:53:27 +0300
+  Processing by MyTestScaffoldsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 6 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 3 ORDER BY title LIMIT 1[0m
+Rendered my_test_scaffolds/_form.html.erb (12.2ms)
+Rendered my_test_scaffolds/edit.html.erb within layouts/my_book_store (17.9ms)
+Completed 200 OK in 50ms (Views: 20.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/my_test_scaffolds" for 192.168.2.2 at 2012-06-08 21:54:16 +0300
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 6 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.5ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (16.5ms)
+Completed 200 OK in 48ms (Views: 19.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/my_test_scaffolds/2/edit" for 192.168.2.2 at 2012-06-08 21:54:19 +0300
+  Processing by MyTestScaffoldsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 6 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 2 ORDER BY title LIMIT 1[0m
+Rendered my_test_scaffolds/_form.html.erb (64.0ms)
+Rendered my_test_scaffolds/edit.html.erb within layouts/my_book_store (70.6ms)
+Completed 200 OK in 104ms (Views: 73.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/my_test_scaffolds" for 192.168.2.2 at 2012-06-08 21:54:49 +0300
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 6 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (16.4ms)
+Completed 200 OK in 51ms (Views: 20.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/my_test_scaffolds/new" for 192.168.2.2 at 2012-06-08 21:54:51 +0300
+  Processing by MyTestScaffoldsController#new as HTML
+  [1m[35mAuthUser Load (0.1ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 6 LIMIT 1
+Rendered my_test_scaffolds/_form.html.erb (11.0ms)
+Rendered my_test_scaffolds/new.html.erb within layouts/my_book_store (16.1ms)
+Completed 200 OK in 48ms (Views: 19.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/my_test_scaffolds/2/edit" for 192.168.2.2 at 2012-06-08 21:54:58 +0300
+  Processing by MyTestScaffoldsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 6 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 2 ORDER BY title LIMIT 1
+Rendered my_test_scaffolds/_form.html.erb (13.1ms)
+Rendered my_test_scaffolds/edit.html.erb within layouts/my_book_store (19.0ms)
+Completed 200 OK in 51ms (Views: 21.9ms | ActiveRecord: 0.3ms)
