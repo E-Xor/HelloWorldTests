@@ -35040,3 +35040,83 @@ Completed 200 OK in 39ms (Views: 18.8ms | ActiveRecord: 0.4ms)
   [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
   [1m[35mAREL (0.2ms)[0m  INSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('PayPal', '2012-06-08 19:05:21', '2012-06-08 19:05:21')
   [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/my_store" for 192.168.2.2 at Fri Jun 08 22:18:14 +0300 2012
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (0.6ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+  [1m[36mShopCart Load (1.3ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 84 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 84)
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (2.7ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (130.9ms)
+Completed 200 OK in 169ms (Views: 135.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/my_test_scaffolds" for 192.168.2.2 at Fri Jun 08 22:18:20 +0300 2012
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mAuthUser Load (0.1ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 6 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (18.4ms)
+Completed 200 OK in 41ms (Views: 21.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/my_store" for 192.168.2.2 at Fri Jun 08 22:18:37 +0300 2012
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 84 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 84)[0m
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (2.6ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (96.8ms)
+Completed 200 OK in 118ms (Views: 99.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/shop_items?my_test_scaffold_id=5" for 192.168.2.2 at Fri Jun 08 22:18:38 +0300 2012
+  Processing by ShopItemsController#create as JS
+  Parameters: {"authenticity_token"=>"9Yv8UzdHKjH7gOQvrV302bG6E2q69Rw21H1gmQz5LN8=", "my_test_scaffold_id"=>"5", "_"=>""}
+  [1m[35mShopCart Load (0.1ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 84 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.1ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mShopItem Load (0.6ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 5 AND (`shop_items`.shop_cart_id = 84) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.7ms)[0m  [1mINSERT INTO `shop_items` (`quantity`, `user_order_id`, `created_at`, `updated_at`, `shop_cart_id`, `my_test_scaffold_id`) VALUES (1, NULL, '2012-06-08 19:18:38', '2012-06-08 19:18:38', 84, 5)[0m
+  [1m[35mSQL (2.9ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+  [1m[36mShopItem Load (0.5ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 84)[0m
+  [1m[35mMyTestScaffold Load (0.5ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 5 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (4.3ms)
+Rendered shop_carts/_shop_cart.html.erb (9.8ms)
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 84)[0m
+Rendered shop_items/create.js.rjs (13.8ms)
+Completed 200 OK in 70ms (Views: 19.2ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/my_test_scaffolds" for 192.168.2.2 at Fri Jun 08 22:20:07 +0300 2012
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 6 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (93.3ms)
+Completed 200 OK in 138ms (Views: 96.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/my_test_scaffolds" for 192.168.2.2 at Fri Jun 08 22:20:26 +0300 2012
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 6 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (18.2ms)
+Completed 200 OK in 47ms (Views: 21.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/my_store" for 192.168.2.2 at Fri Jun 08 22:20:28 +0300 2012
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+  [1m[36mShopCart Load (0.1ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 84 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 84)
+  [1m[36mShopItem Load (0.2ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 84)[0m
+  [1m[35mMyTestScaffold Load (0.1ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 5 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (8.7ms)
+Rendered shop_carts/_shop_cart.html.erb (13.7ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (104.5ms)
+Completed 200 OK in 124ms (Views: 106.2ms | ActiveRecord: 1.2ms)

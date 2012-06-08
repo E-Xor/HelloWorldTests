@@ -12,7 +12,7 @@
       <dl>
         <dt><%= my_test_scaffold.title %></dt>
         <dd><%= truncate(strip_tags(my_test_scaffold.description), :length => 80) %><br/>
-        $ <%= my_test_scaffold.price %></dd>
+        <%= currency(my_test_scaffold.price) %></dd>
       </dl>
     </td>
 

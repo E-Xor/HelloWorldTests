@@ -5,4 +5,10 @@ module ApplicationHelper
     end
     content_tag("div", attributes, &block)
   end
+
+  def currency(price)
+    # Adds price sign currently
+    sprintf("$%0.02f", price)
+  end
+
 end
