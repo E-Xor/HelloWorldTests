@@ -42,3 +42,8 @@ group :test, :development do
   gem "rspec-rails", "~> 2.0"
   gem "capybara"
 end
+
+# Heroku works only with PostgreSQL
+group :production do
+  gem "pg"
+end
