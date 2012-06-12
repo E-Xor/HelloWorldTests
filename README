@@ -256,4 +256,4 @@ vendor
   vendor/rails/. This directory is in the load path.
 
 test
-  This is my test record during git setup
+  This is my test record during git setup. One more line.
