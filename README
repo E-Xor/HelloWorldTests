@@ -258,3 +258,4 @@ vendor
 test
   This is my test record during git setup. One more line.
   And second line.
+  Line for new branch.
