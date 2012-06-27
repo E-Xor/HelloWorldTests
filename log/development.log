@@ -35120,3 +35120,1860 @@ Rendered shop_items/_shop_item.html.erb (8.7ms)
 Rendered shop_carts/_shop_cart.html.erb (13.7ms)
 Rendered my_store/index.html.erb within layouts/my_book_store (104.5ms)
 Completed 200 OK in 124ms (Views: 106.2ms | ActiveRecord: 1.2ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (77.0ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (224.1ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (29.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateTexts (20110901134435)
+  [1m[35mSQL (84.0ms)[0m  CREATE TABLE `texts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `str` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110901134435')[0m
+Migrating to CreateMyTestScaffolds (20110902131437)
+  [1m[35mSQL (116.7ms)[0m  CREATE TABLE `my_test_scaffolds` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `image_url` varchar(255), `price` decimal, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110902131437')[0m
+Migrating to AddPressisionAndScaleToPrice (20110902131948)
+  [1m[35mSQL (86.9ms)[0m  ALTER TABLE `my_test_scaffolds` CHANGE `price` `price` decimal(8,2) DEFAULT NULL
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110902131948')[0m
+Migrating to CreateShopCarts (20111119150136)
+  [1m[35mSQL (116.6ms)[0m  CREATE TABLE `shop_carts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20111119150136')[0m
+Migrating to CreateShopItems (20111119154637)
+  [1m[35mSQL (105.8ms)[0m  CREATE TABLE `shop_items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `my_test_scaffold_id` int(11), `shop_cart_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20111119154637')[0m
+Migrating to AddQuantityToShopItem (20111231184853)
+  [1m[35mSQL (108.6ms)[0m  ALTER TABLE `shop_items` ADD `quantity` int(11) DEFAULT 1 AFTER `shop_cart_id`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20111231184853')[0m
+Migrating to GroupShopItemsInShopCarts (20120102184706)
+  [1m[35mShopCart Load (0.4ms)[0m  SELECT `shop_carts`.* FROM `shop_carts`
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120102184706')[0m
+Migrating to AddUserOrderIdToShopItem (20120114204148)
+  [1m[35mSQL (143.6ms)[0m  ALTER TABLE `shop_items` ADD `user_order_id` int(11)
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120114204148')[0m
+Migrating to CreateUserOrders (20120114204430)
+  [1m[35mSQL (102.2ms)[0m  CREATE TABLE `user_orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_name` varchar(255), `user_address` text, `user_email` varchar(255), `user_pay_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120114204430')[0m
+Migrating to CreatePaymentTypes (20120206052729)
+  [1m[35mSQL (106.3ms)[0m  CREATE TABLE `payment_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `payment_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120206052729')[0m
+Migrating to CreateAuthUsers (20120510132500)
+  [1m[35mSQL (71.5ms)[0m  CREATE TABLE `auth_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_name` varchar(255), `enc_pass` varchar(255), `pass_salt` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120510132500')[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `auth_users`
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `my_test_scaffolds`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `my_test_scaffolds`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `payment_types`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `shop_carts`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `shop_carts`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `shop_items`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `shop_items`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `texts`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `texts`
+  [1m[36mSQL (1.3ms)[0m  [1mdescribe `user_orders`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `user_orders`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mAREL (0.3ms)[0m  DELETE FROM `payment_types`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  describe `payment_types`
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Check', '2012-06-27 14:25:15', '2012-06-27 14:25:15')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Credit/Debet Card', '2012-06-27 14:25:15', '2012-06-27 14:25:15')
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Purchase', '2012-06-27 14:25:15', '2012-06-27 14:25:15')[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('PayPal', '2012-06-27 14:25:15', '2012-06-27 14:25:15')
+  [1m[36mSQL (21.4ms)[0m  [1mCOMMIT[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/msundukov/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-27 10:25:41 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map" for 127.0.0.1 at 2012-06-27 10:25:44 -0400
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from handle at /Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:147)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-27 10:26:09 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/svetik/home" for 127.0.0.1 at 2012-06-27 10:26:15 -0400
+  Processing by SvetikController#home as HTML
+Rendered svetik/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google_map" for 127.0.0.1 at 2012-06-27 10:26:18 -0400
+  Processing by GoogleMapController#index as HTML
+Rendered google_map/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_store" for 127.0.0.1 at 2012-06-27 10:26:58 -0400
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.4ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  describe `shop_carts`
+  [1m[36mAREL (1.1ms)[0m  [1mINSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-06-27 14:26:58', '2012-06-27 14:26:58')[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 1)[0m
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (15.2ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (37.3ms)
+Completed 200 OK in 99ms (Views: 39.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/my_store" for 127.0.0.1 at 2012-06-27 10:27:01 -0400
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (0.4ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+  [1m[36mShopCart Load (0.2ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 1)
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (1.9ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (25.0ms)
+Completed 200 OK in 69ms (Views: 26.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-27 10:27:03 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 10:27:05 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` IS NULL LIMIT 1[0m
+Redirected to http://helloworldtests.dev/auth_login
+Completed 302 Found in 54ms
+
+
+Started GET "/auth_login" for 127.0.0.1 at 2012-06-27 10:27:05 -0400
+  Processing by AuthSessionsController#new as HTML
+Rendered auth_sessions/new.html.erb within layouts/my_book_store (3.0ms)
+Completed 200 OK in 5ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at 2012-06-27 10:27:16 -0400
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZSjWkfrc0r8BO+oF+mndjs4l69CYLUDH5Eu7SNvu8mE=", "user_name"=>"Max", "user_password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `auth_users`[0m
+Redirected to http://helloworldtests.dev/auth_users/new
+Completed 302 Found in 15ms
+
+
+Started GET "/auth_users/new" for 127.0.0.1 at 2012-06-27 10:27:16 -0400
+  Processing by AuthUsersController#new as HTML
+Rendered auth_users/_form.html.erb (6.5ms)
+Rendered auth_users/new.html.erb within layouts/my_book_store (10.3ms)
+Completed 200 OK in 44ms (Views: 12.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/auth_users" for 127.0.0.1 at 2012-06-27 10:27:31 -0400
+  Processing by AuthUsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZSjWkfrc0r8BO+oF+mndjs4l69CYLUDH5Eu7SNvu8mE=", "auth_user"=>{"user_name"=>"Max", "user_password"=>"[FILTERED]", "user_password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Auth user"}
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM `auth_users` WHERE (`auth_users`.`user_name` = BINARY 'Max') LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  describe `auth_users`
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `auth_users` (`user_name`, `enc_pass`, `pass_salt`, `created_at`, `updated_at`) VALUES ('Max', 'd74d04a9e72e71d6f7024b336c731a7dbdb98d370cc959bde3e773294bf3442e', '21879880600.15688387416921512', '2012-06-27 14:27:31', '2012-06-27 14:27:31')[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+Redirected to http://helloworldtests.dev/auth_users
+Completed 302 Found in 24ms
+
+
+Started GET "/auth_users" for 127.0.0.1 at 2012-06-27 10:27:31 -0400
+  Processing by AuthUsersController#index as HTML
+  [1m[36mAuthUser Load (0.5ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` ORDER BY user_name[0m
+Rendered auth_users/index.html.erb within layouts/my_book_store (30.9ms)
+Completed 200 OK in 57ms (Views: 47.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/auth_login" for 127.0.0.1 at 2012-06-27 10:27:43 -0400
+  Processing by AuthSessionsController#new as HTML
+Rendered auth_sessions/new.html.erb within layouts/my_book_store (3.2ms)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auth_login" for 127.0.0.1 at 2012-06-27 10:27:47 -0400
+  Processing by AuthSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZSjWkfrc0r8BO+oF+mndjs4l69CYLUDH5Eu7SNvu8mE=", "user_name"=>"Max", "user_password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`user_name` = 'Max' LIMIT 1
+Redirected to http://helloworldtests.dev/admin
+Completed 302 Found in 18ms
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-06-27 10:27:47 -0400
+  Processing by AuthAdminController#index as HTML
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mPaymentType Load (0.3ms)[0m  SELECT payment_type FROM `payment_types`
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM `user_orders`[0m
+Rendered auth_admin/index.html.erb within layouts/my_book_store (3.7ms)
+Completed 200 OK in 59ms (Views: 6.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/my_store" for 127.0.0.1 at 2012-06-27 10:27:52 -0400
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (0.4ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+  [1m[36mShopCart Load (0.2ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 1)
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (1.8ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (46.7ms)
+Completed 200 OK in 72ms (Views: 48.4ms | ActiveRecord: 0.8ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM `my_test_scaffolds`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Programming Ruby 1.9') LIMIT 1
+  [1m[36mSQL (2.4ms)[0m  [1mdescribe `my_test_scaffolds`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `my_test_scaffolds` (`title`, `description`, `image_url`, `price`, `created_at`, `updated_at`) VALUES ('Programming Ruby 1.9', '\nRuby is the fastest growing and most exciting dynamic language out there. If you need to get working programs delivered fast, you should add Ruby to your toolbox.\n ', '/images/ruby.jpg', 49.5, '2012-06-27 14:29:10', '2012-06-27 14:29:10')
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Web Design for Developers') LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `my_test_scaffolds` (`title`, `description`, `image_url`, `price`, `created_at`, `updated_at`) VALUES ('Web Design for Developers', '\nWeb Design for Developers will show you how to make your web-based application look professionally designed. We\'ll help you learn how to pick the right colors and fonts, avoid costly interface and accessibility mistakes - your application will really come alive. We\'ll also walk you through some common Photoshop and CSS techniques and work through a web site redesign, taking a new design from concept all the way to implementation\n ', '/images/wdfd.jpg', 42.95, '2012-06-27 14:29:10', '2012-06-27 14:29:10')
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mAREL (0.5ms)[0m  DELETE FROM `payment_types`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  describe `payment_types`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Check', '2012-06-27 14:29:10', '2012-06-27 14:29:10')[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Credit/Debet Card', '2012-06-27 14:29:10', '2012-06-27 14:29:10')
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Purchase', '2012-06-27 14:29:10', '2012-06-27 14:29:10')[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('PayPal', '2012-06-27 14:29:10', '2012-06-27 14:29:10')
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-06-27 10:31:36 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/my_store" for 127.0.0.1 at 2012-06-27 10:31:38 -0400
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.4ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 1)[0m
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (1.9ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (59.6ms)
+Completed 200 OK in 85ms (Views: 61.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 10:36:48 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.4ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (17.4ms)
+Completed 200 OK in 61ms (Views: 37.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/my_test_scaffolds/1/edit" for 127.0.0.1 at 2012-06-27 10:37:01 -0400
+  Processing by MyTestScaffoldsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered my_test_scaffolds/_form.html.erb (10.3ms)
+Rendered my_test_scaffolds/edit.html.erb within layouts/my_book_store (14.7ms)
+Completed 200 OK in 42ms (Views: 17.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 10:37:15 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.4ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (13.3ms)
+Completed 200 OK in 58ms (Views: 15.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/my_test_scaffolds/new" for 127.0.0.1 at 2012-06-27 10:37:16 -0400
+  Processing by MyTestScaffoldsController#new as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+Rendered my_test_scaffolds/_form.html.erb (8.3ms)
+Rendered my_test_scaffolds/new.html.erb within layouts/my_book_store (12.1ms)
+Completed 200 OK in 39ms (Views: 14.5ms | ActiveRecord: 0.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from handle at /Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:147)
+
+
+Started GET "/user_orders" for 127.0.0.1 at 2012-06-27 10:46:58 -0400
+  Processing by UserOrdersController#index as HTML
+  [1m[36mPaymentType Load (0.3ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mUserOrder Load (0.3ms)[0m  SELECT `user_orders`.* FROM `user_orders` ORDER BY created_at desc LIMIT 4 OFFSET 0
+Rendered user_orders/index.html.erb within layouts/my_book_store (4.3ms)
+Completed 200 OK in 48ms (Views: 6.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/auth_users" for 127.0.0.1 at 2012-06-27 10:47:02 -0400
+  Processing by AuthUsersController#index as HTML
+  [1m[36mAuthUser Load (0.4ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` ORDER BY user_name[0m
+Rendered auth_users/index.html.erb within layouts/my_book_store (11.8ms)
+Completed 200 OK in 25ms (Views: 13.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth_users/new" for 127.0.0.1 at 2012-06-27 10:47:07 -0400
+  Processing by AuthUsersController#new as HTML
+Rendered auth_users/_form.html.erb (6.0ms)
+Rendered auth_users/new.html.erb within layouts/my_book_store (10.2ms)
+Completed 200 OK in 43ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth_users" for 127.0.0.1 at 2012-06-27 10:48:09 -0400
+  Processing by AuthUsersController#index as HTML
+  [1m[35mAuthUser Load (0.4ms)[0m  SELECT `auth_users`.* FROM `auth_users` ORDER BY user_name
+Rendered auth_users/index.html.erb within layouts/my_book_store (11.4ms)
+Completed 200 OK in 22ms (Views: 12.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth_users/new" for 127.0.0.1 at 2012-06-27 10:48:19 -0400
+  Processing by AuthUsersController#new as HTML
+Rendered auth_users/_form.html.erb (24.9ms)
+Rendered auth_users/new.html.erb within layouts/my_book_store (28.7ms)
+Completed 200 OK in 42ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth_users" for 127.0.0.1 at 2012-06-27 10:48:21 -0400
+  Processing by AuthUsersController#index as HTML
+  [1m[36mAuthUser Load (0.4ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` ORDER BY user_name[0m
+Rendered auth_users/index.html.erb within layouts/my_book_store (11.4ms)
+Completed 200 OK in 23ms (Views: 12.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth_users/1/edit" for 127.0.0.1 at 2012-06-27 10:48:22 -0400
+  Processing by AuthUsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+Rendered auth_users/_form.html.erb (7.8ms)
+Rendered auth_users/edit.html.erb within layouts/my_book_store (12.1ms)
+Completed 200 OK in 58ms (Views: 45.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/auth_users" for 127.0.0.1 at 2012-06-27 10:48:44 -0400
+  Processing by AuthUsersController#index as HTML
+  [1m[35mAuthUser Load (0.4ms)[0m  SELECT `auth_users`.* FROM `auth_users` ORDER BY user_name
+Rendered auth_users/index.html.erb within layouts/my_book_store (11.5ms)
+Completed 200 OK in 22ms (Views: 13.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 10:48:47 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.4ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (23.1ms)
+Completed 200 OK in 72ms (Views: 25.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/my_test_scaffolds/new" for 127.0.0.1 at 2012-06-27 10:48:53 -0400
+  Processing by MyTestScaffoldsController#new as HTML
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+Rendered my_test_scaffolds/_form.html.erb (12.9ms)
+Rendered my_test_scaffolds/new.html.erb within layouts/my_book_store (16.9ms)
+Completed 200 OK in 63ms (Views: 37.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 10:50:00 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.4ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (12.3ms)
+Completed 200 OK in 38ms (Views: 14.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/my_test_scaffolds/2/edit" for 127.0.0.1 at 2012-06-27 10:50:02 -0400
+  Processing by MyTestScaffoldsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 2 ORDER BY title LIMIT 1[0m
+Rendered my_test_scaffolds/_form.html.erb (10.2ms)
+Rendered my_test_scaffolds/edit.html.erb within layouts/my_book_store (14.4ms)
+Completed 200 OK in 41ms (Views: 16.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/auth_users" for 127.0.0.1 at 2012-06-27 10:54:54 -0400
+  Processing by AuthUsersController#index as HTML
+  [1m[35mAuthUser Load (0.4ms)[0m  SELECT `auth_users`.* FROM `auth_users` ORDER BY user_name
+Rendered auth_users/index.html.erb within layouts/my_book_store (11.6ms)
+Completed 200 OK in 22ms (Views: 13.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth_users/new" for 127.0.0.1 at 2012-06-27 10:54:55 -0400
+  Processing by AuthUsersController#new as HTML
+ERROR: compiling _app_views_auth_users__form_html_erb__4512232575219115819_2172766220_2936664990980080355 RAISED /Users/msundukov/HelloWorldTests/app/views/auth_users/_form.html.erb:39: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/msundukov/HelloWorldTests/app/views/auth_users/_form.html.erb:41: syntax error, unexpected $end, expecting keyword_end
+Function body:           def _app_views_auth_users__form_html_erb__4512232575219115819_2172766220_2936664990980080355(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "auth_users/_form";_old_output_buffer = @output_buffer;form = local_assigns[:form];;@output_buffer = ActionView::OutputBuffer.new;if notice ;@output_buffer.safe_concat('<div id="notice">');@output_buffer.append= ( notice );@output_buffer.safe_concat('</div>'); end ;@output_buffer.safe_concat('
+');@output_buffer.append=  form_for(@auth_user) do |f| @output_buffer.safe_concat('
+');   if @auth_user.errors.any? 
+@output_buffer.safe_concat('    <div id="error_explanation">
+      <h2>');@output_buffer.append= ( pluralize(@auth_user.errors.count, "error") );@output_buffer.safe_concat(' prohibited this auth_user from being saved:</h2>
+
+      <ul>
+');@output_buffer.append_if_string=        @auth_user.errors.full_messages.each do |msg| 
+@output_buffer.safe_concat('        <li>');@output_buffer.append= ( msg );@output_buffer.safe_concat('</li>
+');       end 
+@output_buffer.safe_concat('      </ul>
+    </div>
+');   end 
+@output_buffer.safe_concat('
+  <fieldset>
+  <legend>Enter user details</legend>
+  <div>
+    ');@output_buffer.append= ( f.label :user_name, "Your Name: " );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.text_field :user_name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div>
+    ');@output_buffer.append= ( f.label :user_password, "Password: " );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.password_field :user_password );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div>
+    ');@output_buffer.append= ( f.label :user_password_confirmation, "Confirm password: " );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.password_field :user_password_confirmation );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div>
+');     if controller.action_name == 'new' 
+@output_buffer.safe_concat('      ');@output_buffer.append= ( f.submit "Create" );@output_buffer.safe_concat('
+');     if controller.action_name == 'edit' 
+@output_buffer.safe_concat('      ');@output_buffer.append= ( f.submit "Update" );@output_buffer.safe_concat('
+');     end 
+@output_buffer.safe_concat('  </div>
+  </fieldset>
+'); end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:333:in `render_partial'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:262:in `block in render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:260:in `render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:378:in `_render_partial'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:31:in `render'
+/Users/msundukov/HelloWorldTests/app/views/auth_users/new.html.erb:3:in `_app_views_auth_users_new_html_erb___366991049572565888_2172749420__4095548203274699329'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/template.rb:135:in `block in render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/msundukov/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:261:in `block in retrieve_response_from_mimes'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/Users/msundukov/HelloWorldTests/app/controllers/auth_users_controller.rb:31:in `new'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:436:in `_run__1390022724524886381__process_action__97270711944115598__callbacks'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.2.5/lib/rack/methodoverride.rb:24:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.2.5/lib/rack/sendfile.rb:106:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.2.5/lib/rack/runtime.rb:17:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.2.5/lib/rack/lock.rb:13:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.2.5/lib/rack/lock.rb:13:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:147:in `handle'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:99:in `rescue in block (2 levels) in start'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:96:in `block (2 levels) in start'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:86:in `each'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:86:in `block in start'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:66:in `loop'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:66:in `start'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:13:in `run'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/bin/nack_worker:4:in `<main>'
+Rendered auth_users/_form.html.erb (3.9ms)
+Rendered auth_users/new.html.erb within layouts/my_book_store (5.1ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (/Users/msundukov/HelloWorldTests/app/views/auth_users/_form.html.erb:39: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/msundukov/HelloWorldTests/app/views/auth_users/_form.html.erb:41: syntax error, unexpected $end, expecting keyword_end):
+    36:   </fieldset>
+    37: <% end %>
+  app/views/auth_users/new.html.erb:3:in `_app_views_auth_users_new_html_erb___366991049572565888_2172749420__4095548203274699329'
+  app/controllers/auth_users_controller.rb:31:in `new'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.5ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.3ms)
+
+
+Started GET "/auth_users/new" for 127.0.0.1 at 2012-06-27 10:55:10 -0400
+  Processing by AuthUsersController#new as HTML
+Rendered auth_users/_form.html.erb (5.9ms)
+Rendered auth_users/new.html.erb within layouts/my_book_store (9.8ms)
+Completed 200 OK in 43ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth_users" for 127.0.0.1 at 2012-06-27 10:55:13 -0400
+  Processing by AuthUsersController#index as HTML
+  [1m[36mAuthUser Load (0.4ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` ORDER BY user_name[0m
+Rendered auth_users/index.html.erb within layouts/my_book_store (11.4ms)
+Completed 200 OK in 22ms (Views: 12.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth_users/1/edit" for 127.0.0.1 at 2012-06-27 10:55:14 -0400
+  Processing by AuthUsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+Rendered auth_users/_form.html.erb (30.0ms)
+Rendered auth_users/edit.html.erb within layouts/my_book_store (34.0ms)
+Completed 200 OK in 48ms (Views: 35.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 10:55:30 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.4ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (12.1ms)
+Completed 200 OK in 37ms (Views: 14.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/my_test_scaffolds/1/edit" for 127.0.0.1 at 2012-06-27 10:55:32 -0400
+  Processing by MyTestScaffoldsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1
+Rendered my_test_scaffolds/_form.html.erb (10.6ms)
+Rendered my_test_scaffolds/edit.html.erb within layouts/my_book_store (14.9ms)
+Completed 200 OK in 62ms (Views: 16.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth_users" for 127.0.0.1 at 2012-06-27 10:57:07 -0400
+  Processing by AuthUsersController#index as HTML
+  [1m[36mAuthUser Load (0.4ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` ORDER BY user_name[0m
+Rendered auth_users/index.html.erb within layouts/my_book_store (10.9ms)
+Completed 200 OK in 21ms (Views: 12.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth_users/new" for 127.0.0.1 at 2012-06-27 10:57:08 -0400
+  Processing by AuthUsersController#new as HTML
+Rendered auth_users/_form.html.erb (6.1ms)
+Rendered auth_users/new.html.erb within layouts/my_book_store (10.0ms)
+Completed 200 OK in 24ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth_users" for 127.0.0.1 at 2012-06-27 10:57:09 -0400
+  Processing by AuthUsersController#index as HTML
+  [1m[35mAuthUser Load (0.4ms)[0m  SELECT `auth_users`.* FROM `auth_users` ORDER BY user_name
+Rendered auth_users/index.html.erb within layouts/my_book_store (10.4ms)
+Completed 200 OK in 21ms (Views: 11.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auth_users/1/edit" for 127.0.0.1 at 2012-06-27 10:57:10 -0400
+  Processing by AuthUsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+Rendered auth_users/_form.html.erb (8.4ms)
+Rendered auth_users/edit.html.erb within layouts/my_book_store (12.5ms)
+Completed 200 OK in 47ms (Views: 14.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auth_users" for 127.0.0.1 at 2012-06-27 10:57:13 -0400
+  Processing by AuthUsersController#index as HTML
+  [1m[35mAuthUser Load (0.8ms)[0m  SELECT `auth_users`.* FROM `auth_users` ORDER BY user_name
+Rendered auth_users/index.html.erb within layouts/my_book_store (12.6ms)
+Completed 200 OK in 23ms (Views: 13.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 11:06:05 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.4ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (13.4ms)
+Completed 200 OK in 60ms (Views: 15.6ms | ActiveRecord: 0.6ms)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateTexts (20110901134435)
+Migrating to CreateMyTestScaffolds (20110902131437)
+Migrating to AddPressisionAndScaleToPrice (20110902131948)
+Migrating to CreateShopCarts (20111119150136)
+Migrating to CreateShopItems (20111119154637)
+Migrating to AddQuantityToShopItem (20111231184853)
+Migrating to GroupShopItemsInShopCarts (20120102184706)
+Migrating to AddUserOrderIdToShopItem (20120114204148)
+Migrating to CreateUserOrders (20120114204430)
+Migrating to CreatePaymentTypes (20120206052729)
+Migrating to CreateAuthUsers (20120510132500)
+Migrating to AddAttachmentImageToMyTestScaffolds (20120627154300)
+DEPRECATION WARNING: Method `t.has_attached_file` in the migration has been deprecated and will be replaced by `t.attachment`. (called from block in up at /Users/msundukov/HelloWorldTests/db/migrate/20120627154300_add_attachment_image_to_my_test_scaffolds.rb:4)
+  [1m[35mSQL (121.2ms)[0m  ALTER TABLE `my_test_scaffolds` ADD `image_file_name` varchar(255)
+  [1m[36mSQL (190.3ms)[0m  [1mALTER TABLE `my_test_scaffolds` ADD `image_content_type` varchar(255)[0m
+  [1m[35mSQL (99.9ms)[0m  ALTER TABLE `my_test_scaffolds` ADD `image_file_size` int(11)
+  [1m[36mSQL (101.1ms)[0m  [1mALTER TABLE `my_test_scaffolds` ADD `image_updated_at` datetime[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120627154300')
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.9ms)[0m  describe `auth_users`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `auth_users`[0m
+  [1m[35mSQL (1.5ms)[0m  describe `my_test_scaffolds`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `my_test_scaffolds`[0m
+  [1m[35mSQL (1.6ms)[0m  describe `payment_types`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `payment_types`[0m
+  [1m[35mSQL (1.7ms)[0m  describe `shop_carts`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `shop_carts`[0m
+  [1m[35mSQL (1.7ms)[0m  describe `shop_items`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `shop_items`[0m
+  [1m[35mSQL (1.9ms)[0m  describe `texts`
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `texts`[0m
+  [1m[35mSQL (1.6ms)[0m  describe `user_orders`
+  [1m[36mSQL (0.2ms)[0m  [1mSHOW KEYS FROM `user_orders`[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from handle at /Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:147)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 13:45:04 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (46.6ms)
+Completed 200 OK in 84ms (Views: 48.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/my_test_scaffolds/new" for 127.0.0.1 at 2012-06-27 13:45:09 -0400
+  Processing by MyTestScaffoldsController#new as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+Rendered my_test_scaffolds/_form.html.erb (36.2ms)
+Rendered my_test_scaffolds/new.html.erb within layouts/my_book_store (40.3ms)
+Completed 200 OK in 70ms (Views: 42.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 13:47:24 -0400
+  Processing by MyTestScaffoldsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZSjWkfrc0r8BO+oF+mndjs4l69CYLUDH5Eu7SNvu8mE=", "my_test_scaffold"=>{"title"=>"The Awakened: Book Two", "description"=>"Returning to his home city of Bastul, Kael finds the Southern Territory of the Orudan Empire under invasion. As he races to unravel the secrecy of the enemy’s identity, he becomes entangled in a brutal conspiracy to gain control of the government. ", "image_url"=>"asd.jpg", "image"=>"awake.jpg", "price"=>"2.99"}, "commit"=>"Create My test scaffold"}
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 34ms
+
+Paperclip::AdapterRegistry::NoHandlerError (No handler found for "awake.jpg"):
+  app/controllers/my_test_scaffolds_controller.rb:46:in `new'
+  app/controllers/my_test_scaffolds_controller.rb:46:in `create'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.8ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 13:48:49 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (15.3ms)
+Completed 200 OK in 43ms (Views: 17.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/my_test_scaffolds/new" for 127.0.0.1 at 2012-06-27 13:48:51 -0400
+  Processing by MyTestScaffoldsController#new as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+ERROR: compiling _app_views_my_test_scaffolds__form_html_erb__4276080685085925533_2155851140__3958913265607826753 RAISED /Users/msundukov/HelloWorldTests/app/views/my_test_scaffolds/_form.html.erb:1: syntax error, unexpected tASSOC, expecting keyword_end
+...or(@my_test_scaffold), :html => {:multipart => true} do |f| ...
+...                               ^
+/Users/msundukov/HelloWorldTests/app/views/my_test_scaffolds/_form.html.erb:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+...html => {:multipart => true} do |f| @output_buffer.safe_conc...
+...                               ^
+/Users/msundukov/HelloWorldTests/app/views/my_test_scaffolds/_form.html.erb:39: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _app_views_my_test_scaffolds__form_html_erb__4276080685085925533_2155851140__3958913265607826753(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "my_test_scaffolds/_form";_old_output_buffer = @output_buffer;form = local_assigns[:form];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append=  form_for(@my_test_scaffold), :html => {:multipart => true} do |f| @output_buffer.safe_concat('
+');   if @my_test_scaffold.errors.any? 
+@output_buffer.safe_concat('    <div id="error_explanation">
+      <h2>');@output_buffer.append= ( pluralize(@my_test_scaffold.errors.count, "error") );@output_buffer.safe_concat(' prohibited this my_test_scaffold from being saved:</h2>
+
+      <ul>
+');@output_buffer.append_if_string=        @my_test_scaffold.errors.full_messages.each do |msg| 
+@output_buffer.safe_concat('        <li>');@output_buffer.append= ( msg );@output_buffer.safe_concat('</li>
+');       end 
+@output_buffer.safe_concat('      </ul>
+    </div>
+');   end 
+@output_buffer.safe_concat('
+  <div class="field">
+    ');@output_buffer.append= ( f.label :title );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :title );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :description );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_area :description, :rows => 6 );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :image_url );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :image_url );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :image );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.file_field :image );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :price );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :price );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+'); end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:333:in `render_partial'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:262:in `block in render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:260:in `render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/render/partials.rb:378:in `_render_partial'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:31:in `render'
+/Users/msundukov/HelloWorldTests/app/views/my_test_scaffolds/new.html.erb:3:in `_app_views_my_test_scaffolds_new_html_erb__1562320180291212479_2154387640__2520125538181809312'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/template.rb:135:in `block in render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:59:in `block in _render_template'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/msundukov/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:261:in `block in retrieve_response_from_mimes'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/Users/msundukov/HelloWorldTests/app/controllers/my_test_scaffolds_controller.rb:32:in `new'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:441:in `_run__39391228198066043__process_action__3977823858015994694__callbacks'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.2.5/lib/rack/methodoverride.rb:24:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.2.5/lib/rack/sendfile.rb:106:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.2.5/lib/rack/runtime.rb:17:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.2.5/lib/rack/lock.rb:13:in `block in call'
+<internal:prelude>:10:in `synchronize'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.2.5/lib/rack/lock.rb:13:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:147:in `handle'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:99:in `rescue in block (2 levels) in start'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:96:in `block (2 levels) in start'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:86:in `each'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:86:in `block in start'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:66:in `loop'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:66:in `start'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:13:in `run'
+/Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/bin/nack_worker:4:in `<main>'
+Rendered my_test_scaffolds/_form.html.erb (4.4ms)
+Rendered my_test_scaffolds/new.html.erb within layouts/my_book_store (5.5ms)
+Completed 500 Internal Server Error in 33ms
+
+ActionView::Template::Error (/Users/msundukov/HelloWorldTests/app/views/my_test_scaffolds/_form.html.erb:1: syntax error, unexpected tASSOC, expecting keyword_end
+...or(@my_test_scaffold), :html => {:multipart => true} do |f| ...
+...                               ^
+/Users/msundukov/HelloWorldTests/app/views/my_test_scaffolds/_form.html.erb:1: syntax error, unexpected keyword_do_block, expecting keyword_end
+...html => {:multipart => true} do |f| @output_buffer.safe_conc...
+...                               ^
+/Users/msundukov/HelloWorldTests/app/views/my_test_scaffolds/_form.html.erb:39: syntax error, unexpected keyword_ensure, expecting $end):
+    1: <%= form_for(@my_test_scaffold), :html => {:multipart => true} do |f| %>
+    2:   <% if @my_test_scaffold.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@my_test_scaffold.errors.count, "error") %> prohibited this my_test_scaffold from being saved:</h2>
+  app/views/my_test_scaffolds/new.html.erb:3:in `_app_views_my_test_scaffolds_new_html_erb__1562320180291212479_2154387640__2520125538181809312'
+  app/controllers/my_test_scaffolds_controller.rb:32:in `new'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.3ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from handle at /Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:147)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 13:51:13 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (27.1ms)
+Completed 200 OK in 84ms (Views: 29.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/my_test_scaffolds/new" for 127.0.0.1 at 2012-06-27 13:51:15 -0400
+  Processing by MyTestScaffoldsController#new as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+Rendered my_test_scaffolds/_form.html.erb (16.2ms)
+Rendered my_test_scaffolds/new.html.erb within layouts/my_book_store (20.3ms)
+Completed 200 OK in 68ms (Views: 22.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 13:51:51 -0400
+  Processing by MyTestScaffoldsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZSjWkfrc0r8BO+oF+mndjs4l69CYLUDH5Eu7SNvu8mE=", "my_test_scaffold"=>{"title"=>"The Awakened: Book Two", "description"=>"Returning to his home city of Bastul, Kael finds the Southern Territory of the Orudan Empire under invasion. As he races to unravel the secrecy of the enemy’s identity, he becomes entangled in a brutal conspiracy to gain control of the government. ", "image_url"=>"asd.jpg", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000104d2a230 @original_filename="awake.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"my_test_scaffold[image]\"; filename=\"awake.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/sf/sfib8JMnHTaZ2jOpxJV1sU+++TM/-Tmp-/RackMultipart20120627-16494-1ml987f>>, "price"=>"2.99"}, "commit"=>"Create My test scaffold"}
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'The Awakened: Book Two') LIMIT 1[0m
+  [1m[35mSQL (1.7ms)[0m  describe `my_test_scaffolds`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `my_test_scaffolds` (`title`, `description`, `image_url`, `price`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`) VALUES ('The Awakened: Book Two', 'Returning to his home city of Bastul, Kael finds the Southern Territory of the Orudan Empire under invasion. As he races to unravel the secrecy of the enemy’s identity, he becomes entangled in a brutal conspiracy to gain control of the government. ', 'asd.jpg', 2.99, '2012-06-27 17:51:51', '2012-06-27 17:51:51', 'awake.jpg', 'image/jpeg', 17923, '2012-06-27 17:51:51')[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.7ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 86ms
+
+Errno::EEXIST (File exists - /Users/msundukov/HelloWorldTests/public/system):
+  app/controllers/my_test_scaffolds_controller.rb:49:in `block in create'
+  app/controllers/my_test_scaffolds_controller.rb:48:in `create'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.9ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.4ms)
+
+
+Started POST "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 13:55:15 -0400
+  Processing by MyTestScaffoldsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZSjWkfrc0r8BO+oF+mndjs4l69CYLUDH5Eu7SNvu8mE=", "my_test_scaffold"=>{"title"=>"The Awakened: Book Two", "description"=>"Returning to his home city of Bastul, Kael finds the Southern Territory of the Orudan Empire under invasion. As he races to unravel the secrecy of the enemy’s identity, he becomes entangled in a brutal conspiracy to gain control of the government. ", "image_url"=>"asd.jpg", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000104583ea0 @original_filename="awake.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"my_test_scaffold[image]\"; filename=\"awake.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/sf/sfib8JMnHTaZ2jOpxJV1sU+++TM/-Tmp-/RackMultipart20120627-16494-i1jfhs>>, "price"=>"2.99"}, "commit"=>"Create My test scaffold"}
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'The Awakened: Book Two') LIMIT 1[0m
+  [1m[35mSQL (1.6ms)[0m  describe `my_test_scaffolds`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `my_test_scaffolds` (`title`, `description`, `image_url`, `price`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`) VALUES ('The Awakened: Book Two', 'Returning to his home city of Bastul, Kael finds the Southern Territory of the Orudan Empire under invasion. As he races to unravel the secrecy of the enemy’s identity, he becomes entangled in a brutal conspiracy to gain control of the government. ', 'asd.jpg', 2.99, '2012-06-27 17:55:15', '2012-06-27 17:55:15', 'awake.jpg', 'image/jpeg', 17923, '2012-06-27 17:55:15')[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+Redirected to http://helloworldtests.dev/my_test_scaffolds/4
+Completed 302 Found in 68ms
+
+
+Started GET "/my_test_scaffolds/4" for 127.0.0.1 at 2012-06-27 13:55:15 -0400
+  Processing by MyTestScaffoldsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 4 ORDER BY title LIMIT 1
+Rendered my_test_scaffolds/show.html.erb within layouts/my_book_store (34.9ms)
+Completed 200 OK in 66ms (Views: 37.1ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 13:55:32 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (16.7ms)
+Completed 200 OK in 44ms (Views: 18.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images/asd.jpg" for 127.0.0.1 at 2012-06-27 13:55:32 -0400
+
+ActionController::RoutingError (No route matches "/images/asd.jpg"):
+  
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/my_store" for 127.0.0.1 at 2012-06-27 14:00:13 -0400
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.4ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 1)[0m
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (1.8ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (42.0ms)
+Completed 200 OK in 91ms (Views: 43.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2012-06-27 14:00:13 -0400
+
+ActionController::RoutingError (No route matches "/images/original/missing.png"):
+  
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from handle at /Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:147)
+
+
+Started GET "/images/asd.jpg" for 127.0.0.1 at 2012-06-27 14:00:15 -0400
+
+ActionController::RoutingError (No route matches "/images/asd.jpg"):
+  
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 14:09:05 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (18.6ms)
+Completed 200 OK in 46ms (Views: 20.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2012-06-27 14:09:05 -0400
+
+
+Started GET "/images/asd.jpg" for 127.0.0.1 at 2012-06-27 14:09:05 -0400
+
+ActionController::RoutingError (No route matches "/images/original/missing.png"):
+  
+
+
+ActionController::RoutingError (No route matches "/images/asd.jpg"):
+  
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/my_test_scaffolds/1/edit" for 127.0.0.1 at 2012-06-27 14:09:08 -0400
+  Processing by MyTestScaffoldsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered my_test_scaffolds/_form.html.erb (14.1ms)
+Rendered my_test_scaffolds/edit.html.erb within layouts/my_book_store (18.4ms)
+Completed 200 OK in 71ms (Views: 20.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/my_test_scaffolds/1" for 127.0.0.1 at 2012-06-27 14:10:01 -0400
+  Processing by MyTestScaffoldsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZSjWkfrc0r8BO+oF+mndjs4l69CYLUDH5Eu7SNvu8mE=", "my_test_scaffold"=>{"title"=>"Programming Ruby 1.9", "description"=>"Ruby is the fastest growing and most exciting dynamic language out there. If you need to get working programs delivered fast, you should add Ruby to your toolbox.\r\n ", "image_url"=>"/images/ruby.jpg", "image"=>#<ActionDispatch::Http::UploadedFile:0x000001037942e0 @original_filename="ruby.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"my_test_scaffold[image]\"; filename=\"ruby.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/sf/sfib8JMnHTaZ2jOpxJV1sU+++TM/-Tmp-/RackMultipart20120627-16494-s4veel>>, "price"=>"49.5"}, "commit"=>"Update My test scaffold", "id"=>"1"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Programming Ruby 1.9') AND (`my_test_scaffolds`.id <> 1) LIMIT 1[0m
+  [1m[35mAREL (1.4ms)[0m  UPDATE `my_test_scaffolds` SET `description` = 'Ruby is the fastest growing and most exciting dynamic language out there. If you need to get working programs delivered fast, you should add Ruby to your toolbox.\r\n ', `image_file_name` = 'ruby.jpg', `image_content_type` = 'image/jpeg', `image_file_size` = 8300, `image_updated_at` = '2012-06-27 18:10:01', `updated_at` = '2012-06-27 18:10:01' WHERE `my_test_scaffolds`.`id` = 1
+[paperclip] Saving attachments.
+  [1m[36mSQL (10.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://helloworldtests.dev/my_test_scaffolds/1
+Completed 302 Found in 79ms
+
+
+Started GET "/my_test_scaffolds/1" for 127.0.0.1 at 2012-06-27 14:10:01 -0400
+  Processing by MyTestScaffoldsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered my_test_scaffolds/show.html.erb within layouts/my_book_store (13.3ms)
+Completed 200 OK in 252ms (Views: 15.3ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 14:10:03 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.6ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.4ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (18.4ms)
+Completed 200 OK in 279ms (Views: 20.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/asd.jpg" for 127.0.0.1 at 2012-06-27 14:10:03 -0400
+
+ActionController::RoutingError (No route matches "/images/asd.jpg"):
+  
+
+
+
+Started GET "/images/original/missing.png" for 127.0.0.1 at 2012-06-27 14:10:03 -0400
+
+ActionController::RoutingError (No route matches "/images/original/missing.png"):
+  
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/my_test_scaffolds/2/edit" for 127.0.0.1 at 2012-06-27 14:10:18 -0400
+  Processing by MyTestScaffoldsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 2 ORDER BY title LIMIT 1[0m
+Rendered my_test_scaffolds/_form.html.erb (15.0ms)
+Rendered my_test_scaffolds/edit.html.erb within layouts/my_book_store (19.3ms)
+Completed 200 OK in 71ms (Views: 21.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/my_test_scaffolds/2" for 127.0.0.1 at 2012-06-27 14:10:26 -0400
+  Processing by MyTestScaffoldsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZSjWkfrc0r8BO+oF+mndjs4l69CYLUDH5Eu7SNvu8mE=", "my_test_scaffold"=>{"title"=>"Web Design for Developers", "description"=>"Web Design for Developers will show you how to make your web-based application look professionally designed. We'll help you learn how to pick the right colors and fonts, avoid costly interface and accessibility mistakes - your application will really come alive. We'll also walk you through some common Photoshop and CSS techniques and work through a web site redesign, taking a new design from concept all the way to implementation\r\n ", "image_url"=>"/images/wdfd.jpg", "image"=>#<ActionDispatch::Http::UploadedFile:0x0000010371c6a0 @original_filename="wdfd.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"my_test_scaffold[image]\"; filename=\"wdfd.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/sf/sfib8JMnHTaZ2jOpxJV1sU+++TM/-Tmp-/RackMultipart20120627-16494-zxbkkm>>, "price"=>"42.95"}, "commit"=>"Update My test scaffold", "id"=>"2"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 2 ORDER BY title LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Web Design for Developers') AND (`my_test_scaffolds`.id <> 2) LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE `my_test_scaffolds` SET `description` = 'Web Design for Developers will show you how to make your web-based application look professionally designed. We\'ll help you learn how to pick the right colors and fonts, avoid costly interface and accessibility mistakes - your application will really come alive. We\'ll also walk you through some common Photoshop and CSS techniques and work through a web site redesign, taking a new design from concept all the way to implementation\r\n ', `image_file_name` = 'wdfd.jpg', `image_content_type` = 'image/jpeg', `image_file_size` = 6688, `image_updated_at` = '2012-06-27 18:10:26', `updated_at` = '2012-06-27 18:10:26' WHERE `my_test_scaffolds`.`id` = 2
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://helloworldtests.dev/my_test_scaffolds/2
+Completed 302 Found in 70ms
+
+
+Started GET "/my_test_scaffolds/2" for 127.0.0.1 at 2012-06-27 14:10:26 -0400
+  Processing by MyTestScaffoldsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 2 ORDER BY title LIMIT 1[0m
+Rendered my_test_scaffolds/show.html.erb within layouts/my_book_store (12.9ms)
+Completed 200 OK in 41ms (Views: 14.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 14:10:27 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (18.7ms)
+Completed 200 OK in 66ms (Views: 20.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images/asd.jpg" for 127.0.0.1 at 2012-06-27 14:10:28 -0400
+
+ActionController::RoutingError (No route matches "/images/asd.jpg"):
+  
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/my_store" for 127.0.0.1 at 2012-06-27 14:10:29 -0400
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+  [1m[36mShopCart Load (0.2ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 1)
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (1.8ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (62.1ms)
+Completed 200 OK in 89ms (Views: 63.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images/asd.jpg" for 127.0.0.1 at 2012-06-27 14:10:29 -0400
+
+ActionController::RoutingError (No route matches "/images/asd.jpg"):
+  
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/my_store" for 127.0.0.1 at 2012-06-27 14:11:33 -0400
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 1)[0m
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (1.7ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (60.2ms)
+Completed 200 OK in 87ms (Views: 61.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 14:11:35 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (39.3ms)
+Completed 200 OK in 65ms (Views: 41.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/my_test_scaffolds/1/edit" for 127.0.0.1 at 2012-06-27 14:11:37 -0400
+  Processing by MyTestScaffoldsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 1 ORDER BY title LIMIT 1[0m
+Rendered my_test_scaffolds/_form.html.erb (13.0ms)
+Rendered my_test_scaffolds/edit.html.erb within layouts/my_book_store (17.1ms)
+Completed 200 OK in 45ms (Views: 19.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 14:11:39 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (18.2ms)
+Completed 200 OK in 44ms (Views: 20.1ms | ActiveRecord: 0.5ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateTexts (20110901134435)
+Migrating to CreateMyTestScaffolds (20110902131437)
+Migrating to AddPressisionAndScaleToPrice (20110902131948)
+Migrating to CreateShopCarts (20111119150136)
+Migrating to CreateShopItems (20111119154637)
+Migrating to AddQuantityToShopItem (20111231184853)
+Migrating to GroupShopItemsInShopCarts (20120102184706)
+Migrating to AddUserOrderIdToShopItem (20120114204148)
+Migrating to CreateUserOrders (20120114204430)
+Migrating to CreatePaymentTypes (20120206052729)
+Migrating to CreateAuthUsers (20120510132500)
+Migrating to AddAttachmentImageToMyTestScaffolds (20120627154300)
+Migrating to RemoveImageUrlFromMts (20120627181300)
+  [1m[35mSQL (107.9ms)[0m  ALTER TABLE `my_test_scaffolds` DROP `image_url`
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120627181300')[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `auth_users`
+  [1m[36mSQL (2.1ms)[0m  [1mdescribe `my_test_scaffolds`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `my_test_scaffolds`
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `payment_types`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `payment_types`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `shop_carts`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `shop_carts`
+  [1m[36mSQL (1.7ms)[0m  [1mdescribe `shop_items`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `shop_items`
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `texts`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `texts`
+  [1m[36mSQL (1.8ms)[0m  [1mdescribe `user_orders`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `user_orders`
+
+
+Started GET "/my_test_scaffolds/new" for 127.0.0.1 at 2012-06-27 14:17:20 -0400
+  Processing by MyTestScaffoldsController#new as HTML
+  [1m[35mAuthUser Load (0.4ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+Rendered my_test_scaffolds/_form.html.erb (10.3ms)
+Rendered my_test_scaffolds/new.html.erb within layouts/my_book_store (14.3ms)
+Completed 200 OK in 296ms (Views: 16.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 14:18:14 -0400
+  Processing by MyTestScaffoldsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZSjWkfrc0r8BO+oF+mndjs4l69CYLUDH5Eu7SNvu8mE=", "my_test_scaffold"=>{"title"=>"Fifty Shades of Grey: Book One of the Fifty Shades Trilogy", "description"=>"When literature student Anastasia Steele goes to interview young entrepreneur Christian Grey, she encounters a man who is beautiful, brilliant, and intimidating. The unworldly, innocent Ana is startled to realize she wants this man and, despite his enigmatic reserve, finds she is desperate to get close to him. Unable to resist Ana’s quiet beauty, wit, and independent spirit, Grey admits he wants her, too—but on his own terms.", "image"=>#<ActionDispatch::Http::UploadedFile:0x000001037933b8 @original_filename="grey.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"my_test_scaffold[image]\"; filename=\"grey.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/sf/sfib8JMnHTaZ2jOpxJV1sU+++TM/-Tmp-/RackMultipart20120627-16494-189mogk>>, "price"=>"9.99"}, "commit"=>"Create My test scaffold"}
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mROLLBACK[0m
+Completed 500 Internal Server Error in 35ms
+
+NoMethodError (undefined method `image_url' for #<MyTestScaffold:0x000001047c1348>):
+  app/controllers/my_test_scaffolds_controller.rb:49:in `block in create'
+  app/controllers/my_test_scaffolds_controller.rb:48:in `create'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.9ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.1ms)
+
+
+Started POST "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 14:20:38 -0400
+  Processing by MyTestScaffoldsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZSjWkfrc0r8BO+oF+mndjs4l69CYLUDH5Eu7SNvu8mE=", "my_test_scaffold"=>{"title"=>"Fifty Shades of Grey: Book One of the Fifty Shades Trilogy", "description"=>"When literature student Anastasia Steele goes to interview young entrepreneur Christian Grey, she encounters a man who is beautiful, brilliant, and intimidating. The unworldly, innocent Ana is startled to realize she wants this man and, despite his enigmatic reserve, finds she is desperate to get close to him. Unable to resist Ana’s quiet beauty, wit, and independent spirit, Grey admits he wants her, too—but on his own terms.", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000103317e88 @original_filename="grey.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"my_test_scaffold[image]\"; filename=\"grey.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/sf/sfib8JMnHTaZ2jOpxJV1sU+++TM/-Tmp-/RackMultipart20120627-16494-1l93kww>>, "price"=>"9.99"}, "commit"=>"Create My test scaffold"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 35ms
+
+NoMethodError (undefined method `image_url' for #<MyTestScaffold:0x00000104d2a9d8>):
+  app/controllers/my_test_scaffolds_controller.rb:49:in `block in create'
+  app/controllers/my_test_scaffolds_controller.rb:48:in `create'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (26.0ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.0ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 14:21:53 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.4ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (17.5ms)
+Completed 200 OK in 44ms (Views: 19.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/my_test_scaffolds/new" for 127.0.0.1 at 2012-06-27 14:21:54 -0400
+  Processing by MyTestScaffoldsController#new as HTML
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+Rendered my_test_scaffolds/_form.html.erb (10.1ms)
+Rendered my_test_scaffolds/new.html.erb within layouts/my_book_store (13.8ms)
+Completed 200 OK in 63ms (Views: 15.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 14:22:20 -0400
+  Processing by MyTestScaffoldsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZSjWkfrc0r8BO+oF+mndjs4l69CYLUDH5Eu7SNvu8mE=", "my_test_scaffold"=>{"title"=>"Fifty Shades of Grey: Book One of the Fifty Shades Trilogy", "description"=>"When literature student Anastasia Steele goes to interview young entrepreneur Christian Grey, she encounters a man who is beautiful, brilliant, and intimidating. The unworldly, innocent Ana is startled to realize she wants this man and, despite his enigmatic reserve, finds she is desperate to get close to him. Unable to resist Ana’s quiet beauty, wit, and independent spirit, Grey admits he wants her, too—but on his own terms.", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000104da9210 @original_filename="grey.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"my_test_scaffold[image]\"; filename=\"grey.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/sf/sfib8JMnHTaZ2jOpxJV1sU+++TM/-Tmp-/RackMultipart20120627-16494-1m2k257>>, "price"=>"9.99"}, "commit"=>"Create My test scaffold"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 57ms
+
+NoMethodError (undefined method `image_url' for #<MyTestScaffold:0x000001012041b0>):
+  app/controllers/my_test_scaffolds_controller.rb:49:in `block in create'
+  app/controllers/my_test_scaffolds_controller.rb:48:in `create'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.7ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.7ms)
+
+
+Started POST "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 14:22:45 -0400
+  Processing by MyTestScaffoldsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZSjWkfrc0r8BO+oF+mndjs4l69CYLUDH5Eu7SNvu8mE=", "my_test_scaffold"=>{"title"=>"Fifty Shades of Grey: Book One of the Fifty Shades Trilogy", "description"=>"When literature student Anastasia Steele goes to interview young entrepreneur Christian Grey, she encounters a man who is beautiful, brilliant, and intimidating. The unworldly, innocent Ana is startled to realize she wants this man and, despite his enigmatic reserve, finds she is desperate to get close to him. Unable to resist Ana’s quiet beauty, wit, and independent spirit, Grey admits he wants her, too—but on his own terms.", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000104ca2e70 @original_filename="grey.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"my_test_scaffold[image]\"; filename=\"grey.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/sf/sfib8JMnHTaZ2jOpxJV1sU+++TM/-Tmp-/RackMultipart20120627-16494-w4hs5h>>, "price"=>"9.99"}, "commit"=>"Create My test scaffold"}
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Fifty Shades of Grey: Book One of the Fifty Shades Trilogy') LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  describe `my_test_scaffolds`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `my_test_scaffolds` (`title`, `description`, `price`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`) VALUES ('Fifty Shades of Grey: Book One of the Fifty Shades Trilogy', 'When literature student Anastasia Steele goes to interview young entrepreneur Christian Grey, she encounters a man who is beautiful, brilliant, and intimidating. The unworldly, innocent Ana is startled to realize she wants this man and, despite his enigmatic reserve, finds she is desperate to get close to him. Unable to resist Ana’s quiet beauty, wit, and independent spirit, Grey admits he wants her, too—but on his own terms.', 9.99, '2012-06-27 18:22:45', '2012-06-27 18:22:45', 'grey.jpg', 'image/jpeg', 17747, '2012-06-27 18:22:45')[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+Redirected to http://helloworldtests.dev/my_test_scaffolds/5
+Completed 302 Found in 69ms
+
+
+Started GET "/my_test_scaffolds/5" for 127.0.0.1 at 2012-06-27 14:22:45 -0400
+  Processing by MyTestScaffoldsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 5 ORDER BY title LIMIT 1
+Rendered my_test_scaffolds/show.html.erb within layouts/my_book_store (12.4ms)
+Completed 500 Internal Server Error in 41ms
+
+ActionView::Template::Error (undefined method `image_url' for #<MyTestScaffold:0x00000100bdb5b8>):
+    12: 
+    13: <p>
+    14:   <b>Image url:</b>
+    15:   <%= @my_test_scaffold.image_url %>
+    16: </p>
+    17: 
+    18: <p>
+  app/views/my_test_scaffolds/show.html.erb:15:in `_app_views_my_test_scaffolds_show_html_erb__3372712721543639981_2185769320_1249116660523309415'
+  app/controllers/my_test_scaffolds_controller.rb:21:in `show'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (25.0ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (29.4ms)
+
+
+Started GET "/my_test_scaffolds/5" for 127.0.0.1 at 2012-06-27 14:23:06 -0400
+  Processing by MyTestScaffoldsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 5 ORDER BY title LIMIT 1
+Rendered my_test_scaffolds/show.html.erb within layouts/my_book_store (12.1ms)
+Completed 200 OK in 41ms (Views: 13.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/my_test_scaffolds/5" for 127.0.0.1 at 2012-06-27 14:23:19 -0400
+  Processing by MyTestScaffoldsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 5 ORDER BY title LIMIT 1
+Rendered my_test_scaffolds/show.html.erb within layouts/my_book_store (13.1ms)
+Completed 200 OK in 65ms (Views: 15.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/my_test_scaffolds/5" for 127.0.0.1 at 2012-06-27 14:23:32 -0400
+  Processing by MyTestScaffoldsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 5 ORDER BY title LIMIT 1
+Rendered my_test_scaffolds/show.html.erb within layouts/my_book_store (35.7ms)
+Completed 200 OK in 64ms (Views: 37.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 14:23:38 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[36mAuthUser Load (0.2ms)[0m  [1mSELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1[0m
+  [1m[35mMyTestScaffold Load (0.4ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (19.4ms)
+Completed 200 OK in 46ms (Views: 21.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/my_store" for 127.0.0.1 at 2012-06-27 14:23:44 -0400
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 1)[0m
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (1.7ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (37.8ms)
+Completed 200 OK in 86ms (Views: 39.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/shop_items?my_test_scaffold_id=5" for 127.0.0.1 at 2012-06-27 14:23:51 -0400
+  Processing by ShopItemsController#create as JS
+  Parameters: {"authenticity_token"=>"ZSjWkfrc0r8BO+oF+mndjs4l69CYLUDH5Eu7SNvu8mE=", "_"=>"", "my_test_scaffold_id"=>"5"}
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mShopItem Load (0.1ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 5 AND (`shop_items`.shop_cart_id = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  describe `shop_items`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `shop_items` (`my_test_scaffold_id`, `shop_cart_id`, `quantity`, `created_at`, `updated_at`, `user_order_id`) VALUES (5, 1, 1, '2012-06-27 18:23:52', '2012-06-27 18:23:52', NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  COMMIT
+  [1m[36mShopItem Load (0.2ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 1)[0m
+  [1m[35mMyTestScaffold Load (0.2ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 5 ORDER BY title LIMIT 1
+Rendered shop_items/_shop_item.html.erb (6.4ms)
+Rendered shop_carts/_shop_cart.html.erb (10.3ms)
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT SUM(`shop_items`.`quantity`) AS sum_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 1)[0m
+Rendered shop_items/create.js.rjs (12.8ms)
+Completed 200 OK in 104ms (Views: 18.4ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/shop_items?my_test_scaffold_id=5" for 127.0.0.1 at 2012-06-27 14:23:53 -0400
+  Processing by ShopItemsController#create as JS
+  Parameters: {"authenticity_token"=>"ZSjWkfrc0r8BO+oF+mndjs4l69CYLUDH5Eu7SNvu8mE=", "_"=>"", "my_test_scaffold_id"=>"5"}
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 5 ORDER BY title LIMIT 1[0m
+  [1m[35mShopItem Load (0.2ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE `shop_items`.`my_test_scaffold_id` = 5 AND (`shop_items`.shop_cart_id = 1) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE `shop_items` SET `quantity` = 2, `updated_at` = '2012-06-27 18:23:53' WHERE `shop_items`.`id` = 1
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mShopItem Load (0.2ms)[0m  SELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 1)
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 5 ORDER BY title LIMIT 1[0m
+Rendered shop_items/_shop_item.html.erb (6.5ms)
+Rendered shop_carts/_shop_cart.html.erb (9.4ms)
+  [1m[35mSQL (0.2ms)[0m  SELECT SUM(`shop_items`.`quantity`) AS sum_id FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 1)
+Rendered shop_items/create.js.rjs (11.6ms)
+Completed 200 OK in 99ms (Views: 16.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/shop_carts/1" for 127.0.0.1 at 2012-06-27 14:23:57 -0400
+  Processing by ShopCartsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZSjWkfrc0r8BO+oF+mndjs4l69CYLUDH5Eu7SNvu8mE=", "id"=>"1"}
+  [1m[36mShopCart Load (0.2ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mShopItem Load (0.2ms)[0m  [1mSELECT `shop_items`.* FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 1)[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM `shop_items` WHERE `shop_items`.`id` = 1
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM `shop_carts` WHERE `shop_carts`.`id` = 1[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+Redirected to http://helloworldtests.dev/my_store
+Completed 302 Found in 62ms
+
+
+Started GET "/my_store" for 127.0.0.1 at 2012-06-27 14:23:57 -0400
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `shop_carts`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `shop_carts` (`created_at`, `updated_at`) VALUES ('2012-06-27 18:23:57', '2012-06-27 18:23:57')
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 2)
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (1.7ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (58.1ms)
+Completed 200 OK in 89ms (Views: 59.8ms | ActiveRecord: 3.2ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mAREL (0.5ms)[0m  DELETE FROM `my_test_scaffolds`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Programming Ruby 1.9') LIMIT 1
+  [1m[36mSQL (2.6ms)[0m  [1mdescribe `my_test_scaffolds`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `my_test_scaffolds` (`title`, `description`, `price`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`) VALUES ('Programming Ruby 1.9', '\nRuby is the fastest growing and most exciting dynamic language out there. If you need to get working programs delivered fast, you should add Ruby to your toolbox.\n ', 49.5, '2012-06-27 18:32:14', '2012-06-27 18:32:14', 'ruby.jpg', 'image/jpeg', 8300, '2012-06-27 18:10:01')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Web Design for Developers') LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `my_test_scaffolds` (`title`, `description`, `price`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`) VALUES ('Web Design for Developers', '\nWeb Design for Developers will show you how to make your web-based application look professionally designed. We\'ll help you learn how to pick the right colors and fonts, avoid costly interface and accessibility mistakes - your application will really come alive. We\'ll also walk you through some common Photoshop and CSS techniques and work through a web site redesign, taking a new design from concept all the way to implementation\n ', 42.95, '2012-06-27 18:32:14', '2012-06-27 18:32:14', 'wdfd.jpg', 'image/jpeg', 6688, '2012-06-27 18:10:26')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mAREL (12.5ms)[0m  DELETE FROM `payment_types`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  describe `payment_types`
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Check', '2012-06-27 18:32:14', '2012-06-27 18:32:14')[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Credit/Debet Card', '2012-06-27 18:32:14', '2012-06-27 18:32:14')
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Purchase', '2012-06-27 18:32:14', '2012-06-27 18:32:14')[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('PayPal', '2012-06-27 18:32:14', '2012-06-27 18:32:14')
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/my_store" for 127.0.0.1 at 2012-06-27 14:32:17 -0400
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 2 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 2)[0m
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (1.7ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (61.2ms)
+Completed 200 OK in 86ms (Views: 62.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/system/my_test_scaffolds/images/000/000/006/original/ruby.jpg?1340820601" for 127.0.0.1 at 2012-06-27 14:32:18 -0400
+
+ActionController::RoutingError (No route matches "/system/my_test_scaffolds/images/000/000/006/original/ruby.jpg"):
+  
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/system/my_test_scaffolds/images/000/000/007/original/wdfd.jpg?1340820626" for 127.0.0.1 at 2012-06-27 14:32:18 -0400
+
+ActionController::RoutingError (No route matches "/system/my_test_scaffolds/images/000/000/007/original/wdfd.jpg"):
+  
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 14:32:43 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (15.4ms)
+Completed 200 OK in 41ms (Views: 17.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/system/my_test_scaffolds/images/000/000/007/original/wdfd.jpg?1340820626" for 127.0.0.1 at 2012-06-27 14:32:43 -0400
+
+ActionController::RoutingError (No route matches "/system/my_test_scaffolds/images/000/000/007/original/wdfd.jpg"):
+  
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/my_test_scaffolds/6/edit" for 127.0.0.1 at 2012-06-27 14:32:44 -0400
+  Processing by MyTestScaffoldsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 6 ORDER BY title LIMIT 1[0m
+Rendered my_test_scaffolds/_form.html.erb (12.9ms)
+Rendered my_test_scaffolds/edit.html.erb within layouts/my_book_store (17.3ms)
+Completed 200 OK in 47ms (Views: 19.4ms | ActiveRecord: 0.4ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from handle at /Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:147)
+
+
+Started GET "/system/my_test_scaffolds/images/000/000/006/original/ruby.jpg?1340820601" for 127.0.0.1 at 2012-06-27 14:32:45 -0400
+
+ActionController::RoutingError (No route matches "/system/my_test_scaffolds/images/000/000/006/original/ruby.jpg"):
+  
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/my_test_scaffolds/6" for 127.0.0.1 at 2012-06-27 14:33:03 -0400
+  Processing by MyTestScaffoldsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZSjWkfrc0r8BO+oF+mndjs4l69CYLUDH5Eu7SNvu8mE=", "my_test_scaffold"=>{"title"=>"Programming Ruby 1.9", "description"=>"Ruby is the fastest growing and most exciting dynamic language out there. If you need to get working programs delivered fast, you should add Ruby to your toolbox.\r\n ", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000102b8bca0 @original_filename="ruby.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"my_test_scaffold[image]\"; filename=\"ruby.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/sf/sfib8JMnHTaZ2jOpxJV1sU+++TM/-Tmp-/RackMultipart20120627-16494-aqpbkp>>, "price"=>"49.5"}, "commit"=>"Update My test scaffold", "id"=>"6"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 6 ORDER BY title LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Programming Ruby 1.9') AND (`my_test_scaffolds`.id <> 6) LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE `my_test_scaffolds` SET `description` = 'Ruby is the fastest growing and most exciting dynamic language out there. If you need to get working programs delivered fast, you should add Ruby to your toolbox.\r\n ', `image_updated_at` = '2012-06-27 18:33:03', `updated_at` = '2012-06-27 18:33:03' WHERE `my_test_scaffolds`.`id` = 6
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://helloworldtests.dev/my_test_scaffolds/6
+Completed 302 Found in 68ms
+
+
+Started GET "/my_test_scaffolds/6" for 127.0.0.1 at 2012-06-27 14:33:03 -0400
+  Processing by MyTestScaffoldsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 6 ORDER BY title LIMIT 1[0m
+Rendered my_test_scaffolds/show.html.erb within layouts/my_book_store (35.8ms)
+Completed 200 OK in 64ms (Views: 37.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 14:33:05 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (15.7ms)
+Completed 200 OK in 42ms (Views: 17.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/system/my_test_scaffolds/images/000/000/007/original/wdfd.jpg?1340820626" for 127.0.0.1 at 2012-06-27 14:33:05 -0400
+
+ActionController::RoutingError (No route matches "/system/my_test_scaffolds/images/000/000/007/original/wdfd.jpg"):
+  
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/my_test_scaffolds/7/edit" for 127.0.0.1 at 2012-06-27 14:33:07 -0400
+  Processing by MyTestScaffoldsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 7 ORDER BY title LIMIT 1[0m
+Rendered my_test_scaffolds/_form.html.erb (12.8ms)
+Rendered my_test_scaffolds/edit.html.erb within layouts/my_book_store (17.1ms)
+Completed 200 OK in 46ms (Views: 19.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/my_test_scaffolds/7" for 127.0.0.1 at 2012-06-27 14:33:13 -0400
+  Processing by MyTestScaffoldsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZSjWkfrc0r8BO+oF+mndjs4l69CYLUDH5Eu7SNvu8mE=", "my_test_scaffold"=>{"title"=>"Web Design for Developers", "description"=>"Web Design for Developers will show you how to make your web-based application look professionally designed. We'll help you learn how to pick the right colors and fonts, avoid costly interface and accessibility mistakes - your application will really come alive. We'll also walk you through some common Photoshop and CSS techniques and work through a web site redesign, taking a new design from concept all the way to implementation\r\n ", "image"=>#<ActionDispatch::Http::UploadedFile:0x00000102abcf40 @original_filename="wdfd.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"my_test_scaffold[image]\"; filename=\"wdfd.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/var/folders/sf/sfib8JMnHTaZ2jOpxJV1sU+++TM/-Tmp-/RackMultipart20120627-16494-flct8z>>, "price"=>"42.95"}, "commit"=>"Update My test scaffold", "id"=>"7"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 7 ORDER BY title LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Web Design for Developers') AND (`my_test_scaffolds`.id <> 7) LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE `my_test_scaffolds` SET `description` = 'Web Design for Developers will show you how to make your web-based application look professionally designed. We\'ll help you learn how to pick the right colors and fonts, avoid costly interface and accessibility mistakes - your application will really come alive. We\'ll also walk you through some common Photoshop and CSS techniques and work through a web site redesign, taking a new design from concept all the way to implementation\r\n ', `image_updated_at` = '2012-06-27 18:33:13', `updated_at` = '2012-06-27 18:33:13' WHERE `my_test_scaffolds`.`id` = 7
+[paperclip] Saving attachments.
+  [1m[36mSQL (17.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://helloworldtests.dev/my_test_scaffolds/7
+Completed 302 Found in 85ms
+
+
+Started GET "/my_test_scaffolds/7" for 127.0.0.1 at 2012-06-27 14:33:13 -0400
+  Processing by MyTestScaffoldsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.2ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` WHERE `my_test_scaffolds`.`id` = 7 ORDER BY title LIMIT 1[0m
+Rendered my_test_scaffolds/show.html.erb within layouts/my_book_store (35.8ms)
+Completed 200 OK in 63ms (Views: 37.7ms | ActiveRecord: 18.5ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 14:33:15 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (15.7ms)
+Completed 200 OK in 42ms (Views: 17.6ms | ActiveRecord: 0.5ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mAREL (0.7ms)[0m  DELETE FROM `my_test_scaffolds`
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Programming Ruby 1.9') LIMIT 1
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `my_test_scaffolds`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `my_test_scaffolds` (`title`, `description`, `price`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`) VALUES ('Programming Ruby 1.9', '\nRuby is the fastest growing and most exciting dynamic language out there. If you need to get working programs delivered fast, you should add Ruby to your toolbox.\n ', 49.5, '2012-06-27 18:35:37', '2012-06-27 18:35:37', 'ruby.jpg', 'image/jpeg', 8300, '2012-06-27 18:10:01')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Web Design for Developers') LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `my_test_scaffolds` (`title`, `description`, `price`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`) VALUES ('Web Design for Developers', '\nWeb Design for Developers will show you how to make your web-based application look professionally designed. We\'ll help you learn how to pick the right colors and fonts, avoid costly interface and accessibility mistakes - your application will really come alive. We\'ll also walk you through some common Photoshop and CSS techniques and work through a web site redesign, taking a new design from concept all the way to implementation\n ', 42.95, '2012-06-27 18:35:37', '2012-06-27 18:35:37', 'wdfd.jpg', 'image/jpeg', 6688, '2012-06-27 18:10:26')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mAREL (0.4ms)[0m  DELETE FROM `payment_types`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  describe `payment_types`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Check', '2012-06-27 18:35:37', '2012-06-27 18:35:37')[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Credit/Debet Card', '2012-06-27 18:35:37', '2012-06-27 18:35:37')
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Purchase', '2012-06-27 18:35:37', '2012-06-27 18:35:37')[0m
+  [1m[35mSQL (0.2ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('PayPal', '2012-06-27 18:35:37', '2012-06-27 18:35:37')
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 14:35:40 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (16.2ms)
+Completed 200 OK in 65ms (Views: 18.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/system/my_test_scaffolds/images/000/000/008/original/ruby.jpg?1340820601" for 127.0.0.1 at 2012-06-27 14:35:40 -0400
+
+
+Started GET "/system/my_test_scaffolds/images/000/000/009/original/wdfd.jpg?1340820626" for 127.0.0.1 at 2012-06-27 14:35:40 -0400
+
+ActionController::RoutingError (No route matches "/system/my_test_scaffolds/images/000/000/008/original/ruby.jpg"):
+  
+
+
+ActionController::RoutingError (No route matches "/system/my_test_scaffolds/images/000/000/009/original/wdfd.jpg"):
+  
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mAREL (0.6ms)[0m  DELETE FROM `my_test_scaffolds`
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Programming Ruby 1.9') LIMIT 1
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `my_test_scaffolds`[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `my_test_scaffolds` (`title`, `description`, `price`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`) VALUES ('Programming Ruby 1.9', '\nRuby is the fastest growing and most exciting dynamic language out there. If you need to get working programs delivered fast, you should add Ruby to your toolbox.\n ', 49.5, '2012-06-27 18:36:18', '2012-06-27 18:36:18', 'ruby.jpg', 'image/jpeg', 8300, '2012-06-27 18:10:01')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Web Design for Developers') LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `my_test_scaffolds` (`title`, `description`, `price`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`) VALUES ('Web Design for Developers', '\nWeb Design for Developers will show you how to make your web-based application look professionally designed. We\'ll help you learn how to pick the right colors and fonts, avoid costly interface and accessibility mistakes - your application will really come alive. We\'ll also walk you through some common Photoshop and CSS techniques and work through a web site redesign, taking a new design from concept all the way to implementation\n ', 42.95, '2012-06-27 18:36:18', '2012-06-27 18:36:18', 'wdfd.jpg', 'image/jpeg', 6688, '2012-06-27 18:10:26')
+[paperclip] Saving attachments.
+  [1m[36mSQL (23.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mAREL (7.7ms)[0m  DELETE FROM `payment_types`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  describe `payment_types`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Check', '2012-06-27 18:36:18', '2012-06-27 18:36:18')[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Credit/Debet Card', '2012-06-27 18:36:18', '2012-06-27 18:36:18')
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Purchase', '2012-06-27 18:36:18', '2012-06-27 18:36:18')[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('PayPal', '2012-06-27 18:36:18', '2012-06-27 18:36:18')
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mAREL (0.6ms)[0m  DELETE FROM `my_test_scaffolds`
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Programming Ruby 1.9') LIMIT 1
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `my_test_scaffolds`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `my_test_scaffolds` (`title`, `description`, `price`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`) VALUES ('Programming Ruby 1.9', '\nRuby is the fastest growing and most exciting dynamic language out there. If you need to get working programs delivered fast, you should add Ruby to your toolbox.\n ', 49.5, '2012-06-27 18:38:15', '2012-06-27 18:38:15', 'ruby.jpg', 'image/jpeg', 8300, '2012-06-27 18:10:01')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Web Design for Developers') LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `my_test_scaffolds` (`title`, `description`, `price`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`) VALUES ('Web Design for Developers', '\nWeb Design for Developers will show you how to make your web-based application look professionally designed. We\'ll help you learn how to pick the right colors and fonts, avoid costly interface and accessibility mistakes - your application will really come alive. We\'ll also walk you through some common Photoshop and CSS techniques and work through a web site redesign, taking a new design from concept all the way to implementation\n ', 42.95, '2012-06-27 18:38:15', '2012-06-27 18:38:15', 'wdfd.jpg', 'image/jpeg', 6688, '2012-06-27 18:10:26')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mAREL (17.0ms)[0m  DELETE FROM `payment_types`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  describe `payment_types`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Check', '2012-06-27 18:38:15', '2012-06-27 18:38:15')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Credit/Debet Card', '2012-06-27 18:38:15', '2012-06-27 18:38:15')
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Purchase', '2012-06-27 18:38:15', '2012-06-27 18:38:15')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('PayPal', '2012-06-27 18:38:15', '2012-06-27 18:38:15')
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mAREL (0.6ms)[0m  DELETE FROM `my_test_scaffolds`
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Programming Ruby 1.9') LIMIT 1
+  [1m[36mSQL (1.8ms)[0m  [1mdescribe `my_test_scaffolds`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `my_test_scaffolds` (`title`, `description`, `price`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `id`) VALUES ('Programming Ruby 1.9', '\nRuby is the fastest growing and most exciting dynamic language out there. If you need to get working programs delivered fast, you should add Ruby to your toolbox.\n ', 49.5, '2012-06-27 18:38:40', '2012-06-27 18:38:40', 'ruby.jpg', 'image/jpeg', 8300, '2012-06-27 18:10:01', 1)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.5ms)[0m  [1mCOMMIT[0m
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Web Design for Developers') LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `my_test_scaffolds` (`title`, `description`, `price`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `id`) VALUES ('Web Design for Developers', '\nWeb Design for Developers will show you how to make your web-based application look professionally designed. We\'ll help you learn how to pick the right colors and fonts, avoid costly interface and accessibility mistakes - your application will really come alive. We\'ll also walk you through some common Photoshop and CSS techniques and work through a web site redesign, taking a new design from concept all the way to implementation\n ', 42.95, '2012-06-27 18:38:40', '2012-06-27 18:38:40', 'wdfd.jpg', 'image/jpeg', 6688, '2012-06-27 18:10:26', 2)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mAREL (0.5ms)[0m  DELETE FROM `payment_types`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  describe `payment_types`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Check', '2012-06-27 18:38:40', '2012-06-27 18:38:40')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Credit/Debet Card', '2012-06-27 18:38:40', '2012-06-27 18:38:40')
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Purchase', '2012-06-27 18:38:40', '2012-06-27 18:38:40')[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('PayPal', '2012-06-27 18:38:40', '2012-06-27 18:38:40')
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mAREL (0.7ms)[0m  DELETE FROM `my_test_scaffolds`
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Programming Ruby 1.9') LIMIT 1
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `my_test_scaffolds`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `my_test_scaffolds` (`title`, `description`, `price`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `id`) VALUES ('Programming Ruby 1.9', '\nRuby is the fastest growing and most exciting dynamic language out there. If you need to get working programs delivered fast, you should add Ruby to your toolbox.\n ', 49.5, '2012-06-27 18:38:52', '2012-06-27 18:38:52', 'ruby.jpg', 'image/jpeg', 8300, '2012-06-27 18:10:01', 1)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM `my_test_scaffolds` WHERE (`my_test_scaffolds`.`title` = BINARY 'Web Design for Developers') LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `my_test_scaffolds` (`title`, `description`, `price`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `id`) VALUES ('Web Design for Developers', '\nWeb Design for Developers will show you how to make your web-based application look professionally designed. We\'ll help you learn how to pick the right colors and fonts, avoid costly interface and accessibility mistakes - your application will really come alive. We\'ll also walk you through some common Photoshop and CSS techniques and work through a web site redesign, taking a new design from concept all the way to implementation\n ', 42.95, '2012-06-27 18:38:52', '2012-06-27 18:38:52', 'wdfd.jpg', 'image/jpeg', 6688, '2012-06-27 18:10:26', 2)
+[paperclip] Saving attachments.
+  [1m[36mSQL (16.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mAREL (9.8ms)[0m  DELETE FROM `payment_types`
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  describe `payment_types`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Check', '2012-06-27 18:38:52', '2012-06-27 18:38:52')[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Credit/Debet Card', '2012-06-27 18:38:52', '2012-06-27 18:38:52')
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('Purchase', '2012-06-27 18:38:52', '2012-06-27 18:38:52')[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `payment_types` (`payment_type`, `created_at`, `updated_at`) VALUES ('PayPal', '2012-06-27 18:38:52', '2012-06-27 18:38:52')
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 14:39:01 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (39.6ms)
+Completed 200 OK in 65ms (Views: 41.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/my_test_scaffolds" for 127.0.0.1 at 2012-06-27 14:40:12 -0400
+  Processing by MyTestScaffoldsController#index as HTML
+  [1m[35mAuthUser Load (0.2ms)[0m  SELECT `auth_users`.* FROM `auth_users` WHERE `auth_users`.`id` = 1 LIMIT 1
+  [1m[36mMyTestScaffold Load (0.3ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+Rendered my_test_scaffolds/index.html.erb within layouts/my_book_store (16.3ms)
+Completed 200 OK in 42ms (Views: 18.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/my_store" for 127.0.0.1 at 2012-06-27 14:40:14 -0400
+  Processing by MyStoreController#index as HTML
+  [1m[35mMyTestScaffold Load (0.3ms)[0m  SELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title
+  [1m[36mShopCart Load (0.2ms)[0m  [1mSELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 2)
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (1.7ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (35.1ms)
+Completed 200 OK in 84ms (Views: 36.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/my_store" for 127.0.0.1 at 2012-06-27 14:46:14 -0400
+  Processing by MyStoreController#index as HTML
+  [1m[36mMyTestScaffold Load (0.4ms)[0m  [1mSELECT `my_test_scaffolds`.* FROM `my_test_scaffolds` ORDER BY title[0m
+  [1m[35mShopCart Load (0.2ms)[0m  SELECT `shop_carts`.* FROM `shop_carts` WHERE `shop_carts`.`id` = 2 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `shop_items` WHERE (`shop_items`.shop_cart_id = 2)[0m
+Rendered collection (0.0ms)
+Rendered shop_carts/_shop_cart.html.erb (1.7ms)
+Rendered my_store/index.html.erb within layouts/my_book_store (35.8ms)
+Completed 200 OK in 86ms (Views: 37.9ms | ActiveRecord: 0.8ms)

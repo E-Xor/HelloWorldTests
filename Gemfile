@@ -37,6 +37,9 @@ gem "mysql2", "0.2.7"
 # Pagination
 gem 'will_paginate', '~> 3.0'
 
+# Attahcment management (i.e. images)
+gem 'paperclip'
+
 # RSpec
 group :test, :development do
   gem "rspec-rails", "~> 2.0"

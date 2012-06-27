@@ -6,7 +6,7 @@
 
 <% @my_test_scaffolds.each do |my_test_scaffold| %>
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-    <td><%= image_tag(my_test_scaffold.image_url, :class => 'list_image') %></td>
+    <td><%= image_tag(my_test_scaffold.image.url, :class => 'list_image') %></td>
 
     <td class="list_description">
       <dl>

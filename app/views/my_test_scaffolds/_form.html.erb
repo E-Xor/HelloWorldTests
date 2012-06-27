@@ -1,4 +1,4 @@
-<%= form_for(@my_test_scaffold) do |f| %>
+<%= form_for @my_test_scaffold, :html => {:multipart => true} do |f| %>
   <% if @my_test_scaffold.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@my_test_scaffold.errors.count, "error") %> prohibited this my_test_scaffold from being saved:</h2>
@@ -20,8 +20,8 @@
     <%= f.text_area :description, :rows => 6 %>
   </div>
   <div class="field">
-    <%= f.label :image_url %><br />
-    <%= f.text_field :image_url %>
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
   </div>
   <div class="field">
     <%= f.label :price %><br />

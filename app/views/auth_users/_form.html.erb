@@ -27,7 +27,13 @@
     <%= f.password_field :user_password_confirmation %>
   </div>
   <div>
-    <%= f.submit %>
+    <% if controller.action_name == 'new' %>
+      <%= f.submit "Create" %>
+    <% elsif controller.action_name == 'edit' %>
+      <%= f.submit "Update" %>
+    <% else %>
+      <%= f.submit "Save" %>
+    <% end %>
   </div>
   </fieldset>
 <% end %>

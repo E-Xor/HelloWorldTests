@@ -4,16 +4,16 @@ class MyTestScaffold < ActiveRecord::Base
   # Reference for items in carts
   has_many :shop_items
   has_many :user_orders, :through => :shop_items
+
+  # Images
+  has_attached_file :image
+
   # Prevent delete is any item in a cart has reference
   before_destroy :no_shop_item
 
-  validates :title, :description, :image_url, :presence => true
+  validates :title, :description, :presence => true
   validates :price, :numericality => {:greater_than_or_equal_to => 0.01}
   validates :title, :uniqueness => { :message => 'has already been taken. Should be unique.' }
-  validates :image_url, :format => {
-    :with => %r{\.(gif|jpg|png)$}i,
-    :message => 'must be URL for .gif, .jpg or .png image.'
-  }
 
   def no_shop_item
     return true if shop_items.count.zero?
