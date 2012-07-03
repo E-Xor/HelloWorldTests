@@ -36977,3 +36977,343 @@ Rendered collection (0.0ms)
 Rendered shop_carts/_shop_cart.html.erb (1.7ms)
 Rendered my_store/index.html.erb within layouts/my_book_store (35.8ms)
 Completed 200 OK in 86ms (Views: 37.9ms | ActiveRecord: 0.8ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/msundukov/HelloWorldTests/app/controllers/application_controller.rb:1)
+  [1m[36mPaymentType Load (17.5ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from handle at /Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:147)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-03 09:52:29 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-03 09:57:49 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (86.3ms)
+Completed 500 Internal Server Error in 89ms
+
+ActionView::Template::Error (undefined local variable or method `resque_que_path' for #<#<Class:0x0000010365e6a0>:0x000001033eedc0>):
+    5: <p><%= link_to "Svetik Home", svetik_home_path %></p>
+    6: <p><%= link_to "Say Hello", say_hello_path %></p>
+    7: <p><%= link_to "Say Goodbye", say_goodbye_path %></p>
+    8: <p><%= link_to "Resque Que", resque_que_path %></p>
+  app/views/home/index.html.erb:8:in `_app_views_home_index_html_erb__164114987510777737_2174706700__1618776944402345558'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from handle at /Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:147)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-03 09:59:00 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 23ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/resque_que" for 127.0.0.1 at 2012-07-03 09:59:02 -0400
+  Processing by ResqueQueController#index as HTML
+Rendered resque_que/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (10.8ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateTexts (20110901134435)
+Migrating to CreateMyTestScaffolds (20110902131437)
+Migrating to AddPressisionAndScaleToPrice (20110902131948)
+Migrating to CreateShopCarts (20111119150136)
+Migrating to CreateShopItems (20111119154637)
+Migrating to AddQuantityToShopItem (20111231184853)
+Migrating to GroupShopItemsInShopCarts (20120102184706)
+Migrating to AddUserOrderIdToShopItem (20120114204148)
+Migrating to CreateUserOrders (20120114204430)
+Migrating to CreatePaymentTypes (20120206052729)
+Migrating to CreateAuthUsers (20120510132500)
+Migrating to AddAttachmentImageToMyTestScaffolds (20120627154300)
+Migrating to RemoveImageUrlFromMts (20120627181300)
+Migrating to CreateResqueQues (20120703144221)
+  [1m[35mSQL (164.4ms)[0m  CREATE TABLE `resque_ques` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `printed` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120703144221')[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `auth_users`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `auth_users`
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `my_test_scaffolds`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `my_test_scaffolds`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  SHOW KEYS FROM `payment_types`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `resque_ques`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `resque_ques`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `shop_carts`[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW KEYS FROM `shop_carts`
+  [1m[36mSQL (2.2ms)[0m  [1mdescribe `shop_items`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `shop_items`
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `texts`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `texts`
+  [1m[36mSQL (1.6ms)[0m  [1mdescribe `user_orders`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `user_orders`
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/msundukov/HelloWorldTests/app/controllers/application_controller.rb:1)
+  [1m[36mPaymentType Load (0.2ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from handle at /Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:147)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-03 10:52:02 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/resque_que" for 127.0.0.1 at 2012-07-03 10:52:03 -0400
+  Processing by ResqueQueController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+Resque::NoQueueError (Jobs must be placed onto a queue.):
+  app/controllers/resque_que_controller.rb:4:in `index'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+
+
+Started GET "/resque_que" for 127.0.0.1 at 2012-07-03 10:52:42 -0400
+  Processing by ResqueQueController#index as HTML
+Completed 500 Internal Server Error in 5ms
+
+NameError (uninitialized constant ResqueQueController::BgPrint):
+  app/controllers/resque_que_controller.rb:4:in `index'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.4ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.3ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/msundukov/HelloWorldTests/app/controllers/application_controller.rb:1)
+  [1m[36mPaymentType Load (0.2ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/msundukov/HelloWorldTests/app/controllers/application_controller.rb:1)
+  [1m[36mPaymentType Load (0.2ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/msundukov/HelloWorldTests/app/controllers/application_controller.rb:1)
+  [1m[36mPaymentType Load (0.2ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from handle at /Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:147)
+
+
+Started GET "/resque_que" for 127.0.0.1 at 2012-07-03 10:54:48 -0400
+  Processing by ResqueQueController#index as HTML
+Completed 500 Internal Server Error in 5ms
+
+NameError (uninitialized constant ResqueQueController::BgPrint):
+  app/controllers/resque_que_controller.rb:4:in `index'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.3ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from handle at /Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:147)
+
+
+Started GET "/resque_que" for 127.0.0.1 at 2012-07-03 10:55:08 -0400
+  Processing by ResqueQueController#index as HTML
+Completed 500 Internal Server Error in 5ms
+
+NameError (uninitialized constant ResqueQueController::BgPrint):
+  app/controllers/resque_que_controller.rb:4:in `index'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.3ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.1ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/msundukov/HelloWorldTests/app/controllers/application_controller.rb:1)
+  [1m[36mPaymentType Load (0.3ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+
+
+Started GET "/resque_que" for 127.0.0.1 at 2012-07-03 10:59:29 -0400
+  Processing by ResqueQueController#index as HTML
+Completed 500 Internal Server Error in 5ms
+
+NameError (uninitialized constant ResqueQueController::BgPrint):
+  app/controllers/resque_que_controller.rb:4:in `index'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.9ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from handle at /Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:147)
+
+
+Started GET "/" for 127.0.0.1 at 2012-07-03 16:56:12 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/resque_que" for 127.0.0.1 at 2012-07-03 16:56:15 -0400
+
+LoadError (cannot load such file -- resque/bg_print):
+  app/controllers/resque_que_controller.rb:1:in `<top (required)>'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.6ms)
+
+
+Started GET "/resque_que" for 127.0.0.1 at 2012-07-03 16:56:29 -0400
+
+LoadError (cannot load such file -- lib/resque/bg_print):
+  app/controllers/resque_que_controller.rb:1:in `<top (required)>'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.0ms)
+
+
+Started GET "/resque_que" for 127.0.0.1 at 2012-07-03 16:56:46 -0400
+
+LoadError (cannot load such file -- lib/resque/bg_print.rb):
+  app/controllers/resque_que_controller.rb:1:in `<top (required)>'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.3ms)
+
+
+Started GET "/resque_que" for 127.0.0.1 at 2012-07-03 16:57:05 -0400
+
+LoadError (cannot load such file -- /Users/msundukov/HelloWorldTests/lib/resque/bg_print.rb):
+  app/controllers/resque_que_controller.rb:1:in `<top (required)>'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.0ms)
+
+
+Started GET "/resque_que" for 127.0.0.1 at 2012-07-03 16:59:03 -0400
+  Processing by ResqueQueController#index as HTML
+  [1m[36mResqueQue Load (0.3ms)[0m  [1mSELECT `resque_ques`.* FROM `resque_ques`[0m
+Rendered resque_que/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 41ms (Views: 5.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/resque_que" for 127.0.0.1 at 2012-07-03 16:59:13 -0400
+  Processing by ResqueQueController#index as HTML
+  [1m[35mResqueQue Load (0.2ms)[0m  SELECT `resque_ques`.* FROM `resque_ques`
+Rendered resque_que/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 18ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/resque_que" for 127.0.0.1 at 2012-07-03 17:03:44 -0400
+  Processing by ResqueQueController#index as HTML
+Completed 500 Internal Server Error in 5ms
+
+NameError (uninitialized constant ResqueQueController::BgPrint):
+  app/controllers/resque_que_controller.rb:3:in `index'
+
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.2ms)
+Rendered /Users/msundukov/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.1ms)
+
+
+Started GET "/resque_que" for 127.0.0.1 at 2012-07-03 17:03:56 -0400
+  Processing by ResqueQueController#index as HTML
+  [1m[36mResqueQue Load (0.3ms)[0m  [1mSELECT `resque_ques`.* FROM `resque_ques`[0m
+Rendered resque_que/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 18ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/msundukov/HelloWorldTests/app/controllers/application_controller.rb:1)
+  [1m[36mPaymentType Load (0.2ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.4ms)[0m  describe `resque_ques`
+  [1m[36mAREL (1.8ms)[0m  [1mINSERT INTO `resque_ques` (`printed`, `created_at`, `updated_at`) VALUES ('2012-07-03T16:59:03-04:00 was printed in background. Worker.', '2012-07-03 21:05:43', '2012-07-03 21:05:43')[0m
+  [1m[35mSQL (0.3ms)[0m  COMMIT
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  describe `resque_ques`
+  [1m[36mAREL (1.5ms)[0m  [1mINSERT INTO `resque_ques` (`printed`, `created_at`, `updated_at`) VALUES ('2012-07-03T16:59:13-04:00 was printed in background. Worker.', '2012-07-03 21:05:44', '2012-07-03 21:05:44')[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  describe `resque_ques`
+  [1m[36mAREL (1.5ms)[0m  [1mINSERT INTO `resque_ques` (`printed`, `created_at`, `updated_at`) VALUES ('2012-07-03T17:03:56-04:00 was printed in background. Worker.', '2012-07-03 21:05:44', '2012-07-03 21:05:44')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+
+
+Started GET "/resque_que" for 127.0.0.1 at 2012-07-03 17:05:49 -0400
+  Processing by ResqueQueController#index as HTML
+  [1m[35mResqueQue Load (0.4ms)[0m  SELECT `resque_ques`.* FROM `resque_ques`
+Rendered resque_que/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 25ms (Views: 10.7ms | ActiveRecord: 0.4ms)
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.2ms)[0m  describe `resque_ques`
+  [1m[36mAREL (1.6ms)[0m  [1mINSERT INTO `resque_ques` (`printed`, `created_at`, `updated_at`) VALUES ('2012-07-03T17:05:49-04:00 was printed in background. Worker.', '2012-07-03 21:05:54', '2012-07-03 21:05:54')[0m
+  [1m[35mSQL (93.8ms)[0m  COMMIT
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/msundukov/HelloWorldTests/app/controllers/application_controller.rb:1)
+  [1m[36mPaymentType Load (0.3ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from handle at /Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:147)
+
+
+Started GET "/resque_que" for 127.0.0.1 at 2012-07-03 17:15:04 -0400
+  Processing by ResqueQueController#index as HTML
+  [1m[36mResqueQue Load (0.3ms)[0m  [1mSELECT `resque_ques`.* FROM `resque_ques`[0m
+Rendered resque_que/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 26ms (Views: 11.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/resque_que" for 127.0.0.1 at 2012-07-03 17:15:08 -0400
+  Processing by ResqueQueController#index as HTML
+  [1m[35mResqueQue Load (0.2ms)[0m  SELECT `resque_ques`.* FROM `resque_ques`
+Rendered resque_que/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 45ms (Views: 11.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/resque" for 127.0.0.1 at 2012-07-03 17:15:15 -0400
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2012-07-03 17:15:15 -0400
+
+
+Started GET "/resque/style.css" for 127.0.0.1 at 2012-07-03 17:15:15 -0400
+
+
+Started GET "/resque/jquery-1.3.2.min.js" for 127.0.0.1 at 2012-07-03 17:15:15 -0400
+
+
+Started GET "/resque/jquery.relatize_date.js" for 127.0.0.1 at 2012-07-03 17:15:15 -0400
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from handle at /Users/msundukov/Library/Application Support/Pow/Versions/0.4.0/node_modules/nack/lib/nack/server.rb:147)
+
+
+Started GET "/resque/reset.css" for 127.0.0.1 at 2012-07-03 17:15:17 -0400
+
+
+Started GET "/resque/ranger.js" for 127.0.0.1 at 2012-07-03 17:15:17 -0400
+
+
+Started GET "/resque/poll.png" for 127.0.0.1 at 2012-07-03 17:15:17 -0400
+
+
+Started GET "/resque/queues/bgs" for 127.0.0.1 at 2012-07-03 17:15:20 -0400
+
+
+Started GET "/resque/queues/abacle" for 127.0.0.1 at 2012-07-03 17:15:24 -0400
+
+
+Started GET "/resque/queues/backfill" for 127.0.0.1 at 2012-07-03 17:15:25 -0400
+
+
+Started GET "/resque/queues/bgs" for 127.0.0.1 at 2012-07-03 17:15:25 -0400
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /Users/msundukov/HelloWorldTests/app/controllers/application_controller.rb:1)
+  [1m[36mPaymentType Load (0.2ms)[0m  [1mSELECT payment_type FROM `payment_types`[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  describe `resque_ques`
+  [1m[36mAREL (1.7ms)[0m  [1mINSERT INTO `resque_ques` (`printed`, `created_at`, `updated_at`) VALUES ('2012-07-03T17:15:04-04:00 was printed in background. Worker.', '2012-07-03 21:15:33', '2012-07-03 21:15:33')[0m
+  [1m[35mSQL (0.5ms)[0m  COMMIT
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (2.3ms)[0m  describe `resque_ques`
+  [1m[36mAREL (1.7ms)[0m  [1mINSERT INTO `resque_ques` (`printed`, `created_at`, `updated_at`) VALUES ('2012-07-03T17:15:08-04:00 was printed in background. Worker.', '2012-07-03 21:15:33', '2012-07-03 21:15:33')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2012-07-03 17:15:39 -0400
+
+
+Started GET "/resque/failed" for 127.0.0.1 at 2012-07-03 17:15:47 -0400
+
+
+Started GET "/resque/overview" for 127.0.0.1 at 2012-07-03 17:15:56 -0400

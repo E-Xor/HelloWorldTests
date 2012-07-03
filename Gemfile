@@ -40,6 +40,9 @@ gem 'will_paginate', '~> 3.0'
 # Attahcment management (i.e. images)
 gem 'paperclip'
 
+# Queuing
+gem 'resque', :require => 'resque/server'
+
 # RSpec
 group :test, :development do
   gem "rspec-rails", "~> 2.0"

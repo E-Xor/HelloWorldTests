@@ -86,6 +86,8 @@ HelloWorldTests::Application.routes.draw do
   match 'say/hello' => 'say#hello'
   match 'say/goodbye' => 'say#goodbye'
   match 'my_store' => 'my_store#index'
+  match 'resque_que' => 'resque_que#index'
+  mount Resque::Server, :at => "/resque"
 #  match 'shop_items' => 'shop_items#index'
 #  match 'new_shop_item' => 'shop_items#new'
 #  match 'google_map/index' => 'google_map#index'
