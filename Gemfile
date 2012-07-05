@@ -42,6 +42,7 @@ gem 'paperclip'
 
 # Queuing
 gem 'resque', :require => 'resque/server'
+gem 'resque-scheduler', :require => 'resque_scheduler'
 
 # RSpec
 group :test, :development do
