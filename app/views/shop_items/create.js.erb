@@ -1,0 +1,6 @@
+$("#shop_cart").html("<%= escape_javascript(render :partial => @shop_cart) %>");
+<% if @shop_cart.total_shop_items == 1 %>
+  $("#shop_cart").slideDown("slow");
+<% end %>
+$("#current_shop_item").css("backgroundColor", "#141");
+$("#current_shop_item").effect("highlight", {color:"#88ff88"}, 1500);

@@ -1,6 +1,0 @@
-page.select('#notice').each { |n| n.hide }
-page.replace_html('shop_cart', render(@shop_cart))
-
-# effects.js is part of the Script.aculo.us library, it goes with ruby
-page[:shop_cart].visual_effect :blind_down if @shop_cart.total_shop_items == 1
-page[:current_shop_item].visual_effect :highlight, :startcolor => "#88ff88", :endcolor => "#114411"
