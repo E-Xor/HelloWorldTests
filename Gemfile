@@ -34,3 +34,7 @@ end
 group :production do
   gem "pg"
 end
+
+#group :development do
+  gem 'rack-mini-profiler'
+#end
