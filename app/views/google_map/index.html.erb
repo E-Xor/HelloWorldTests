@@ -1,3 +1,7 @@
+  <%= stylesheet_link_tag("google_map.css") %>
+  <%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false&libraries=places&language=en" %>
+  <%= javascript_include_tag "google_map" %>
+
 <p><h1>GoogleMap#index</h1></p>
 <dl>
   <dt><%= label_tag :from_address, 'From Address', :id => 'from_address_label' %></dt>
