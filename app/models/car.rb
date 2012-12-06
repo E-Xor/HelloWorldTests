@@ -1,18 +1,20 @@
 class Car < ActiveRecord::Base
 
-  state_machine :state, :initial => :stop do 
-    state :start
-    state :stop
+  validates :name, :presence => true
+
+  state_machine :state, :initial => :stopped do 
+    state :started
+    state :stopped
     
-    before_transition any => :stop, :do => :stopping
-    after_transition any => :start, :do => :starting
+    before_transition any => :stopped, :do => :stopping
+    after_transition any => :started, :do => :starting
     
     event :stop_it do
-      transition :start => :stop
+      transition :started => :stopped
     end
     
     event :start_it do
-      transition :stop => :start
+      transition :stopped => :started
     end
 
   end
@@ -24,8 +26,5 @@ class Car < ActiveRecord::Base
   def starting
     puts "Starting"
   end
-  
-  def initialize
-    super()
-  end
+
 end

@@ -92,5 +92,6 @@ HelloWorldTests::Application.routes.draw do
 #  match 'new_shop_item' => 'shop_items#new'
 #  match 'google_map/index' => 'google_map#index'
 
+  resources :cars
 
 end
