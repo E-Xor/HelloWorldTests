@@ -27,7 +27,16 @@
     <%= f.label :price %><br />
     <%= f.text_field :price %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
+
+<script>
+  function formSubmit(id) {
+
+    // Any JS you want before submit
+
+    // Submit
+    document.getElementById(id).submit();
+
+  }
+</script>
+
