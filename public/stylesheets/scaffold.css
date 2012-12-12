@@ -33,6 +33,18 @@ div.field, div.actions {
   font: bold smaller sans-serif;
 }
 
+.field_with_errors {
+  display: inline;
+}
+
+.field_with_errors .message {
+  color: #D00;
+  padding-left: 5px;
+  font-size: 12px;
+  float: none;
+  display: inline;
+}
+
 #error_explanation {
   width: 450px;
   border: 2px solid red;

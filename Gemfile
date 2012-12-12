@@ -11,6 +11,7 @@ gem 'paperclip' # Attahcment management (i.e. images)
 gem 'resque', :require => 'resque/server' # Queuing
 gem 'resque-scheduler', :require => 'resque_scheduler' # Queuing
 gem 'state_machine', '1.1.2' # State machine
+gem 'client_side_validations', '3.2.1' # JS validation
 #group :development do
   gem 'rack-mini-profiler' # Test tool with load times in the corner
 #end
