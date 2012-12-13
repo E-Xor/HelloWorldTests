@@ -58,10 +58,15 @@ class CarsController < ApplicationController
   def update
     @car = Car.find(params[:id])
 
+    case params[:set_state]
+    when 'start' then @car.start_it
+    when 'stop' then @car.stop_it
+    end
+
     respond_to do |format|
       if @car.update_attributes(params[:car])
         format.html { redirect_to @car, notice: 'Car was successfully updated.' }
-        format.json { head :ok }
+        format.json { render json: %Q({"state": "#{@car.state}"}), status: :ok }
       else
         format.html { render action: "edit" }
         format.json { render json: @car.errors, status: :unprocessable_entity }

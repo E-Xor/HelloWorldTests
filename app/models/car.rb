@@ -20,11 +20,11 @@ class Car < ActiveRecord::Base
   end
   
   def stopping
-    puts "Stopping"
+    Rails.logger.debug "Stopping"
   end
   
   def starting
-    puts "Starting"
+    Rails.logger.debug "Starting"
   end
 
 end

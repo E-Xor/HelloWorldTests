@@ -1,7 +1,16 @@
+<%= javascript_include_tag :defaults, "car" %>
+<%= stylesheet_link_tag "car" %>
+
 <h1>Editing car</h1>
 
 <%= render 'form' %>
-
-Here I should have state transition buttons (JS is prefferable)
+<br/>
+<span>
+State: <span id="state"><%= @car.state %></span>&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= link_to "start", "#", :onclick => "update('state','" + car_path(@car) + "', 'start')", :class =>'nice_button' %>
+      <%= link_to "stop", "#", :onclick => "update('state','" + car_path(@car) + "', 'stop')", :class =>'nice_button' %>
+</span>
+</br>
+</br>
 <%= link_to 'Show', @car %> |
 <%= link_to 'Back', cars_path %>
