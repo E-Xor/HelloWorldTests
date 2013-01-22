@@ -1,0 +1,9 @@
+development:
+  fb_app_id: 207516476051124
+  fb_secret: c10ae2453f1f6a2e8b1555026d784284
+
+production:
+  fb_app_id: 207516476051124
+  fb_secret: c10ae2453f1f6a2e8b1555026d784284
+
+
