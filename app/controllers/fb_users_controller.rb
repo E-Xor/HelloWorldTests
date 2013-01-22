@@ -42,7 +42,7 @@ class FbUsersController < ApplicationController
       redirect_to "#{request.protocol}#{request.host_with_port}#{request.path}" and return
     end
 
-    @fb_user = FbUser.all
+    @fb_users = FbUser.all
 
     respond_to do |format|
       format.html # index.html.erb
