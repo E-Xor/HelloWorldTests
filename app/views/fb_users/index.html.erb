@@ -1,0 +1,35 @@
+<h1>Page that requires Facebook access</h1>
+
+<% if @current_user %>
+  Current User: <%= @current_user %>
+<% if @fb_users %>
+<table>
+  <tr>
+    <th>Graph</th>
+    <th>Access token</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Access token</th>
+  </tr>
+
+
+<% @fb_users.each do |fb_user| %>
+  <tr>
+    <td><%= fb_user.graph_id %></td>
+    <td><%= fb_user.access_token %></td>
+    <td><%= fb_user.first_name %></td>
+    <td><%= fb_user.last_name %></td>
+    <td><%= fb_user.email %></td>
+    <td><%= fb_user.access_token %></td>
+  </tr>
+
+</table>
+
+<% end %>
+<% end %>
+<% else %>
+  You need to be authenticated <b>Link</b>
+<% end %>
+
+

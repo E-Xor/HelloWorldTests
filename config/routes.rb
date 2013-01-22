@@ -93,5 +93,5 @@ HelloWorldTests::Application.routes.draw do
 #  match 'google_map/index' => 'google_map#index'
 
   resources :cars
-
+  resources :fb_users, :only => [:index]
 end
