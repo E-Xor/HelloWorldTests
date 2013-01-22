@@ -29,7 +29,7 @@
 <% end %>
 <% end %>
 <% else %>
-  You need to be authenticated <b>Link</b>
+  You need to be authenticated <%= link_to 'Login', Koala::Facebook::OAuth.new.url_for_oauth_code(:callback => @oauth_redirect_url) %>
 <% end %>
 
 
