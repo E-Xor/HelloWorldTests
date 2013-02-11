@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @frog.name %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @frog.age %>
+</p>
+
+
+<%= link_to 'Edit', edit_frog_path(@frog) %> |
+<%= link_to 'Back', frogs_path %>
