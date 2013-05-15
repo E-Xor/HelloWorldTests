@@ -30,6 +30,9 @@ GEM
       multi_json (~> 1.0)
     addressable (2.3.2)
     arel (3.0.2)
+    better_errors (0.8.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
     builder (3.0.4)
     capybara (2.0.2)
       mime-types (>= 1.16)
@@ -42,6 +45,7 @@ GEM
       ffi (~> 1.0, >= 1.0.11)
     client_side_validations (3.2.1)
     cocaine (0.4.2)
+    coderay (1.0.9)
     daemons (1.1.9)
     diff-lcs (1.1.3)
     erubis (2.7.0)
@@ -169,6 +173,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
   capybara
   client_side_validations (~> 3.2.1)
   jquery-rails

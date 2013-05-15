@@ -16,6 +16,7 @@ gem 'koala'
 
 group :development do
   gem 'rack-mini-profiler' # Test tool with load times in the corner
+  gem 'better_errors'      # More descriptive UI errors
 end
 
 # RSpec
