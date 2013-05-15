@@ -1,37 +1,5 @@
 /* Cars (State Machine) page */
 
-table {
-  margin: 0;
-  border: 0px none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  padding: 0;
-}
-
-tr th {
-  background-color: #D8D8D8;
-  padding: 2px 10px 20px 10px;
-  text-align:left
-}
-
-tr td {
-  padding: 2px 10px 2px 10px;
-}
-
-tr:nth-child(even) {
-    background-color: #F2F2F2;
-}
-
-tr:nth-child(odd) {
-    background-color: #FAFAFA;
-}
-
-.default_links {
-  font-size: 10pt;
-  display: block;
-  float: left;
-}
-
 .nice_button {
   -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
   -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;

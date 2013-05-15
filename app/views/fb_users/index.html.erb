@@ -22,7 +22,8 @@
     </table>
   <% end %>
 <% else %>
-  You need to be authenticated <%= link_to 'Login', Koala::Facebook::OAuth.new.url_for_oauth_code(:callback => @oauth_redirect_url) %>
+  You need to be authenticated <%= link_to 'Login', Koala::Facebook::OAuth.new.url_for_oauth_code(:callback => @oauth_redirect_url) %><br/>
+  It's not going really work until FB can access the page. They deprecated authentication for internal pages.
 <% end %>
 
 

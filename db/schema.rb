@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130122153519) do
+ActiveRecord::Schema.define(:version => 20130211200030) do
 
   create_table "auth_users", :force => true do |t|
     t.string   "user_name"
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(:version => 20130122153519) do
     t.string   "access_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "frogs", :force => true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "my_test_scaffolds", :force => true do |t|
