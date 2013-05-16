@@ -13,6 +13,7 @@ gem 'state_machine',            '~> 1.1.2' # State machine
 gem 'client_side_validations',  '~> 3.2.1' # JS validation
 gem 'yajl-ruby',                '~> 1.1.0' # By default Rails doesn't parse JSON request
 gem 'koala'
+gem 'unicorn'
 
 group :development do
   gem 'rack-mini-profiler' # Test tool with load times in the corner
